@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review: Units 37–42 | English for Everyone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:        #223047;
+  --ink-soft:   #57697c;
+  --paper:      #ffffff;
+  --panel:      #eaf5fc;
+  --panel-line: #9bd6f2;
+  --panel-line-soft: #d8eefb;
+
+  --brand:      #1c86c9;
+  --brand-deep: #115e8d;
+  --brand-pale: #eaf5fc;
+
+  --c1: #cf5a37; /* go with gerunds, play with nouns */
+  --c2: #bd8620; /* adverbs of frequency */
+  --c3: #2f8f74; /* questions about free time */
+  --c4: #8a3f95; /* likes and dislikes */
+  --c5: #ab4770; /* questions about likes and dislikes */
+  --c6: #3d5a99; /* using favorite */
+  --c7: #3a3d5c; /* final exam */
+
+  --correct: #2f9e44;
+  --wrong: #c0392b;
+  --light-correct: #e6f6ea;
+  --light-wrong: #fbe4e1;
+  --shadow: 20, 60, 90;
+
+  --font-display: 'Baloo 2', 'Poppins', sans-serif;
+  --font-body: 'Mulish', 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  padding-bottom: 4rem;
+}
+::selection { background: var(--brand); color: #fff; }
+
+h1, h2, h3 { font-family: var(--font-display); margin: 0; }
+p { margin: 0 0 0.9rem; }
+p:last-child { margin-bottom: 0; }
+
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── MASTHEAD ────────────────────────────────────────────────── */
+.masthead {
+  background: var(--brand-pale);
+  border-bottom: 3px solid var(--brand);
+  padding: 2.4rem 1.2rem 1.8rem;
+  text-align: center;
+}
+.masthead h1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  color: var(--brand-deep);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.7rem;
+}
+.masthead h1::before {
+  content: "\2713";
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--brand);
+  border-radius: 10px;
+  padding: 0.4rem 0.7rem;
+  line-height: 1;
+}
+.masthead .lede {
+  max-width: 560px;
+  margin: 0 auto 0.5rem;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+}
+.masthead .howto {
+  max-width: 560px;
+  margin: 0 auto 1rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+/* ── TABS ────────────────────────────────────────────────────── */
+.tabnav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background: #fff;
+  border-bottom: 2px solid var(--panel-line-soft);
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0 10px 24px -20px rgba(var(--shadow), 0.6);
+}
+.tabbtn {
+  --accent: #999;
+  flex: 1 1 auto;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  border: 2px solid var(--panel-line);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink-soft);
+  padding: 0.5rem 0.5rem 0.45rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.tabbtn .tb-unit {
+  font-family: var(--font-body);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.tabbtn .tb-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.tabbtn:hover { background: var(--brand-pale); border-color: var(--accent); }
+.tabbtn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.tabbtn.active .tb-unit { opacity: 0.9; }
+.tabbtn.done .tb-label::after { content: " \2713"; }
+
+/* ── PAGE ────────────────────────────────────────────────────── */
+main.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.4rem 1.2rem 0;
+}
+
+.panel { display: none; animation: fadeIn 0.2s ease; }
+.panel.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ── TOPIC PANELS ────────────────────────────────────────────── */
+.topic-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.topic-num {
+  flex: 0 0 auto;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 12px;
+  padding: 0.55rem 0.8rem;
+  line-height: 1;
+  box-shadow: 0 6px 14px -8px rgba(var(--shadow), 0.7);
+}
+.topic-head h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--ink);
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 0.35rem;
+  flex: 1 1 auto;
+}
+.rule {
+  font-size: 1rem;
+  background: var(--panel);
+  border: 2px solid var(--panel-line);
+  border-radius: 14px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.1rem;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  margin-bottom: 1.9rem;
+}
+.examples span {
+  position: relative;
+  font-size: 0.92rem;
+  font-weight: 500;
+  background: #fff;
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  padding: 0.6rem 1.05rem;
+}
+.examples span::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  bottom: -9px;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  border-radius: 0 0 3px 0;
+  transform: rotate(45deg);
+}
+.examples mark {
+  background: none;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.chart-wrap { overflow-x: auto; margin-bottom: 1.6rem; }
+.chart-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--brand-deep);
+  margin: 0 0 0.6rem 0.2rem;
+}
+.chart-card {
+  min-width: 420px;
+  border: 2.5px solid var(--accent);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 14px 26px -20px rgba(var(--shadow), 0.65);
+}
+table.chart {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+table.chart th,
+table.chart td {
+  position: relative;
+  padding: 0.75rem 0.9rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.25;
+}
+table.chart th {
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-right: 1px solid rgba(255, 255, 255, 0.28);
+}
+table.chart th:last-child { border-right: none; }
+table.chart td {
+  background: #fff;
+  color: var(--ink);
+  font-weight: 700;
+  border-top: 1px solid var(--panel-line-soft);
+  border-right: 1px solid var(--panel-line-soft);
+  transition: background 0.15s ease;
+}
+table.chart td:last-child { border-right: none; }
+table.chart tr:first-of-type td { border-top: none; }
+table.chart tr:nth-of-type(even) td { background: var(--panel); }
+table.chart tr:hover td { background: var(--panel-line-soft); }
+table.chart td.hl {
+  color: var(--accent);
+  font-weight: 800;
+}
+.chart-note { font-size: 0.85rem; color: var(--ink-soft); margin: -0.8rem 0 1.6rem; font-style: italic; }
+
+@media (max-width: 560px) {
+  .chart-card { min-width: 360px; }
+  table.chart { font-size: 0.84rem; }
+  table.chart th, table.chart td { padding: 0.6rem 0.55rem; }
+}
+
+/* ── EXERCISE / READING CARDS ───────────────────────────────── */
+.exercise {
+  position: relative;
+  background: #fff;
+  border: 2.5px solid var(--panel-line);
+  border-radius: 20px;
+  padding: 1.4rem 1.5rem 1.3rem;
+  margin-bottom: 1.4rem;
+  box-shadow: 0 10px 24px -20px rgba(var(--shadow), 0.5);
+}
+.exercise:last-child { margin-bottom: 0.4rem; }
+.exercise h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--brand-deep);
+  margin-bottom: 1.1rem;
+}
+.exercise h3::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+.exercise[data-mode="select"] h3::before { content: "\270E"; }
+.exercise[data-mode="radio"] h3::before { content: "\1F5E8"; font-size: 0.85rem; }
+.ex-list { list-style: none; margin: 0 0 1.1rem; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+.ex-list li { font-size: 0.96rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.ex-cue { color: var(--ink-soft); font-size: 0.82rem; font-style: italic; flex-basis: 100%; }
+select.blank {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+  background-color: var(--panel);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6' fill='none' stroke='%23115e8d' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.55rem center;
+  background-size: 0.85rem;
+  border: 2px solid var(--panel-line);
+  border-radius: 10px;
+  padding: 0.4rem 1.8rem 0.4rem 0.7rem;
+  line-height: 1.3;
+  cursor: pointer;
+}
+select.blank:hover { border-color: var(--brand); }
+select.blank:focus-visible { border-color: var(--brand); }
+select.blank.correct {
+  background-color: var(--light-correct);
+  border-color: var(--correct);
+  color: var(--correct);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6' fill='none' stroke='%232f9e44' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+select.blank.wrong {
+  background-color: var(--light-wrong);
+  border-color: var(--wrong);
+  color: var(--wrong);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6' fill='none' stroke='%23c0392b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+
+.ex-controls { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.3rem; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 14px;
+  border: 2px solid var(--brand);
+  cursor: pointer;
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 8px 16px -8px rgba(var(--shadow), 0.65);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+}
+.btn::before {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+.btn.check-btn::before { content: "\2713"; }
+.btn.reset-btn::before { content: "\21BB"; }
+.btn:hover {
+  transform: translateY(-2px);
+  background: var(--brand-deep);
+  border-color: var(--brand-deep);
+  box-shadow: 0 12px 20px -8px rgba(var(--shadow), 0.75);
+}
+.btn:active { transform: translateY(0); box-shadow: 0 4px 10px -6px rgba(var(--shadow), 0.6); }
+.btn.ghost {
+  background: #fff;
+  color: var(--brand-deep);
+  border-color: var(--panel-line);
+  box-shadow: none;
+}
+.btn.ghost:hover {
+  background: var(--brand-pale);
+  border-color: var(--brand);
+  box-shadow: none;
+}
+.ex-result {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--brand-deep);
+  background: var(--panel);
+  border: 2px solid var(--panel-line);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  min-height: 1.2rem;
+}
+.ex-result:empty { display: none; }
+
+.mini-passage {
+  background: var(--panel);
+  border: 1.5px dashed var(--panel-line);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  font-size: 0.96rem;
+  margin-bottom: 1rem;
+}
+.mini-passage mark { background: none; font-weight: 700; }
+.mini-subhead {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--brand-deep);
+  margin-bottom: 0.8rem;
+}
+
+.q {
+  margin: 0 0 0.8rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--panel);
+  border: 2px solid var(--panel-line);
+  border-radius: 12px;
+}
+.q.correct { background: var(--light-correct); border-color: var(--correct); }
+.q.wrong { background: var(--light-wrong); border-color: var(--wrong); }
+.q-legend { font-size: 0.94rem; margin: 0 0 0.5rem; font-weight: 600; }
+.tf-options { display: flex; gap: 1.4rem; }
+.tf-options label { display: flex; align-items: center; gap: 0.4rem; font-family: var(--font-body); font-weight: 600; font-size: 0.85rem; cursor: pointer; }
+
+.mc-options { display: flex; flex-direction: column; gap: 0.45rem; }
+.mc-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  border-radius: 9px;
+  transition: background 0.12s ease;
+}
+.mc-options label:hover { background: rgba(255,255,255,0.6); }
+.mc-options .opt-letter {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--panel-line);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--ink-soft);
+}
+
+.exam-sec {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 0.2rem;
+  margin: 1.6rem 0 0.9rem;
+}
+.exam-sec:first-of-type { margin-top: 0; }
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  margin-top: 2.5rem;
+  padding: 0 1.2rem;
+}
+
+@media (max-width: 560px) {
+  .tabbtn { min-width: 30%; }
+  .topic-head { flex-wrap: wrap; }
+  .topic-head h2 { font-size: 1.3rem; }
+  .exercise { padding: 1.1rem 1.2rem; }
+  .tf-options { flex-direction: column; gap: 0.4rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <h1>Review: Units 37–42</h1>
+</header>
+
+<nav class="tabnav">
+  <button class="tabbtn active" id="tab-topic-1" style="--accent: var(--c1);" onclick="switchTab('topic-1', this)"><span class="tb-unit">Units 37.1, 37.7</span><span class="tb-label">Go / Play</span></button>
+  <button class="tabbtn" id="tab-topic-2" style="--accent: var(--c2);" onclick="switchTab('topic-2', this)"><span class="tb-unit">Unit 39.1</span><span class="tb-label">Frequency</span></button>
+  <button class="tabbtn" id="tab-topic-3" style="--accent: var(--c3);" onclick="switchTab('topic-3', this)"><span class="tb-unit">Unit 39.6</span><span class="tb-label">Free Time Qs</span></button>
+  <button class="tabbtn" id="tab-topic-4" style="--accent: var(--c4);" onclick="switchTab('topic-4', this)"><span class="tb-unit">Units 40.1, 40.7</span><span class="tb-label">Likes / Dislikes</span></button>
+  <button class="tabbtn" id="tab-topic-5" style="--accent: var(--c5);" onclick="switchTab('topic-5', this)"><span class="tb-unit">Units 40.12, 40.13</span><span class="tb-label">Likes Qs</span></button>
+  <button class="tabbtn" id="tab-topic-6" style="--accent: var(--c6);" onclick="switchTab('topic-6', this)"><span class="tb-unit">Unit 42.1</span><span class="tb-label">Favorite</span></button>
+  <button class="tabbtn" id="tab-topic-7" style="--accent: var(--c7);" onclick="switchTab('topic-7', this)"><span class="tb-unit">Units 37–42</span><span class="tb-label">Final Exam</span></button>
+</nav>
+
+<main class="page">
+
+  <!-- ══════════════ TOPIC 1 · "GO" WITH GERUNDS, "PLAY" WITH NOUNS ══════════════ -->
+  <section class="panel active" id="panel-topic-1" style="--accent: var(--c1);">
+    <div class="topic-head">
+      <span class="topic-num">Units 37.1, 37.7</span>
+      <h2>"Go" with gerunds, "play" with nouns</h2>
+    </div>
+    <p class="rule">Use <mark style="background:none;color:var(--c1);font-weight:600;">go</mark> plus a <mark style="background:none;color:var(--c1);font-weight:600;">gerund</mark> (verb + -ing) for many activities, especially ones done alone, like "go swimming" or "go running." Use <mark style="background:none;color:var(--c1);font-weight:600;">play</mark> plus a <mark style="background:none;color:var(--c1);font-weight:600;">noun</mark> for sports and games with defined rules, like "play tennis" or "play chess."</p>
+    <div class="examples">
+      <span><mark>I go swimming</mark> on Mondays.</span>
+      <span><mark>I play tennis</mark> with my brother on Fridays.</span>
+      <span>She <mark>goes running</mark> every morning.</span>
+      <span>They <mark>play soccer</mark> on weekends.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">go + gerund vs. play + noun</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Verb</th><th>Followed by</th><th>Example</th></tr>
+        <tr><td class="hl">go</td><td>gerund (-ing)</td><td>go swimming</td></tr>
+        <tr><td class="hl">play</td><td>noun</td><td>play tennis</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">Some activities always use "go": go shopping, go fishing, go camping. Team sports and games usually use "play": play soccer, play cards.</p>
+
+    <div class="exercise" data-nav="tab-topic-1" data-mode="select">
+      <h3>Grammar practice: choose go or play (in the right form)</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">an activity done alone</span> I <select class="blank" data-answer="go"><option value="">choose…</option><option>play</option><option>go</option></select> swimming every weekend.</li>
+        <li><span class="ex-cue">a sport with rules</span> He <select class="blank" data-answer="plays"><option value="">choose…</option><option>plays</option><option>goes</option></select> tennis on Saturdays.</li>
+        <li><span class="ex-cue">an activity done alone</span> She <select class="blank" data-answer="goes"><option value="">choose…</option><option>goes</option><option>plays</option></select> running every morning.</li>
+        <li><span class="ex-cue">a game</span> They <select class="blank" data-answer="play"><option value="">choose…</option><option>go</option><option>play</option></select> chess after school.</li>
+        <li><span class="ex-cue">an activity done alone</span> We <select class="blank" data-answer="go"><option value="">choose…</option><option>play</option><option>go</option></select> hiking in the mountains.</li>
+        <li><span class="ex-cue">a sport with rules</span> I <select class="blank" data-answer="play"><option value="">choose…</option><option>play</option><option>go</option></select> basketball with my friends.</li>
+        <li><span class="ex-cue">an activity done alone</span> He <select class="blank" data-answer="goes"><option value="">choose…</option><option>goes</option><option>plays</option></select> shopping every Friday.</li>
+        <li><span class="ex-cue">a game</span> We <select class="blank" data-answer="play"><option value="">choose…</option><option>play</option><option>go</option></select> cards on rainy days.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-1" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">Every weekend, the Martinez family stays busy. On Saturday mornings, Mr. Martinez <mark style="color:var(--c1);">goes fishing</mark> at the lake. Meanwhile, his daughter Lucia <mark style="color:var(--c1);">plays soccer</mark> with her team. In the afternoon, the whole family <mark style="color:var(--c1);">goes swimming</mark> at the community pool. On Sunday, they <mark style="color:var(--c1);">play board games</mark> together after lunch. Mrs. Martinez prefers to <mark style="color:var(--c1);">go running</mark> before breakfast, while her son <mark style="color:var(--c1);">plays video games</mark> most of the day. Everyone agrees Sunday evenings are for playing cards together.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. Mr. Martinez goes fishing on Saturday mornings.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. Mr. Martinez goes fishing on Saturday mornings.">
+          <label><input type="radio" name="t1q1" value="True"> True</label>
+          <label><input type="radio" name="t1q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">2. Lucia plays tennis with her team.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. Lucia plays tennis with her team.">
+          <label><input type="radio" name="t1q2" value="True"> True</label>
+          <label><input type="radio" name="t1q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">3. The family goes swimming at the pool.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. The family goes swimming at the pool.">
+          <label><input type="radio" name="t1q3" value="True"> True</label>
+          <label><input type="radio" name="t1q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. They play board games on Sunday.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. They play board games on Sunday.">
+          <label><input type="radio" name="t1q4" value="True"> True</label>
+          <label><input type="radio" name="t1q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. Mrs. Martinez prefers to play running before breakfast.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. Mrs. Martinez prefers to play running before breakfast.">
+          <label><input type="radio" name="t1q5" value="True"> True</label>
+          <label><input type="radio" name="t1q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 2 · ADVERBS OF FREQUENCY ══════════════ -->
+  <section class="panel" id="panel-topic-2" style="--accent: var(--c2);">
+    <div class="topic-head">
+      <span class="topic-num">Unit 39.1</span>
+      <h2>Adverbs of frequency</h2>
+    </div>
+    <p class="rule">Adverbs of frequency (<mark style="background:none;color:var(--c2);font-weight:600;">always, usually, often, sometimes, rarely, never</mark>) tell how often something happens. They usually go <mark style="background:none;color:var(--c2);font-weight:600;">before the main verb</mark>, but after "to be."</p>
+    <div class="examples">
+      <span><mark>I always watch TV</mark> at night.</span>
+      <span><mark>I sometimes go</mark> to the movies.</span>
+      <span>She is <mark>always</mark> late.</span>
+      <span>He <mark>never</mark> eats breakfast.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Adverbs of frequency</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Adverb</th><th>Frequency</th><th>Example</th></tr>
+        <tr><td class="hl">always</td><td>100%</td><td>I always watch TV.</td></tr>
+        <tr><td class="hl">usually / often</td><td>most of the time</td><td>I often watch TV.</td></tr>
+        <tr><td class="hl">sometimes</td><td>some of the time</td><td>I sometimes watch TV.</td></tr>
+        <tr><td class="hl">rarely</td><td>a little of the time</td><td>I rarely watch TV.</td></tr>
+        <tr><td class="hl">never</td><td>0%</td><td>I never watch TV.</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">Adverbs of frequency go before the main verb, but after the verb "to be": "She is always late," not "She always is late."</p>
+
+    <div class="exercise" data-nav="tab-topic-2" data-mode="select">
+      <h3>Grammar practice: choose the right adverb</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">100% of the time</span> I <select class="blank" data-answer="always"><option value="">choose…</option><option>never</option><option>sometimes</option><option>always</option></select> watch TV at night.</li>
+        <li><span class="ex-cue">0% of the time</span> He <select class="blank" data-answer="never"><option value="">choose…</option><option>never</option><option>usually</option><option>always</option></select> eats vegetables.</li>
+        <li><span class="ex-cue">some of the time</span> I <select class="blank" data-answer="sometimes"><option value="">choose…</option><option>never</option><option>always</option><option>sometimes</option></select> go to the movies.</li>
+        <li><span class="ex-cue">after "to be"</span> She is <select class="blank" data-answer="always"><option value="">choose…</option><option>always</option><option>never</option><option>sometimes</option></select> late.</li>
+        <li><span class="ex-cue">most of the time</span> We <select class="blank" data-answer="usually"><option value="">choose…</option><option>never</option><option>rarely</option><option>usually</option></select> walk to school.</li>
+        <li><span class="ex-cue">before the main verb (often)</span> I <select class="blank" data-answer="often drink"><option value="">choose…</option><option>often drink</option><option>drink am often</option><option>drink often</option></select> coffee.</li>
+        <li><span class="ex-cue">a little of the time</span> They <select class="blank" data-answer="rarely"><option value="">choose…</option><option>always</option><option>usually</option><option>rarely</option></select> eat fast food.</li>
+        <li><span class="ex-cue">100% of the time, after to be</span> He is <select class="blank" data-answer="always"><option value="">choose…</option><option>never</option><option>always</option><option>sometimes</option></select> on time.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-2" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">Mia has a very predictable routine. She <mark style="color:var(--c2);">always wakes up</mark> at seven. She <mark style="color:var(--c2);">usually eats cereal</mark> for breakfast, though she <mark style="color:var(--c2);">sometimes has toast</mark> instead. Mia <mark style="color:var(--c2);">never skips</mark> her morning walk, even in bad weather. In the evening, she <mark style="color:var(--c2);">often reads</mark> before bed, and she <mark style="color:var(--c2);">rarely watches</mark> TV on weekdays. Her roommate is always surprised by how organized Mia is. "You never seem to lose track of time," her roommate says.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. Mia always wakes up at seven.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. Mia always wakes up at seven.">
+          <label><input type="radio" name="t2q1" value="True"> True</label>
+          <label><input type="radio" name="t2q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">2. Mia never eats cereal for breakfast.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. Mia never eats cereal for breakfast.">
+          <label><input type="radio" name="t2q2" value="True"> True</label>
+          <label><input type="radio" name="t2q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">3. Mia sometimes skips her morning walk.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. Mia sometimes skips her morning walk.">
+          <label><input type="radio" name="t2q3" value="True"> True</label>
+          <label><input type="radio" name="t2q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. Mia often reads before bed.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. Mia often reads before bed.">
+          <label><input type="radio" name="t2q4" value="True"> True</label>
+          <label><input type="radio" name="t2q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. Mia often watches TV on weekdays.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. Mia often watches TV on weekdays.">
+          <label><input type="radio" name="t2q5" value="True"> True</label>
+          <label><input type="radio" name="t2q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 3 · QUESTIONS ABOUT FREE TIME ══════════════ -->
+  <section class="panel" id="panel-topic-3" style="--accent: var(--c3);">
+    <div class="topic-head">
+      <span class="topic-num">Unit 39.6</span>
+      <h2>Questions about free time</h2>
+    </div>
+    <p class="rule">Use <mark style="background:none;color:var(--c3);font-weight:600;">How often</mark> to ask about frequency. Use other question words like <mark style="background:none;color:var(--c3);font-weight:600;">When</mark> or <mark style="background:none;color:var(--c3);font-weight:600;">What</mark> with do/does to ask about free-time activities.</p>
+    <div class="examples">
+      <span><mark>How often do you</mark> go on vacation?</span>
+      <span><mark>When does she</mark> go running?</span>
+      <span><mark>What do you do</mark> on weekends?</span>
+      <span><mark>How often do they</mark> play soccer?</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Question words for free time</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Question word</th><th>Asks about</th><th>Example</th></tr>
+        <tr><td class="hl">How often</td><td>frequency</td><td>How often do you exercise?</td></tr>
+        <tr><td class="hl">When</td><td>time</td><td>When does she go running?</td></tr>
+        <tr><td class="hl">What</td><td>activity</td><td>What do you do on weekends?</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">"How often" asks for a frequency answer, like "twice a week" or "every day," not a specific time.</p>
+
+    <div class="exercise" data-nav="tab-topic-3" data-mode="select">
+      <h3>Grammar practice: choose the right question word</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">asking about frequency</span> <select class="blank" data-answer="How often"><option value="">choose…</option><option>When</option><option>What</option><option>How often</option></select> do you go on vacation?</li>
+        <li><span class="ex-cue">asking about time</span> <select class="blank" data-answer="When"><option value="">choose…</option><option>How often</option><option>What</option><option>When</option></select> does she go running?</li>
+        <li><span class="ex-cue">asking about activity</span> <select class="blank" data-answer="What"><option value="">choose…</option><option>When</option><option>How often</option><option>What</option></select> do you do on weekends?</li>
+        <li><span class="ex-cue">asking about frequency</span> <select class="blank" data-answer="How often"><option value="">choose…</option><option>How often</option><option>When</option><option>What</option></select> do they play soccer?</li>
+        <li><span class="ex-cue">asking about time</span> <select class="blank" data-answer="When"><option value="">choose…</option><option>How often</option><option>What</option><option>When</option></select> do you usually relax?</li>
+        <li><span class="ex-cue">asking about frequency</span> <select class="blank" data-answer="How often"><option value="">choose…</option><option>What</option><option>When</option><option>How often</option></select> does he go to the gym?</li>
+        <li><span class="ex-cue">word order</span> How often <select class="blank" data-answer="do"><option value="">choose…</option><option>do</option><option>does</option><option>are</option></select> you exercise?</li>
+        <li><span class="ex-cue">word order, (she)</span> When <select class="blank" data-answer="does"><option value="">choose…</option><option>does</option><option>do</option><option>is</option></select> she go running?</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-3" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">During the interview, the reporter asks the athlete about her routine. "<mark style="color:var(--c3);">How often do you train?</mark>" she asks. "I train six days a week," the athlete answers. "<mark style="color:var(--c3);">When do you usually rest?</mark>" the reporter continues. "I rest on Sundays," she says. "<mark style="color:var(--c3);">What do you do in your free time?</mark>" the reporter asks. "I like to read and spend time with my family." "<mark style="color:var(--c3);">How often do you travel</mark> for competitions?" the reporter asks. "About twice a month," the athlete replies.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. The athlete trains six days a week.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. The athlete trains six days a week.">
+          <label><input type="radio" name="t3q1" value="True"> True</label>
+          <label><input type="radio" name="t3q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">2. The athlete rests on Saturdays.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. The athlete rests on Saturdays.">
+          <label><input type="radio" name="t3q2" value="True"> True</label>
+          <label><input type="radio" name="t3q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">3. The athlete enjoys reading in her free time.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. The athlete enjoys reading in her free time.">
+          <label><input type="radio" name="t3q3" value="True"> True</label>
+          <label><input type="radio" name="t3q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. The athlete travels for competitions about twice a month.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. The athlete travels for competitions about twice a month.">
+          <label><input type="radio" name="t3q4" value="True"> True</label>
+          <label><input type="radio" name="t3q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. The reporter asks no questions about her routine.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. The reporter asks no questions about her routine.">
+          <label><input type="radio" name="t3q5" value="True"> True</label>
+          <label><input type="radio" name="t3q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 4 · LIKES AND DISLIKES ══════════════ -->
+  <section class="panel" id="panel-topic-4" style="--accent: var(--c4);">
+    <div class="topic-head">
+      <span class="topic-num">Units 40.1, 40.7</span>
+      <h2>Likes and dislikes</h2>
+    </div>
+    <p class="rule">Use <mark style="background:none;color:var(--c4);font-weight:600;">like</mark>, <mark style="background:none;color:var(--c4);font-weight:600;">love</mark>, <mark style="background:none;color:var(--c4);font-weight:600;">hate</mark>, and <mark style="background:none;color:var(--c4);font-weight:600;">don't like</mark> to talk about likes and dislikes. Follow these verbs with a noun or a <mark style="background:none;color:var(--c4);font-weight:600;">gerund</mark> (verb + -ing).</p>
+    <div class="examples">
+      <span><mark>She likes</mark> tennis.</span>
+      <span><mark>Max doesn't like</mark> pizza.</span>
+      <span><mark>I love</mark> swimming.</span>
+      <span><mark>She hates</mark> shopping.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Verbs for likes and dislikes</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Verb</th><th>Strength</th><th>Example</th></tr>
+        <tr><td class="hl">love</td><td>strong positive</td><td>I love swimming.</td></tr>
+        <tr><td class="hl">like</td><td>positive</td><td>She likes tennis.</td></tr>
+        <tr><td class="hl">don't like</td><td>negative</td><td>Max doesn't like pizza.</td></tr>
+        <tr><td class="hl">hate</td><td>strong negative</td><td>She hates shopping.</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">After these verbs, we can use a noun (like tennis) or a gerund (like swimming), but not the base verb alone.</p>
+
+    <div class="exercise" data-nav="tab-topic-4" data-mode="select">
+      <h3>Grammar practice: complete each sentence</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">strong positive</span> I <select class="blank" data-answer="love"><option value="">choose…</option><option>don't like</option><option>hate</option><option>love</option></select> swimming.</li>
+        <li><span class="ex-cue">negative, (Max)</span> Max <select class="blank" data-answer="doesn't like"><option value="">choose…</option><option>not likes</option><option>don't like</option><option>doesn't like</option></select> pizza.</li>
+        <li><span class="ex-cue">positive, (she)</span> She <select class="blank" data-answer="likes"><option value="">choose…</option><option>like</option><option>loving</option><option>likes</option></select> tennis.</li>
+        <li><span class="ex-cue">strong negative, (she)</span> She <select class="blank" data-answer="hates"><option value="">choose…</option><option>hates</option><option>hate</option><option>don't hate</option></select> shopping.</li>
+        <li><span class="ex-cue">positive, gerund</span> We <select class="blank" data-answer="like"><option value="">choose…</option><option>liking</option><option>likes</option><option>like</option></select> playing video games.</li>
+        <li><span class="ex-cue">strong positive, (he)</span> He <select class="blank" data-answer="loves"><option value="">choose…</option><option>love</option><option>hating</option><option>loves</option></select> dancing.</li>
+        <li><span class="ex-cue">negative, (I)</span> I <select class="blank" data-answer="don't like"><option value="">choose…</option><option>doesn't like</option><option>not like</option><option>don't like</option></select> spicy food.</li>
+        <li><span class="ex-cue">strong negative, (they)</span> They <select class="blank" data-answer="hate"><option value="">choose…</option><option>hate</option><option>loving</option><option>hates</option></select> waiting in long lines.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-4" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">Everyone in the Nguyen family has different tastes. <mark style="color:var(--c4);">Lily loves painting</mark> and spends hours on her art every week. Her brother Tom <mark style="color:var(--c4);">doesn't like art</mark> at all; he prefers video games instead. Their mother <mark style="color:var(--c4);">hates loud music</mark> but <mark style="color:var(--c4);">loves quiet evenings</mark> with a book. Their father <mark style="color:var(--c4);">likes cooking</mark>, especially trying new recipes. "I don't like eating out much," he says. "I'd rather cook at home." Despite their differences, the family <mark style="color:var(--c4);">loves spending time</mark> together on weekends.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. Lily loves painting.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. Lily loves painting.">
+          <label><input type="radio" name="t4q1" value="True"> True</label>
+          <label><input type="radio" name="t4q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">2. Tom loves art.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. Tom loves art.">
+          <label><input type="radio" name="t4q2" value="True"> True</label>
+          <label><input type="radio" name="t4q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">3. Their mother loves loud music.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. Their mother loves loud music.">
+          <label><input type="radio" name="t4q3" value="True"> True</label>
+          <label><input type="radio" name="t4q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. Their father likes cooking.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. Their father likes cooking.">
+          <label><input type="radio" name="t4q4" value="True"> True</label>
+          <label><input type="radio" name="t4q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. The family hates spending time together.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. The family hates spending time together.">
+          <label><input type="radio" name="t4q5" value="True"> True</label>
+          <label><input type="radio" name="t4q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 5 · QUESTIONS ABOUT LIKES AND DISLIKES ══════════════ -->
+  <section class="panel" id="panel-topic-5" style="--accent: var(--c5);">
+    <div class="topic-head">
+      <span class="topic-num">Units 40.12, 40.13</span>
+      <h2>Questions about likes and dislikes</h2>
+    </div>
+    <p class="rule">Use <mark style="background:none;color:var(--c5);font-weight:600;">Do you like...?</mark> to ask about likes with a yes/no answer. Use <mark style="background:none;color:var(--c5);font-weight:600;">Why do you like...?</mark> to ask for a reason.</p>
+    <div class="examples">
+      <span><mark>Do you like</mark> chocolate?</span>
+      <span><mark>Why do you like</mark> basketball?</span>
+      <span><mark>Does she like</mark> coffee?</span>
+      <span><mark>Why does he like</mark> hiking?</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Asking about likes</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Question type</th><th>Form</th><th>Example</th></tr>
+        <tr><td>Yes/no</td><td class="hl">Do/Does + subject + like</td><td>Do you like chocolate?</td></tr>
+        <tr><td>Reason</td><td class="hl">Why + do/does + subject + like</td><td>Why do you like basketball?</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">Answer a reason question with "because": "Why do you like basketball?" "Because it's exciting."</p>
+
+    <div class="exercise" data-nav="tab-topic-5" data-mode="select">
+      <h3>Grammar practice: complete each question</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">yes/no question</span> <select class="blank" data-answer="Do"><option value="">choose…</option><option>Does</option><option>Are</option><option>Do</option></select> you like chocolate?</li>
+        <li><span class="ex-cue">asking for a reason</span> <select class="blank" data-answer="Why"><option value="">choose…</option><option>Why</option><option>When</option><option>What</option></select> do you like basketball?</li>
+        <li><span class="ex-cue">yes/no question, (she)</span> <select class="blank" data-answer="Does"><option value="">choose…</option><option>Is</option><option>Does</option><option>Do</option></select> she like coffee?</li>
+        <li><span class="ex-cue">asking for a reason, (he)</span> <select class="blank" data-answer="Why"><option value="">choose…</option><option>What</option><option>When</option><option>Why</option></select> does he like hiking?</li>
+        <li><span class="ex-cue">yes/no question, (they)</span> <select class="blank" data-answer="Do"><option value="">choose…</option><option>Are</option><option>Do</option><option>Does</option></select> they like spicy food?</li>
+        <li><span class="ex-cue">word order</span> Why <select class="blank" data-answer="do"><option value="">choose…</option><option>does</option><option>are</option><option>do</option></select> you like basketball?</li>
+        <li><span class="ex-cue">word order, (she)</span> Why <select class="blank" data-answer="does"><option value="">choose…</option><option>do</option><option>does</option><option>is</option></select> she like coffee?</li>
+        <li><span class="ex-cue">yes/no question, (it)</span> <select class="blank" data-answer="Does"><option value="">choose…</option><option>Do</option><option>Does</option><option>Is</option></select> it like cold weather?</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-5" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">At the coffee shop, two friends chat. "<mark style="color:var(--c5);">Do you like coffee?</mark>" Sam asks. "Yes, I love it," says Priya. "<mark style="color:var(--c5);">Why do you like it</mark> so much?" Sam continues. "It helps me focus," she explains. "<mark style="color:var(--c5);">Do you like tea</mark> instead?" she asks Sam. "Not really," he says. "<mark style="color:var(--c5);">Why don't you like it?</mark>" Priya asks. "It's too bitter for me," Sam replies. "<mark style="color:var(--c5);">Does your sister like tea?</mark>" Priya wonders. "Yes, she loves it," Sam says.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. Priya likes coffee.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. Priya likes coffee.">
+          <label><input type="radio" name="t5q1" value="True"> True</label>
+          <label><input type="radio" name="t5q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">2. Coffee helps Priya focus.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. Coffee helps Priya focus.">
+          <label><input type="radio" name="t5q2" value="True"> True</label>
+          <label><input type="radio" name="t5q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">3. Sam loves tea.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. Sam loves tea.">
+          <label><input type="radio" name="t5q3" value="True"> True</label>
+          <label><input type="radio" name="t5q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. Sam finds tea too bitter.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. Sam finds tea too bitter.">
+          <label><input type="radio" name="t5q4" value="True"> True</label>
+          <label><input type="radio" name="t5q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. Sam's sister dislikes tea.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. Sam's sister dislikes tea.">
+          <label><input type="radio" name="t5q5" value="True"> True</label>
+          <label><input type="radio" name="t5q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 6 · USING "FAVORITE" ══════════════ -->
+  <section class="panel" id="panel-topic-6" style="--accent: var(--c6);">
+    <div class="topic-head">
+      <span class="topic-num">Unit 42.1</span>
+      <h2>Using "favorite"</h2>
+    </div>
+    <p class="rule">Use <mark style="background:none;color:var(--c6);font-weight:600;">favorite</mark> before a noun to say which thing you like most in a category. We often say <mark style="background:none;color:var(--c6);font-weight:600;">favorite type of</mark> before a general category.</p>
+    <div class="examples">
+      <span>My <mark>favorite type of</mark> music is rock.</span>
+      <span>My <mark>favorite</mark> color is blue.</span>
+      <span>Pizza is my <mark>favorite</mark> food.</span>
+      <span>What's your <mark>favorite</mark> movie?</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Using favorite</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Structure</th><th>Example</th></tr>
+        <tr><td class="hl">favorite + noun</td><td>my favorite color</td></tr>
+        <tr><td class="hl">favorite type/kind of + category</td><td>my favorite type of music</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">"Favorite" already means "most liked," so we don't say "most favorite" — that repeats the same idea.</p>
+
+    <div class="exercise" data-nav="tab-topic-6" data-mode="select">
+      <h3>Grammar practice: complete each sentence</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">category with "type of"</span> My <select class="blank" data-answer="favorite"><option value="">choose…</option><option>most favorite</option><option>favoritest</option><option>favorite</option></select> type of music is rock.</li>
+        <li><span class="ex-cue">simple noun</span> My <select class="blank" data-answer="favorite"><option value="">choose…</option><option>favorite</option><option>most favorite</option><option>favoritest</option></select> color is blue.</li>
+        <li><span class="ex-cue">asking about a favorite</span> What's your <select class="blank" data-answer="favorite"><option value="">choose…</option><option>most favorite</option><option>favoritest</option><option>favorite</option></select> movie?</li>
+        <li><span class="ex-cue">simple noun</span> Pizza is my <select class="blank" data-answer="favorite"><option value="">choose…</option><option>favoritest</option><option>favorite</option><option>most favorite</option></select> food.</li>
+        <li><span class="ex-cue">category with "kind of"</span> Her <select class="blank" data-answer="favorite"><option value="">choose…</option><option>favoritest</option><option>most favorite</option><option>favorite</option></select> kind of book is mystery.</li>
+        <li><span class="ex-cue">avoid repeating the idea</span> This is my <select class="blank" data-answer="favorite"><option value="">choose…</option><option>favorite</option><option>favoritest</option><option>most favorite</option></select> song.</li>
+        <li><span class="ex-cue">simple noun</span> His <select class="blank" data-answer="favorite"><option value="">choose…</option><option>favoritest</option><option>favorite</option><option>most favorite</option></select> sport is basketball.</li>
+        <li><span class="ex-cue">category with "type of"</span> Our <select class="blank" data-answer="favorite"><option value="">choose…</option><option>favorite</option><option>favoritest</option><option>most favorite</option></select> type of weather is sunny.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-6" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">At the family dinner, everyone shares their favorites. "My <mark style="color:var(--c6);">favorite type of music</mark> is jazz," says Grandpa. "My <mark style="color:var(--c6);">favorite color</mark> is purple," adds his granddaughter. "Pizza is my <mark style="color:var(--c6);">favorite food</mark>," says her brother, smiling. Their mother laughs. "My <mark style="color:var(--c6);">favorite season</mark> is autumn — I love the cool weather." Even the family dog seems to have a <mark style="color:var(--c6);">favorite toy</mark>, a worn-out tennis ball he never lets go of. "Everyone has their favorites," Grandpa says, "and that's what makes us interesting."</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. Grandpa's favorite type of music is jazz.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. Grandpa's favorite type of music is jazz.">
+          <label><input type="radio" name="t6q1" value="True"> True</label>
+          <label><input type="radio" name="t6q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">2. The granddaughter's favorite color is blue.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. The granddaughter's favorite color is blue.">
+          <label><input type="radio" name="t6q2" value="True"> True</label>
+          <label><input type="radio" name="t6q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">3. Pizza is the brother's favorite food.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. Pizza is the brother's favorite food.">
+          <label><input type="radio" name="t6q3" value="True"> True</label>
+          <label><input type="radio" name="t6q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">4. Their mother's favorite season is winter.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. Their mother's favorite season is winter.">
+          <label><input type="radio" name="t6q4" value="True"> True</label>
+          <label><input type="radio" name="t6q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">5. The family dog has a favorite toy.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. The family dog has a favorite toy.">
+          <label><input type="radio" name="t6q5" value="True"> True</label>
+          <label><input type="radio" name="t6q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 7 · FINAL EXAM ══════════════ -->
+  <section class="panel" id="panel-topic-7" style="--accent: var(--c7);">
+    <div class="topic-head">
+      <span class="topic-num">Units 37–42</span>
+      <h2>Final exam</h2>
+    </div>
+    <p class="rule">This 30-question exam covers every topic in this review: "go" with gerunds and "play" with nouns, adverbs of frequency, questions about free time, likes and dislikes, questions about likes and dislikes, and using "favorite." Choose the best answer for each question, then press <mark style="background:none;color:var(--c7);font-weight:600;">Check answers</mark> at the bottom to see your score.</p>
+
+    <div class="exercise" data-nav="tab-topic-7" data-mode="radio">
+      <h3 class="exam-sec">"Go" with gerunds, "play" with nouns</h3>
+      <div class="q" data-answer="go">
+        <p class="q-legend">1. I ____ swimming every weekend.</p>
+        <div class="mc-options" role="radiogroup" aria-label="1. I ____ swimming every weekend.">
+          <label><input type="radio" name="examq1" value="go"><span class="opt-letter">A</span> go</label>
+          <label><input type="radio" name="examq1" value="play"><span class="opt-letter">B</span> play</label>
+          <label><input type="radio" name="examq1" value="goes"><span class="opt-letter">C</span> goes</label>
+          <label><input type="radio" name="examq1" value="plays"><span class="opt-letter">D</span> plays</label>
+        </div>
+      </div>
+      <div class="q" data-answer="plays">
+        <p class="q-legend">2. He ____ tennis on Saturdays.</p>
+        <div class="mc-options" role="radiogroup" aria-label="2. He ____ tennis on Saturdays.">
+          <label><input type="radio" name="examq2" value="play"><span class="opt-letter">A</span> play</label>
+          <label><input type="radio" name="examq2" value="plays"><span class="opt-letter">B</span> plays</label>
+          <label><input type="radio" name="examq2" value="go"><span class="opt-letter">C</span> go</label>
+          <label><input type="radio" name="examq2" value="goes"><span class="opt-letter">D</span> goes</label>
+        </div>
+      </div>
+      <div class="q" data-answer="goes">
+        <p class="q-legend">3. She ____ running every morning.</p>
+        <div class="mc-options" role="radiogroup" aria-label="3. She ____ running every morning.">
+          <label><input type="radio" name="examq3" value="go"><span class="opt-letter">A</span> go</label>
+          <label><input type="radio" name="examq3" value="play"><span class="opt-letter">B</span> play</label>
+          <label><input type="radio" name="examq3" value="goes"><span class="opt-letter">C</span> goes</label>
+          <label><input type="radio" name="examq3" value="plays"><span class="opt-letter">D</span> plays</label>
+        </div>
+      </div>
+      <div class="q" data-answer="play">
+        <p class="q-legend">4. They ____ chess after school.</p>
+        <div class="mc-options" role="radiogroup" aria-label="4. They ____ chess after school.">
+          <label><input type="radio" name="examq4" value="go"><span class="opt-letter">A</span> go</label>
+          <label><input type="radio" name="examq4" value="goes"><span class="opt-letter">B</span> goes</label>
+          <label><input type="radio" name="examq4" value="plays"><span class="opt-letter">C</span> plays</label>
+          <label><input type="radio" name="examq4" value="play"><span class="opt-letter">D</span> play</label>
+        </div>
+      </div>
+      <div class="q" data-answer="go camping">
+        <p class="q-legend">5. Which pairing is correct?</p>
+        <div class="mc-options" role="radiogroup" aria-label="5. Which pairing is correct?">
+          <label><input type="radio" name="examq5" value="go camping"><span class="opt-letter">A</span> go camping</label>
+          <label><input type="radio" name="examq5" value="play camping"><span class="opt-letter">B</span> play camping</label>
+          <label><input type="radio" name="examq5" value="go soccer"><span class="opt-letter">C</span> go soccer</label>
+          <label><input type="radio" name="examq5" value="play swimming"><span class="opt-letter">D</span> play swimming</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Adverbs of frequency</h3>
+      <div class="q" data-answer="always">
+        <p class="q-legend">6. I ____ watch TV at night. (100%)</p>
+        <div class="mc-options" role="radiogroup" aria-label="6. I ____ watch TV at night. (100%)">
+          <label><input type="radio" name="examq6" value="never"><span class="opt-letter">A</span> never</label>
+          <label><input type="radio" name="examq6" value="always"><span class="opt-letter">B</span> always</label>
+          <label><input type="radio" name="examq6" value="sometimes"><span class="opt-letter">C</span> sometimes</label>
+          <label><input type="radio" name="examq6" value="rarely"><span class="opt-letter">D</span> rarely</label>
+        </div>
+      </div>
+      <div class="q" data-answer="never">
+        <p class="q-legend">7. He ____ eats vegetables. (0%)</p>
+        <div class="mc-options" role="radiogroup" aria-label="7. He ____ eats vegetables. (0%)">
+          <label><input type="radio" name="examq7" value="always"><span class="opt-letter">A</span> always</label>
+          <label><input type="radio" name="examq7" value="usually"><span class="opt-letter">B</span> usually</label>
+          <label><input type="radio" name="examq7" value="never"><span class="opt-letter">C</span> never</label>
+          <label><input type="radio" name="examq7" value="sometimes"><span class="opt-letter">D</span> sometimes</label>
+        </div>
+      </div>
+      <div class="q" data-answer="sometimes">
+        <p class="q-legend">8. I ____ go to the movies. (some of the time)</p>
+        <div class="mc-options" role="radiogroup" aria-label="8. I ____ go to the movies. (some of the time)">
+          <label><input type="radio" name="examq8" value="always"><span class="opt-letter">A</span> always</label>
+          <label><input type="radio" name="examq8" value="never"><span class="opt-letter">B</span> never</label>
+          <label><input type="radio" name="examq8" value="usually"><span class="opt-letter">C</span> usually</label>
+          <label><input type="radio" name="examq8" value="sometimes"><span class="opt-letter">D</span> sometimes</label>
+        </div>
+      </div>
+      <div class="q" data-answer="always">
+        <p class="q-legend">9. She is ____ late. (100%, after to be)</p>
+        <div class="mc-options" role="radiogroup" aria-label="9. She is ____ late. (100%, after to be)">
+          <label><input type="radio" name="examq9" value="always"><span class="opt-letter">A</span> always</label>
+          <label><input type="radio" name="examq9" value="sometimes"><span class="opt-letter">B</span> sometimes</label>
+          <label><input type="radio" name="examq9" value="never"><span class="opt-letter">C</span> never</label>
+          <label><input type="radio" name="examq9" value="usually"><span class="opt-letter">D</span> usually</label>
+        </div>
+      </div>
+      <div class="q" data-answer="before the main verb">
+        <p class="q-legend">10. Where does an adverb of frequency usually go?</p>
+        <div class="mc-options" role="radiogroup" aria-label="10. Where does an adverb of frequency usually go?">
+          <label><input type="radio" name="examq10" value="after the main verb"><span class="opt-letter">A</span> after the main verb</label>
+          <label><input type="radio" name="examq10" value="before the main verb"><span class="opt-letter">B</span> before the main verb</label>
+          <label><input type="radio" name="examq10" value="at the end of the sentence"><span class="opt-letter">C</span> at the end of the sentence</label>
+          <label><input type="radio" name="examq10" value="at the start of the sentence"><span class="opt-letter">D</span> at the start of the sentence</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Questions about free time</h3>
+      <div class="q" data-answer="How often">
+        <p class="q-legend">11. ____ do you go on vacation?</p>
+        <div class="mc-options" role="radiogroup" aria-label="11. ____ do you go on vacation?">
+          <label><input type="radio" name="examq11" value="When"><span class="opt-letter">A</span> When</label>
+          <label><input type="radio" name="examq11" value="What"><span class="opt-letter">B</span> What</label>
+          <label><input type="radio" name="examq11" value="How often"><span class="opt-letter">C</span> How often</label>
+          <label><input type="radio" name="examq11" value="Why"><span class="opt-letter">D</span> Why</label>
+        </div>
+      </div>
+      <div class="q" data-answer="When">
+        <p class="q-legend">12. ____ does she go running?</p>
+        <div class="mc-options" role="radiogroup" aria-label="12. ____ does she go running?">
+          <label><input type="radio" name="examq12" value="What"><span class="opt-letter">A</span> What</label>
+          <label><input type="radio" name="examq12" value="How often"><span class="opt-letter">B</span> How often</label>
+          <label><input type="radio" name="examq12" value="Why"><span class="opt-letter">C</span> Why</label>
+          <label><input type="radio" name="examq12" value="When"><span class="opt-letter">D</span> When</label>
+        </div>
+      </div>
+      <div class="q" data-answer="What">
+        <p class="q-legend">13. ____ do you do on weekends?</p>
+        <div class="mc-options" role="radiogroup" aria-label="13. ____ do you do on weekends?">
+          <label><input type="radio" name="examq13" value="What"><span class="opt-letter">A</span> What</label>
+          <label><input type="radio" name="examq13" value="When"><span class="opt-letter">B</span> When</label>
+          <label><input type="radio" name="examq13" value="How often"><span class="opt-letter">C</span> How often</label>
+          <label><input type="radio" name="examq13" value="Why"><span class="opt-letter">D</span> Why</label>
+        </div>
+      </div>
+      <div class="q" data-answer="How often">
+        <p class="q-legend">14. ____ do they play soccer?</p>
+        <div class="mc-options" role="radiogroup" aria-label="14. ____ do they play soccer?">
+          <label><input type="radio" name="examq14" value="When"><span class="opt-letter">A</span> When</label>
+          <label><input type="radio" name="examq14" value="How often"><span class="opt-letter">B</span> How often</label>
+          <label><input type="radio" name="examq14" value="What"><span class="opt-letter">C</span> What</label>
+          <label><input type="radio" name="examq14" value="Why"><span class="opt-letter">D</span> Why</label>
+        </div>
+      </div>
+      <div class="q" data-answer="How often">
+        <p class="q-legend">15. Which question word asks for a frequency answer?</p>
+        <div class="mc-options" role="radiogroup" aria-label="15. Which question word asks for a frequency answer?">
+          <label><input type="radio" name="examq15" value="When"><span class="opt-letter">A</span> When</label>
+          <label><input type="radio" name="examq15" value="What"><span class="opt-letter">B</span> What</label>
+          <label><input type="radio" name="examq15" value="How often"><span class="opt-letter">C</span> How often</label>
+          <label><input type="radio" name="examq15" value="Where"><span class="opt-letter">D</span> Where</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Likes and dislikes</h3>
+      <div class="q" data-answer="love">
+        <p class="q-legend">16. I ____ swimming. (strong positive)</p>
+        <div class="mc-options" role="radiogroup" aria-label="16. I ____ swimming. (strong positive)">
+          <label><input type="radio" name="examq16" value="hate"><span class="opt-letter">A</span> hate</label>
+          <label><input type="radio" name="examq16" value="don't like"><span class="opt-letter">B</span> don't like</label>
+          <label><input type="radio" name="examq16" value="like"><span class="opt-letter">C</span> like</label>
+          <label><input type="radio" name="examq16" value="love"><span class="opt-letter">D</span> love</label>
+        </div>
+      </div>
+      <div class="q" data-answer="doesn't like">
+        <p class="q-legend">17. Max ____ pizza. (negative)</p>
+        <div class="mc-options" role="radiogroup" aria-label="17. Max ____ pizza. (negative)">
+          <label><input type="radio" name="examq17" value="doesn't like"><span class="opt-letter">A</span> doesn't like</label>
+          <label><input type="radio" name="examq17" value="don't like"><span class="opt-letter">B</span> don't like</label>
+          <label><input type="radio" name="examq17" value="not likes"><span class="opt-letter">C</span> not likes</label>
+          <label><input type="radio" name="examq17" value="hates it not"><span class="opt-letter">D</span> hates it not</label>
+        </div>
+      </div>
+      <div class="q" data-answer="likes">
+        <p class="q-legend">18. She ____ tennis.</p>
+        <div class="mc-options" role="radiogroup" aria-label="18. She ____ tennis.">
+          <label><input type="radio" name="examq18" value="like"><span class="opt-letter">A</span> like</label>
+          <label><input type="radio" name="examq18" value="likes"><span class="opt-letter">B</span> likes</label>
+          <label><input type="radio" name="examq18" value="loving"><span class="opt-letter">C</span> loving</label>
+          <label><input type="radio" name="examq18" value="love"><span class="opt-letter">D</span> love</label>
+        </div>
+      </div>
+      <div class="q" data-answer="hates">
+        <p class="q-legend">19. She ____ shopping. (strong negative)</p>
+        <div class="mc-options" role="radiogroup" aria-label="19. She ____ shopping. (strong negative)">
+          <label><input type="radio" name="examq19" value="likes"><span class="opt-letter">A</span> likes</label>
+          <label><input type="radio" name="examq19" value="loves"><span class="opt-letter">B</span> loves</label>
+          <label><input type="radio" name="examq19" value="hates"><span class="opt-letter">C</span> hates</label>
+          <label><input type="radio" name="examq19" value="doesn't like"><span class="opt-letter">D</span> doesn't like</label>
+        </div>
+      </div>
+      <div class="q" data-answer="a noun or a gerund">
+        <p class="q-legend">20. Which can follow "like," "love," or "hate"?</p>
+        <div class="mc-options" role="radiogroup" aria-label="20. Which can follow "like," "love," or "hate"?">
+          <label><input type="radio" name="examq20" value="only a noun"><span class="opt-letter">A</span> only a noun</label>
+          <label><input type="radio" name="examq20" value="only the base verb"><span class="opt-letter">B</span> only the base verb</label>
+          <label><input type="radio" name="examq20" value="only an infinitive"><span class="opt-letter">C</span> only an infinitive</label>
+          <label><input type="radio" name="examq20" value="a noun or a gerund"><span class="opt-letter">D</span> a noun or a gerund</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Questions about likes and dislikes</h3>
+      <div class="q" data-answer="Do">
+        <p class="q-legend">21. ____ you like chocolate?</p>
+        <div class="mc-options" role="radiogroup" aria-label="21. ____ you like chocolate?">
+          <label><input type="radio" name="examq21" value="Do"><span class="opt-letter">A</span> Do</label>
+          <label><input type="radio" name="examq21" value="Does"><span class="opt-letter">B</span> Does</label>
+          <label><input type="radio" name="examq21" value="Are"><span class="opt-letter">C</span> Are</label>
+          <label><input type="radio" name="examq21" value="Is"><span class="opt-letter">D</span> Is</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Why">
+        <p class="q-legend">22. ____ do you like basketball?</p>
+        <div class="mc-options" role="radiogroup" aria-label="22. ____ do you like basketball?">
+          <label><input type="radio" name="examq22" value="What"><span class="opt-letter">A</span> What</label>
+          <label><input type="radio" name="examq22" value="Why"><span class="opt-letter">B</span> Why</label>
+          <label><input type="radio" name="examq22" value="When"><span class="opt-letter">C</span> When</label>
+          <label><input type="radio" name="examq22" value="How"><span class="opt-letter">D</span> How</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Does">
+        <p class="q-legend">23. ____ she like coffee?</p>
+        <div class="mc-options" role="radiogroup" aria-label="23. ____ she like coffee?">
+          <label><input type="radio" name="examq23" value="Do"><span class="opt-letter">A</span> Do</label>
+          <label><input type="radio" name="examq23" value="Are"><span class="opt-letter">B</span> Are</label>
+          <label><input type="radio" name="examq23" value="Does"><span class="opt-letter">C</span> Does</label>
+          <label><input type="radio" name="examq23" value="Is"><span class="opt-letter">D</span> Is</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Why">
+        <p class="q-legend">24. ____ does he like hiking?</p>
+        <div class="mc-options" role="radiogroup" aria-label="24. ____ does he like hiking?">
+          <label><input type="radio" name="examq24" value="What"><span class="opt-letter">A</span> What</label>
+          <label><input type="radio" name="examq24" value="When"><span class="opt-letter">B</span> When</label>
+          <label><input type="radio" name="examq24" value="How"><span class="opt-letter">C</span> How</label>
+          <label><input type="radio" name="examq24" value="Why"><span class="opt-letter">D</span> Why</label>
+        </div>
+      </div>
+      <div class="q" data-answer="with because">
+        <p class="q-legend">25. How do you answer a "why" question about likes?</p>
+        <div class="mc-options" role="radiogroup" aria-label="25. How do you answer a "why" question about likes?">
+          <label><input type="radio" name="examq25" value="with because"><span class="opt-letter">A</span> with because</label>
+          <label><input type="radio" name="examq25" value="with yes or no"><span class="opt-letter">B</span> with yes or no</label>
+          <label><input type="radio" name="examq25" value="with a question"><span class="opt-letter">C</span> with a question</label>
+          <label><input type="radio" name="examq25" value="with a number"><span class="opt-letter">D</span> with a number</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Using "favorite"</h3>
+      <div class="q" data-answer="favorite">
+        <p class="q-legend">26. My ____ type of music is rock.</p>
+        <div class="mc-options" role="radiogroup" aria-label="26. My ____ type of music is rock.">
+          <label><input type="radio" name="examq26" value="most favorite"><span class="opt-letter">A</span> most favorite</label>
+          <label><input type="radio" name="examq26" value="favorite"><span class="opt-letter">B</span> favorite</label>
+          <label><input type="radio" name="examq26" value="favoritest"><span class="opt-letter">C</span> favoritest</label>
+          <label><input type="radio" name="examq26" value="favorites"><span class="opt-letter">D</span> favorites</label>
+        </div>
+      </div>
+      <div class="q" data-answer="favorite">
+        <p class="q-legend">27. My ____ color is blue.</p>
+        <div class="mc-options" role="radiogroup" aria-label="27. My ____ color is blue.">
+          <label><input type="radio" name="examq27" value="favorites"><span class="opt-letter">A</span> favorites</label>
+          <label><input type="radio" name="examq27" value="most favorite"><span class="opt-letter">B</span> most favorite</label>
+          <label><input type="radio" name="examq27" value="favorite"><span class="opt-letter">C</span> favorite</label>
+          <label><input type="radio" name="examq27" value="favoritest"><span class="opt-letter">D</span> favoritest</label>
+        </div>
+      </div>
+      <div class="q" data-answer="favorite">
+        <p class="q-legend">28. What's your ____ movie?</p>
+        <div class="mc-options" role="radiogroup" aria-label="28. What's your ____ movie?">
+          <label><input type="radio" name="examq28" value="favorites"><span class="opt-letter">A</span> favorites</label>
+          <label><input type="radio" name="examq28" value="favoritest"><span class="opt-letter">B</span> favoritest</label>
+          <label><input type="radio" name="examq28" value="most favorite"><span class="opt-letter">C</span> most favorite</label>
+          <label><input type="radio" name="examq28" value="favorite"><span class="opt-letter">D</span> favorite</label>
+        </div>
+      </div>
+      <div class="q" data-answer="my favorite food">
+        <p class="q-legend">29. Which phrase is correct?</p>
+        <div class="mc-options" role="radiogroup" aria-label="29. Which phrase is correct?">
+          <label><input type="radio" name="examq29" value="my favorite food"><span class="opt-letter">A</span> my favorite food</label>
+          <label><input type="radio" name="examq29" value="my most favorite food"><span class="opt-letter">B</span> my most favorite food</label>
+          <label><input type="radio" name="examq29" value="my favoritest food"><span class="opt-letter">C</span> my favoritest food</label>
+          <label><input type="radio" name="examq29" value="my favorites food"><span class="opt-letter">D</span> my favorites food</label>
+        </div>
+      </div>
+      <div class="q" data-answer="most liked">
+        <p class="q-legend">30. "Favorite" already means:</p>
+        <div class="mc-options" role="radiogroup" aria-label="30. "Favorite" already means:">
+          <label><input type="radio" name="examq30" value="very liked"><span class="opt-letter">A</span> very liked</label>
+          <label><input type="radio" name="examq30" value="most liked"><span class="opt-letter">B</span> most liked</label>
+          <label><input type="radio" name="examq30" value="somewhat liked"><span class="opt-letter">C</span> somewhat liked</label>
+          <label><input type="radio" name="examq30" value="least liked"><span class="opt-letter">D</span> least liked</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>Grammar review worksheet for Units 37–42. Includes self-check exercises.</footer>
+
+<script>
+function switchTab(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tabbtn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateTabStatus(navId) {
+  if (!navId) return;
+  const related = document.querySelectorAll(`.exercise[data-nav="${navId}"]`);
+  const allChecked = related.length > 0 && Array.from(related).every(c => c.dataset.checked === 'true');
+  const btn = document.getElementById(navId);
+  if (btn) btn.classList.toggle('done', allChecked);
+}
+
+document.querySelectorAll('.exercise').forEach(container => {
+  const checkBtn = container.querySelector('.check-btn');
+  const resetBtn = container.querySelector('.reset-btn');
+  const resultEl = container.querySelector('.ex-result');
+  const navId = container.dataset.nav;
+  const mode = container.dataset.mode;
+
+  checkBtn.addEventListener('click', () => {
+    let correct = 0, total = 0;
+    if (mode === 'select') {
+      const selects = container.querySelectorAll('select.blank');
+      total = selects.length;
+      selects.forEach(sel => {
+        sel.classList.remove('correct', 'wrong');
+        if (sel.value && sel.value === sel.dataset.answer) { sel.classList.add('correct'); correct++; }
+        else { sel.classList.add('wrong'); }
+      });
+    } else {
+      const groups = container.querySelectorAll('.q');
+      total = groups.length;
+      groups.forEach(fs => {
+        fs.classList.remove('correct', 'wrong');
+        const checked = fs.querySelector('input[type="radio"]:checked');
+        if (checked && checked.value === fs.dataset.answer) { fs.classList.add('correct'); correct++; }
+        else { fs.classList.add('wrong'); }
+      });
+    }
+    resultEl.textContent = `${correct} / ${total} correct`;
+    container.dataset.checked = 'true';
+    updateTabStatus(navId);
+  });
+
+  resetBtn.addEventListener('click', () => {
+    if (mode === 'select') {
+      container.querySelectorAll('select.blank').forEach(sel => {
+        sel.value = '';
+        sel.classList.remove('correct', 'wrong');
+      });
+    } else {
+      container.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+      container.querySelectorAll('.q').forEach(fs => fs.classList.remove('correct', 'wrong'));
+    }
+    resultEl.textContent = '';
+    container.dataset.checked = 'false';
+    updateTabStatus(navId);
+  });
+});
+</script>
+
+</body>
+</html>

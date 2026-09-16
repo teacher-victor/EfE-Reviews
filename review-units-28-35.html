@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review: Units 28–35 | English for Everyone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:        #223047;
+  --ink-soft:   #57697c;
+  --paper:      #ffffff;
+  --panel:      #eaf7f4;
+  --panel-line: #a3ddd0;
+  --panel-line-soft: #d7f0ea;
+
+  --brand:      #189a86;
+  --brand-deep: #0f6e5f;
+  --brand-pale: #eaf7f4;
+
+  --c1: #cf5a37; /* using have */
+  --c2: #bd8620; /* asking have questions */
+  --c3: #3d5a99; /* countable and uncountable nouns */
+  --c4: #8a3f95; /* using enough and many */
+  --c5: #ab4770; /* shopping verbs */
+  --c6: #b8631f; /* adjective order */
+  --c7: #3a3d5c; /* final exam */
+
+  --correct: #2f9e44;
+  --wrong: #c0392b;
+  --light-correct: #e6f6ea;
+  --light-wrong: #fbe4e1;
+  --shadow: 20, 60, 90;
+
+  --font-display: 'Baloo 2', 'Poppins', sans-serif;
+  --font-body: 'Mulish', 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  padding-bottom: 4rem;
+}
+::selection { background: var(--brand); color: #fff; }
+
+h1, h2, h3 { font-family: var(--font-display); margin: 0; }
+p { margin: 0 0 0.9rem; }
+p:last-child { margin-bottom: 0; }
+
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── MASTHEAD ────────────────────────────────────────────────── */
+.masthead {
+  background: var(--brand-pale);
+  border-bottom: 3px solid var(--brand);
+  padding: 2.4rem 1.2rem 1.8rem;
+  text-align: center;
+}
+.masthead h1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  color: var(--brand-deep);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.7rem;
+}
+.masthead h1::before {
+  content: "\2713";
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--brand);
+  border-radius: 10px;
+  padding: 0.4rem 0.7rem;
+  line-height: 1;
+}
+.masthead .lede {
+  max-width: 560px;
+  margin: 0 auto 0.5rem;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+}
+.masthead .howto {
+  max-width: 560px;
+  margin: 0 auto 1rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+/* ── TABS ────────────────────────────────────────────────────── */
+.tabnav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background: #fff;
+  border-bottom: 2px solid var(--panel-line-soft);
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0 10px 24px -20px rgba(var(--shadow), 0.6);
+}
+.tabbtn {
+  --accent: #999;
+  flex: 1 1 auto;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  border: 2px solid var(--panel-line);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink-soft);
+  padding: 0.5rem 0.5rem 0.45rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.tabbtn .tb-unit {
+  font-family: var(--font-body);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.tabbtn .tb-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.tabbtn:hover { background: var(--brand-pale); border-color: var(--accent); }
+.tabbtn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.tabbtn.active .tb-unit { opacity: 0.9; }
+.tabbtn.done .tb-label::after { content: " \2713"; }
+
+/* ── PAGE ────────────────────────────────────────────────────── */
+main.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.4rem 1.2rem 0;
+}
+
+.panel { display: none; animation: fadeIn 0.2s ease; }
+.panel.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ── TOPIC PANELS ────────────────────────────────────────────── */
+.topic-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.topic-num {
+  flex: 0 0 auto;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 12px;
+  padding: 0.55rem 0.8rem;
+  line-height: 1;
+  box-shadow: 0 6px 14px -8px rgba(var(--shadow), 0.7);
+}
+.topic-head h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--ink);
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 0.35rem;
+  flex: 1 1 auto;
+}
+.rule {
+  font-size: 1rem;
+  background: var(--panel);
+  border: 2px solid var(--panel-line);
+  border-radius: 14px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.1rem;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  margin-bottom: 1.9rem;
+}
+.examples span {
+  position: relative;
+  font-size: 0.92rem;
+  font-weight: 500;
+  background: #fff;
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  padding: 0.6rem 1.05rem;
+}
+.examples span::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  bottom: -9px;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  border-radius: 0 0 3px 0;
+  transform: rotate(45deg);
+}
+.examples mark {
+  background: none;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.chart-wrap { overflow-x: auto; margin-bottom: 1.6rem; }
+.chart-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--brand-deep);
+  margin: 0 0 0.6rem 0.2rem;
+}
+.chart-card {
+  min-width: 420px;
+  border: 2.5px solid var(--accent);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 14px 26px -20px rgba(var(--shadow), 0.65);
+}
+table.chart {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+table.chart th,
+table.chart td {
+  position: relative;
+  padding: 0.75rem 0.9rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.25;
+}
+table.chart th {
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-right: 1px solid rgba(255, 255, 255, 0.28);
+}
+table.chart th:last-child { border-right: none; }
+table.chart td {
+  background: #fff;
+  color: var(--ink);
+  font-weight: 700;
+  border-top: 1px solid var(--panel-line-soft);
+  border-right: 1px solid var(--panel-line-soft);
+  transition: background 0.15s ease;
+}
+table.chart td:last-child { border-right: none; }
+table.chart tr:first-of-type td { border-top: none; }
+table.chart tr:nth-of-type(even) td { background: var(--panel); }
+table.chart tr:hover td { background: var(--panel-line-soft); }
+table.chart td.hl {
+  color: var(--accent);
+  font-weight: 800;
+}
+.chart-note { font-size: 0.85rem; color: var(--ink-soft); margin: -0.8rem 0 1.6rem; font-style: italic; }
+
+@media (max-width: 560px) {
+  .chart-card { min-width: 360px; }
+  table.chart { font-size: 0.84rem; }
+  table.chart th, table.chart td { padding: 0.6rem 0.55rem; }
+}
+
+/* ── EXERCISE / READING CARDS ───────────────────────────────── */
+.exercise {
+  position: relative;
+  background: #fff;
+  border: 2.5px solid var(--panel-line);
+  border-radius: 20px;
+  padding: 1.4rem 1.5rem 1.3rem;
+  margin-bottom: 1.4rem;
+  box-shadow: 0 10px 24px -20px rgba(var(--shadow), 0.5);
+}
+.exercise:last-child { margin-bottom: 0.4rem; }
+.exercise h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--brand-deep);
+  margin-bottom: 1.1rem;
+}
+.exercise h3::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+.exercise[data-mode="select"] h3::before { content: "\270E"; }
+.exercise[data-mode="radio"] h3::before { content: "\1F5E8"; font-size: 0.85rem; }
+.ex-list { list-style: none; margin: 0 0 1.1rem; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+.ex-list li { font-size: 0.96rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.ex-cue { color: var(--ink-soft); font-size: 0.82rem; font-style: italic; flex-basis: 100%; }
+select.blank {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+  background-color: var(--panel);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6' fill='none' stroke='%230f6e5f' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.55rem center;
+  background-size: 0.85rem;
+  border: 2px solid var(--panel-line);
+  border-radius: 10px;
+  padding: 0.4rem 1.8rem 0.4rem 0.7rem;
+  line-height: 1.3;
+  cursor: pointer;
+}
+select.blank:hover { border-color: var(--brand); }
+select.blank:focus-visible { border-color: var(--brand); }
+select.blank.correct {
+  background-color: var(--light-correct);
+  border-color: var(--correct);
+  color: var(--correct);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6' fill='none' stroke='%232f9e44' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+select.blank.wrong {
+  background-color: var(--light-wrong);
+  border-color: var(--wrong);
+  color: var(--wrong);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6' fill='none' stroke='%23c0392b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+
+.ex-controls { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.3rem; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 14px;
+  border: 2px solid var(--brand);
+  cursor: pointer;
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 8px 16px -8px rgba(var(--shadow), 0.65);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+}
+.btn::before {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+.btn.check-btn::before { content: "\2713"; }
+.btn.reset-btn::before { content: "\21BB"; }
+.btn:hover {
+  transform: translateY(-2px);
+  background: var(--brand-deep);
+  border-color: var(--brand-deep);
+  box-shadow: 0 12px 20px -8px rgba(var(--shadow), 0.75);
+}
+.btn:active { transform: translateY(0); box-shadow: 0 4px 10px -6px rgba(var(--shadow), 0.6); }
+.btn.ghost {
+  background: #fff;
+  color: var(--brand-deep);
+  border-color: var(--panel-line);
+  box-shadow: none;
+}
+.btn.ghost:hover {
+  background: var(--brand-pale);
+  border-color: var(--brand);
+  box-shadow: none;
+}
+.ex-result {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--brand-deep);
+  background: var(--panel);
+  border: 2px solid var(--panel-line);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  min-height: 1.2rem;
+}
+.ex-result:empty { display: none; }
+
+.mini-passage {
+  background: var(--panel);
+  border: 1.5px dashed var(--panel-line);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  font-size: 0.96rem;
+  margin-bottom: 1rem;
+}
+.mini-passage mark { background: none; font-weight: 700; }
+.mini-subhead {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--brand-deep);
+  margin-bottom: 0.8rem;
+}
+
+.q {
+  margin: 0 0 0.8rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--panel);
+  border: 2px solid var(--panel-line);
+  border-radius: 12px;
+}
+.q.correct { background: var(--light-correct); border-color: var(--correct); }
+.q.wrong { background: var(--light-wrong); border-color: var(--wrong); }
+.q-legend { font-size: 0.94rem; margin: 0 0 0.5rem; font-weight: 600; }
+.tf-options { display: flex; gap: 1.4rem; }
+.tf-options label { display: flex; align-items: center; gap: 0.4rem; font-family: var(--font-body); font-weight: 600; font-size: 0.85rem; cursor: pointer; }
+
+.mc-options { display: flex; flex-direction: column; gap: 0.45rem; }
+.mc-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  border-radius: 9px;
+  transition: background 0.12s ease;
+}
+.mc-options label:hover { background: rgba(255,255,255,0.6); }
+.mc-options .opt-letter {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--panel-line);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--ink-soft);
+}
+
+.exam-sec {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 0.2rem;
+  margin: 1.6rem 0 0.9rem;
+}
+.exam-sec:first-of-type { margin-top: 0; }
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  margin-top: 2.5rem;
+  padding: 0 1.2rem;
+}
+
+@media (max-width: 560px) {
+  .tabbtn { min-width: 30%; }
+  .topic-head { flex-wrap: wrap; }
+  .topic-head h2 { font-size: 1.3rem; }
+  .exercise { padding: 1.1rem 1.2rem; }
+  .tf-options { flex-direction: column; gap: 0.4rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <h1>Review: Units 28–35</h1>
+</header>
+
+<nav class="tabnav">
+  <button class="tabbtn active" id="tab-topic-1" style="--accent: var(--c1);" onclick="switchTab('topic-1', this)"><span class="tb-unit">Units 28.1, 28.6</span><span class="tb-label">Using "Have"</span></button>
+  <button class="tabbtn" id="tab-topic-2" style="--accent: var(--c2);" onclick="switchTab('topic-2', this)"><span class="tb-unit">Unit 29.1</span><span class="tb-label">"Have" Questions</span></button>
+  <button class="tabbtn" id="tab-topic-3" style="--accent: var(--c3);" onclick="switchTab('topic-3', this)"><span class="tb-unit">Units 31.1, 31.4</span><span class="tb-label">Countable Nouns</span></button>
+  <button class="tabbtn" id="tab-topic-4" style="--accent: var(--c4);" onclick="switchTab('topic-4', this)"><span class="tb-unit">Unit 32.1</span><span class="tb-label">Enough / Many</span></button>
+  <button class="tabbtn" id="tab-topic-5" style="--accent: var(--c5);" onclick="switchTab('topic-5', this)"><span class="tb-unit">Unit 34.1</span><span class="tb-label">Shopping Verbs</span></button>
+  <button class="tabbtn" id="tab-topic-6" style="--accent: var(--c6);" onclick="switchTab('topic-6', this)"><span class="tb-unit">Unit 35.1</span><span class="tb-label">Adjective Order</span></button>
+  <button class="tabbtn" id="tab-topic-7" style="--accent: var(--c7);" onclick="switchTab('topic-7', this)"><span class="tb-unit">Units 28–35</span><span class="tb-label">Final Exam</span></button>
+</nav>
+
+<main class="page">
+
+  <!-- ══════════════ TOPIC 1 · USING "HAVE" ══════════════ -->
+  <section class="panel active" id="panel-topic-1" style="--accent: var(--c1);">
+    <div class="topic-head">
+      <span class="topic-num">Units 28.1, 28.6</span>
+      <h2>Using "have"</h2>
+    </div>
+    <p class="rule">Use <mark style="background:none;color:var(--c1);font-weight:600;">have</mark> (I/you/we/they) or <mark style="background:none;color:var(--c1);font-weight:600;">has</mark> (he/she/it) to talk about possession. Make it negative with <mark style="background:none;color:var(--c1);font-weight:600;">do not have</mark> (don't have) or <mark style="background:none;color:var(--c1);font-weight:600;">does not have</mark> (doesn't have).</p>
+    <div class="examples">
+      <span><mark>I have</mark> a garage.</span>
+      <span><mark>She has</mark> a yard.</span>
+      <span><mark>I do not have</mark> a bathtub.</span>
+      <span>They <mark>have</mark> two cars.</span>
+      <span>He <mark>doesn't have</mark> a garden.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">have / has</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Subject</th><th>Positive</th><th>Negative</th></tr>
+        <tr><td>I / You / We / They</td><td class="hl">have</td><td>don't have</td></tr>
+        <tr><td>He / She / It</td><td class="hl">has</td><td>doesn't have</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">"Have" changes to "has" only for he, she, and it — just like other present simple verbs.</p>
+
+    <div class="exercise" data-nav="tab-topic-1" data-mode="select">
+      <h3>Grammar practice: complete each sentence</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">(I)</span> I <select class="blank" data-answer="have"><option value="">choose…</option><option>don't have</option><option>have</option><option>has</option></select> a garage.</li>
+        <li><span class="ex-cue">(she)</span> She <select class="blank" data-answer="has"><option value="">choose…</option><option>have</option><option>don't have</option><option>has</option></select> a yard.</li>
+        <li><span class="ex-cue">(they)</span> They <select class="blank" data-answer="have"><option value="">choose…</option><option>has</option><option>doesn't have</option><option>have</option></select> two cars.</li>
+        <li><span class="ex-cue">negative, (I)</span> I <select class="blank" data-answer="do not have"><option value="">choose…</option><option>not have</option><option>do not have</option><option>does not have</option></select> a bathtub.</li>
+        <li><span class="ex-cue">(he)</span> He <select class="blank" data-answer="has"><option value="">choose…</option><option>has</option><option>doesn't have</option><option>have</option></select> a garden.</li>
+        <li><span class="ex-cue">negative, (she)</span> She <select class="blank" data-answer="doesn't have"><option value="">choose…</option><option>doesn't have</option><option>not has</option><option>don't have</option></select> a pool.</li>
+        <li><span class="ex-cue">(we)</span> We <select class="blank" data-answer="have"><option value="">choose…</option><option>doesn't have</option><option>has</option><option>have</option></select> a big kitchen.</li>
+        <li><span class="ex-cue">negative, (they)</span> They <select class="blank" data-answer="don't have"><option value="">choose…</option><option>doesn't have</option><option>don't have</option><option>not have</option></select> a basement.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-1" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">The Alvarez family just bought a new house. They <mark style="color:var(--c1);">have a large garage</mark> and a small garden. <mark style="color:var(--c1);">Mr. Alvarez has an office</mark> upstairs. <mark style="color:var(--c1);">Mrs. Alvarez has a studio</mark> for painting. Their daughter <mark style="color:var(--c1);">doesn't have her own bathroom</mark>, so she shares one with her brother. They <mark style="color:var(--c1);">don't have a swimming pool</mark>, but they have a nice yard for the kids to play in. The house <mark style="color:var(--c1);">doesn't have a basement</mark>, but it has a big attic instead.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. The Alvarez family has a large garage.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. The Alvarez family has a large garage.">
+          <label><input type="radio" name="t1q1" value="True"> True</label>
+          <label><input type="radio" name="t1q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">2. Mrs. Alvarez has an office upstairs.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. Mrs. Alvarez has an office upstairs.">
+          <label><input type="radio" name="t1q2" value="True"> True</label>
+          <label><input type="radio" name="t1q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">3. The daughter has her own bathroom.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. The daughter has her own bathroom.">
+          <label><input type="radio" name="t1q3" value="True"> True</label>
+          <label><input type="radio" name="t1q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">4. The house has a swimming pool.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. The house has a swimming pool.">
+          <label><input type="radio" name="t1q4" value="True"> True</label>
+          <label><input type="radio" name="t1q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">5. The house has a big attic.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. The house has a big attic.">
+          <label><input type="radio" name="t1q5" value="True"> True</label>
+          <label><input type="radio" name="t1q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 2 · ASKING "HAVE" QUESTIONS ══════════════ -->
+  <section class="panel" id="panel-topic-2" style="--accent: var(--c2);">
+    <div class="topic-head">
+      <span class="topic-num">Unit 29.1</span>
+      <h2>Asking "have" questions</h2>
+    </div>
+    <p class="rule">Use <mark style="background:none;color:var(--c2);font-weight:600;">Do you have...?</mark> (I/you/we/they) or <mark style="background:none;color:var(--c2);font-weight:600;">Does she have...?</mark> (he/she/it) to ask about possession. After "does," the verb stays as <mark style="background:none;color:var(--c2);font-weight:600;">have</mark>, not "has."</p>
+    <div class="examples">
+      <span><mark>Do you have</mark> a TV?</span>
+      <span><mark>Does she have</mark> a car?</span>
+      <span><mark>Do they have</mark> a garden?</span>
+      <span><mark>Does he have</mark> a bicycle?</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Asking about possession</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Subject</th><th>Question form</th><th>Example</th></tr>
+        <tr><td>I / You / We / They</td><td class="hl">Do + subject + have</td><td>Do you have a TV?</td></tr>
+        <tr><td>He / She / It</td><td class="hl">Does + subject + have</td><td>Does she have a car?</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">After "does," the verb stays as "have," not "has": "Does she have a car?" not "Does she has a car?"</p>
+
+    <div class="exercise" data-nav="tab-topic-2" data-mode="select">
+      <h3>Grammar practice: choose do or does</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">(you)</span> <select class="blank" data-answer="Do"><option value="">choose…</option><option>Do</option><option>Are</option><option>Does</option></select> you have a TV?</li>
+        <li><span class="ex-cue">(she)</span> <select class="blank" data-answer="Does"><option value="">choose…</option><option>Is</option><option>Do</option><option>Does</option></select> she have a car?</li>
+        <li><span class="ex-cue">(they)</span> <select class="blank" data-answer="Do"><option value="">choose…</option><option>Do</option><option>Are</option><option>Does</option></select> they have a garden?</li>
+        <li><span class="ex-cue">(he)</span> <select class="blank" data-answer="Does"><option value="">choose…</option><option>Is</option><option>Do</option><option>Does</option></select> he have a bicycle?</li>
+        <li><span class="ex-cue">(we)</span> <select class="blank" data-answer="Do"><option value="">choose…</option><option>Are</option><option>Do</option><option>Does</option></select> we have enough chairs?</li>
+        <li><span class="ex-cue">the verb stays as "have" after does</span> Does she <select class="blank" data-answer="have"><option value="">choose…</option><option>have</option><option>having</option><option>has</option></select> a car?</li>
+        <li><span class="ex-cue">(it)</span> <select class="blank" data-answer="Does"><option value="">choose…</option><option>Is</option><option>Does</option><option>Do</option></select> it have four wheels?</li>
+        <li><span class="ex-cue">(you)</span> <select class="blank" data-answer="Do"><option value="">choose…</option><option>Are</option><option>Does</option><option>Do</option></select> you have any questions?</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-2" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">At the electronics store, the salesperson asks customers questions. "<mark style="color:var(--c2);">Do you have a TV already?</mark>" she asks a young couple. "No, we don't," they say. "<mark style="color:var(--c2);">Does your apartment have cable?</mark>" she continues. "Yes, it does," says the woman. Another customer walks in. "<mark style="color:var(--c2);">Do you have any laptops</mark> on sale?" he asks. "Yes, we have several," the salesperson says. "<mark style="color:var(--c2);">Does this model have a good battery?</mark>" he asks, pointing at one. "It does," she answers. "It lasts about ten hours."</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="False">
+        <p class="q-legend">1. The young couple already has a TV.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. The young couple already has a TV.">
+          <label><input type="radio" name="t2q1" value="True"> True</label>
+          <label><input type="radio" name="t2q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">2. The woman's apartment has cable.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. The woman's apartment has cable.">
+          <label><input type="radio" name="t2q2" value="True"> True</label>
+          <label><input type="radio" name="t2q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">3. The store has laptops on sale.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. The store has laptops on sale.">
+          <label><input type="radio" name="t2q3" value="True"> True</label>
+          <label><input type="radio" name="t2q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. The laptop's battery lasts about ten hours.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. The laptop's battery lasts about ten hours.">
+          <label><input type="radio" name="t2q4" value="True"> True</label>
+          <label><input type="radio" name="t2q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. The salesperson asks no questions.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. The salesperson asks no questions.">
+          <label><input type="radio" name="t2q5" value="True"> True</label>
+          <label><input type="radio" name="t2q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 3 · COUNTABLE AND UNCOUNTABLE NOUNS ══════════════ -->
+  <section class="panel" id="panel-topic-3" style="--accent: var(--c3);">
+    <div class="topic-head">
+      <span class="topic-num">Units 31.1, 31.4</span>
+      <h2>Countable and uncountable nouns</h2>
+    </div>
+    <p class="rule"><mark style="background:none;color:var(--c3);font-weight:600;">Countable</mark> nouns can be counted and have a plural form, like "eggs." <mark style="background:none;color:var(--c3);font-weight:600;">Uncountable</mark> nouns cannot be counted and have no plural form, like "rice." Use <mark style="background:none;color:var(--c3);font-weight:600;">There are</mark> with countable plural nouns and <mark style="background:none;color:var(--c3);font-weight:600;">There is</mark> with uncountable nouns.</p>
+    <div class="examples">
+      <span><mark>There are</mark> four eggs.</span>
+      <span><mark>There is</mark> some rice.</span>
+      <span><mark>Are there any</mark> eggs?</span>
+      <span><mark>Is there any</mark> rice?</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Countable vs. uncountable</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Noun type</th><th>Example</th><th>Question form</th></tr>
+        <tr><td class="hl">Countable (plural)</td><td>four eggs</td><td>Are there any eggs?</td></tr>
+        <tr><td class="hl">Uncountable</td><td>some rice</td><td>Is there any rice?</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">Uncountable nouns like rice, water, and money never take a plural -s or a number directly in front of them.</p>
+
+    <div class="exercise" data-nav="tab-topic-3" data-mode="select">
+      <h3>Grammar practice: complete each sentence</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">countable, plural</span> <select class="blank" data-answer="There are"><option value="">choose…</option><option>There are</option><option>Is there</option><option>There is</option></select> four eggs in the fridge.</li>
+        <li><span class="ex-cue">uncountable</span> <select class="blank" data-answer="There is"><option value="">choose…</option><option>Are there</option><option>There are</option><option>There is</option></select> some rice in the pot.</li>
+        <li><span class="ex-cue">countable question</span> <select class="blank" data-answer="Are there"><option value="">choose…</option><option>Is there</option><option>Are there</option><option>There are</option></select> any eggs left?</li>
+        <li><span class="ex-cue">uncountable question</span> <select class="blank" data-answer="Is there"><option value="">choose…</option><option>Is there</option><option>There is</option><option>Are there</option></select> any rice left?</li>
+        <li><span class="ex-cue">uncountable</span> <select class="blank" data-answer="There is"><option value="">choose…</option><option>There is</option><option>There are</option><option>Are there</option></select> some water on the table.</li>
+        <li><span class="ex-cue">countable, plural</span> <select class="blank" data-answer="There are"><option value="">choose…</option><option>There are</option><option>There is</option><option>Is there</option></select> six apples in the bowl.</li>
+        <li><span class="ex-cue">uncountable</span> We need <select class="blank" data-answer="some"><option value="">choose…</option><option>many</option><option>some</option><option>a</option></select> more sugar.</li>
+        <li><span class="ex-cue">countable question</span> <select class="blank" data-answer="Are there"><option value="">choose…</option><option>Are there</option><option>Is there</option><option>There are</option></select> any chairs in the room?</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-3" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">In the kitchen, Grandma checks the pantry. <mark style="color:var(--c3);">There are four eggs</mark> on the shelf, and <mark style="color:var(--c3);">there is some flour</mark> in a jar. "<mark style="color:var(--c3);">Is there any rice</mark> left?" she asks. "Yes, <mark style="color:var(--c3);">there is some rice</mark> in the cupboard," says her grandson. "<mark style="color:var(--c3);">Are there any onions?</mark>" she continues. "<mark style="color:var(--c3);">There are three onions</mark>," he answers. "Good," she says. "There isn't much sugar, but there is enough for the recipe."</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. There are four eggs on the shelf.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. There are four eggs on the shelf.">
+          <label><input type="radio" name="t3q1" value="True"> True</label>
+          <label><input type="radio" name="t3q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">2. There is no flour in the pantry.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. There is no flour in the pantry.">
+          <label><input type="radio" name="t3q2" value="True"> True</label>
+          <label><input type="radio" name="t3q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">3. There is some rice in the cupboard.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. There is some rice in the cupboard.">
+          <label><input type="radio" name="t3q3" value="True"> True</label>
+          <label><input type="radio" name="t3q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. There are three onions.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. There are three onions.">
+          <label><input type="radio" name="t3q4" value="True"> True</label>
+          <label><input type="radio" name="t3q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. There is plenty of sugar.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. There is plenty of sugar.">
+          <label><input type="radio" name="t3q5" value="True"> True</label>
+          <label><input type="radio" name="t3q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 4 · USING "ENOUGH" AND "MANY" ══════════════ -->
+  <section class="panel" id="panel-topic-4" style="--accent: var(--c4);">
+    <div class="topic-head">
+      <span class="topic-num">Unit 32.1</span>
+      <h2>Using "enough" and "many"</h2>
+    </div>
+    <p class="rule">Use <mark style="background:none;color:var(--c4);font-weight:600;">enough</mark> before a noun to mean the right amount. Use <mark style="background:none;color:var(--c4);font-weight:600;">too many</mark> before a countable plural noun to mean more than needed. Use <mark style="background:none;color:var(--c4);font-weight:600;">too much</mark> before an uncountable noun.</p>
+    <div class="examples">
+      <span>We have <mark>enough</mark> eggs.</span>
+      <span>We have <mark>too many</mark> eggs.</span>
+      <span>There isn't <mark>enough</mark> time.</span>
+      <span>She has <mark>too much</mark> homework.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">enough / too many / too much</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Word</th><th>Noun type</th><th>Example</th></tr>
+        <tr><td class="hl">enough</td><td>countable or uncountable</td><td>enough eggs / enough time</td></tr>
+        <tr><td class="hl">too many</td><td>countable plural</td><td>too many eggs</td></tr>
+        <tr><td class="hl">too much</td><td>uncountable</td><td>too much sugar</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">"Too many" and "too much" both mean "more than is good," but "too many" is for things you can count, and "too much" is for things you can't.</p>
+
+    <div class="exercise" data-nav="tab-topic-4" data-mode="select">
+      <h3>Grammar practice: complete each sentence</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">the right amount, countable</span> We have <select class="blank" data-answer="enough"><option value="">choose…</option><option>enough</option><option>too many</option><option>too much</option></select> eggs for the recipe.</li>
+        <li><span class="ex-cue">more than needed, countable</span> We have <select class="blank" data-answer="too many"><option value="">choose…</option><option>enough</option><option>too many</option><option>too much</option></select> eggs — let's use fewer.</li>
+        <li><span class="ex-cue">the right amount, uncountable</span> Is there <select class="blank" data-answer="enough"><option value="">choose…</option><option>too much</option><option>too many</option><option>enough</option></select> time to finish?</li>
+        <li><span class="ex-cue">more than needed, uncountable</span> She has <select class="blank" data-answer="too much"><option value="">choose…</option><option>too many</option><option>enough</option><option>too much</option></select> homework this week.</li>
+        <li><span class="ex-cue">the right amount, countable</span> Do we have <select class="blank" data-answer="enough"><option value="">choose…</option><option>too much</option><option>too many</option><option>enough</option></select> chairs for everyone?</li>
+        <li><span class="ex-cue">more than needed, countable</span> There are <select class="blank" data-answer="too many"><option value="">choose…</option><option>too many</option><option>too much</option><option>enough</option></select> people in this small room.</li>
+        <li><span class="ex-cue">more than needed, uncountable</span> He drinks <select class="blank" data-answer="too much"><option value="">choose…</option><option>too many</option><option>enough</option><option>too much</option></select> coffee every day.</li>
+        <li><span class="ex-cue">the right amount, uncountable</span> We don't have <select class="blank" data-answer="enough"><option value="">choose…</option><option>enough</option><option>too many</option><option>too much</option></select> milk for the cake.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-4" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">Before the party, Sam checks the kitchen. "Do we have <mark style="color:var(--c4);">enough snacks</mark>?" he asks his roommate. "I think so," she says, "but we might have <mark style="color:var(--c4);">too many drinks</mark> — nobody will finish them all." Sam checks the chairs. "We don't have <mark style="color:var(--c4);">enough chairs</mark> for everyone," he says. His roommate nods. "And there's <mark style="color:var(--c4);">too much noise</mark> coming from next door already!" They both laugh. "At least we have <mark style="color:var(--c4);">enough time</mark> to fix the chairs before people arrive," Sam says.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="False">
+        <p class="q-legend">1. Sam thinks they don't have enough snacks.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. Sam thinks they don't have enough snacks.">
+          <label><input type="radio" name="t4q1" value="True"> True</label>
+          <label><input type="radio" name="t4q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">2. They might have too many drinks.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. They might have too many drinks.">
+          <label><input type="radio" name="t4q2" value="True"> True</label>
+          <label><input type="radio" name="t4q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">3. They have enough chairs for everyone.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. They have enough chairs for everyone.">
+          <label><input type="radio" name="t4q3" value="True"> True</label>
+          <label><input type="radio" name="t4q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. There is too much noise from next door.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. There is too much noise from next door.">
+          <label><input type="radio" name="t4q4" value="True"> True</label>
+          <label><input type="radio" name="t4q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. Sam feels there isn't enough time to fix the chairs.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. Sam feels there isn't enough time to fix the chairs.">
+          <label><input type="radio" name="t4q5" value="True"> True</label>
+          <label><input type="radio" name="t4q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 5 · SHOPPING VERBS ══════════════ -->
+  <section class="panel" id="panel-topic-5" style="--accent: var(--c5);">
+    <div class="topic-head">
+      <span class="topic-num">Unit 34.1</span>
+      <h2>Shopping verbs</h2>
+    </div>
+    <p class="rule">Use verbs like <mark style="background:none;color:var(--c5);font-weight:600;">own</mark>, <mark style="background:none;color:var(--c5);font-weight:600;">sell</mark>, <mark style="background:none;color:var(--c5);font-weight:600;">want</mark>, and <mark style="background:none;color:var(--c5);font-weight:600;">fit</mark> to talk about shopping. "Own" means to possess something, "sell" means to offer it for money, "want" means to desire it, and "fit" means to be the right size.</p>
+    <div class="examples">
+      <span>Ana <mark>owns</mark> a red hat.</span>
+      <span>Luc <mark>sells</mark> old clothes.</span>
+      <span>They <mark>want</mark> new shoes.</span>
+      <span>The hat <mark>fits</mark> Jane.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Shopping verbs</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Verb</th><th>Meaning</th><th>Example</th></tr>
+        <tr><td class="hl">own</td><td>to possess</td><td>She owns three hats.</td></tr>
+        <tr><td class="hl">sell</td><td>to offer for money</td><td>He sells shoes.</td></tr>
+        <tr><td class="hl">want</td><td>to desire</td><td>I want a new coat.</td></tr>
+        <tr><td class="hl">fit</td><td>to be the right size</td><td>These shoes fit well.</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">"Fit" describes whether something is the right size — it doesn't mean the same as "like" or "want."</p>
+
+    <div class="exercise" data-nav="tab-topic-5" data-mode="select">
+      <h3>Grammar practice: choose the right verb</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">(Ana / possess)</span> Ana <select class="blank" data-answer="owns"><option value="">choose…</option><option>sells</option><option>owns</option><option>wants</option></select> a red hat.</li>
+        <li><span class="ex-cue">(Luc / offer for money)</span> Luc <select class="blank" data-answer="sells"><option value="">choose…</option><option>owns</option><option>sells</option><option>fits</option></select> old clothes.</li>
+        <li><span class="ex-cue">(they / desire)</span> They <select class="blank" data-answer="want"><option value="">choose…</option><option>own</option><option>want</option><option>sell</option></select> new shoes.</li>
+        <li><span class="ex-cue">(the hat / right size)</span> The hat <select class="blank" data-answer="fits"><option value="">choose…</option><option>wants</option><option>sells</option><option>fits</option></select> Jane.</li>
+        <li><span class="ex-cue">(I / desire)</span> I <select class="blank" data-answer="want"><option value="">choose…</option><option>want</option><option>own</option><option>sell</option></select> a new jacket.</li>
+        <li><span class="ex-cue">(this shop / offer for money)</span> This shop <select class="blank" data-answer="sells"><option value="">choose…</option><option>fits</option><option>sells</option><option>owns</option></select> jewelry.</li>
+        <li><span class="ex-cue">(she / possess)</span> She <select class="blank" data-answer="owns"><option value="">choose…</option><option>wants</option><option>sells</option><option>owns</option></select> two cars.</li>
+        <li><span class="ex-cue">(these shoes / right size)</span> These shoes <select class="blank" data-answer="fit"><option value="">choose…</option><option>fits</option><option>fitting</option><option>fit</option></select> perfectly.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-5" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">At the market, Jane looks for a new coat. "<mark style="color:var(--c5);">I want something warm</mark>," she tells the seller. The seller, Mr. Kim, <mark style="color:var(--c5);">owns a small clothing stall</mark>. "<mark style="color:var(--c5);">I sell coats</mark> from local designers," he says proudly. Jane tries on a green coat. "<mark style="color:var(--c5);">This fits perfectly!</mark>" she says. "How much does it cost?" Mr. Kim smiles. "It's a great choice. My stall <mark style="color:var(--c5);">sells the best coats</mark> in town." Jane happily buys the coat, glad <mark style="color:var(--c5);">it fits so well</mark>.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. Jane wants a new coat.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. Jane wants a new coat.">
+          <label><input type="radio" name="t5q1" value="True"> True</label>
+          <label><input type="radio" name="t5q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">2. Mr. Kim owns a large department store.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. Mr. Kim owns a large department store.">
+          <label><input type="radio" name="t5q2" value="True"> True</label>
+          <label><input type="radio" name="t5q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">3. Mr. Kim sells coats from local designers.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. Mr. Kim sells coats from local designers.">
+          <label><input type="radio" name="t5q3" value="True"> True</label>
+          <label><input type="radio" name="t5q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">4. The green coat does not fit Jane.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. The green coat does not fit Jane.">
+          <label><input type="radio" name="t5q4" value="True"> True</label>
+          <label><input type="radio" name="t5q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">5. Jane buys the coat.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. Jane buys the coat.">
+          <label><input type="radio" name="t5q5" value="True"> True</label>
+          <label><input type="radio" name="t5q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 6 · ADJECTIVE ORDER ══════════════ -->
+  <section class="panel" id="panel-topic-6" style="--accent: var(--c6);">
+    <div class="topic-head">
+      <span class="topic-num">Unit 35.1</span>
+      <h2>Adjective order</h2>
+    </div>
+    <p class="rule">When using more than one adjective before a noun, follow a general order: <mark style="background:none;color:var(--c6);font-weight:600;">opinion</mark>, then <mark style="background:none;color:var(--c6);font-weight:600;">size or age</mark>, then <mark style="background:none;color:var(--c6);font-weight:600;">color</mark>. "A lovely green hat" (opinion before color) sounds natural; "a green lovely hat" does not.</p>
+    <div class="examples">
+      <span>This is a <mark>lovely green</mark> hat.</span>
+      <span>She has a <mark>beautiful old</mark> house.</span>
+      <span>He bought a <mark>small red</mark> car.</span>
+      <span>It's a <mark>nice warm</mark> coat.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Adjective order</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Order</th><th>Type</th><th>Example</th></tr>
+        <tr><td>1</td><td class="hl">Opinion</td><td>lovely, nice, beautiful</td></tr>
+        <tr><td>2</td><td class="hl">Size / Age</td><td>small, old, big</td></tr>
+        <tr><td>3</td><td class="hl">Color</td><td>green, red, black</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">Opinion adjectives (like lovely or nice) usually come before more factual adjectives like size or color.</p>
+
+    <div class="exercise" data-nav="tab-topic-6" data-mode="select">
+      <h3>Grammar practice: complete each sentence</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">opinion + color (lovely)</span> This is a <select class="blank" data-answer="lovely"><option value="">choose…</option><option>lovely</option><option>greenly</option><option>green lovely</option></select> green hat.</li>
+        <li><span class="ex-cue">correct order (old)</span> She has a beautiful <select class="blank" data-answer="old"><option value="">choose…</option><option>olds</option><option>old</option><option>oldly</option></select> house.</li>
+        <li><span class="ex-cue">correct order (red)</span> He bought a small <select class="blank" data-answer="red"><option value="">choose…</option><option>red</option><option>redly</option><option>reds</option></select> car.</li>
+        <li><span class="ex-cue">opinion comes first (nice)</span> It's a <select class="blank" data-answer="nice"><option value="">choose…</option><option>nice</option><option>nicer</option><option>warmly nice</option></select> warm coat.</li>
+        <li><span class="ex-cue">correct order (black)</span> We saw a big <select class="blank" data-answer="black"><option value="">choose…</option><option>blackly</option><option>blacks</option><option>black</option></select> dog.</li>
+        <li><span class="ex-cue">opinion first, then size (lovely)</span> That's a <select class="blank" data-answer="lovely"><option value="">choose…</option><option>lovelier</option><option>small lovely</option><option>lovely</option></select> small apartment.</li>
+        <li><span class="ex-cue">correct order (blue)</span> I bought a nice <select class="blank" data-answer="blue"><option value="">choose…</option><option>blues</option><option>blue</option><option>bluely</option></select> jacket.</li>
+        <li><span class="ex-cue">opinion before age (new)</span> She has a beautiful <select class="blank" data-answer="new"><option value="">choose…</option><option>new</option><option>news</option><option>newly</option></select> car.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-6" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">At the antique shop, Mia finds a <mark style="color:var(--c6);">lovely old lamp</mark>. Next to it, there's a <mark style="color:var(--c6);">beautiful red vase</mark>. The shop owner shows her a <mark style="color:var(--c6);">nice small mirror</mark> with a gold frame. "I love this <mark style="color:var(--c6);">pretty green chair</mark>," Mia says, pointing across the room. She also notices a <mark style="color:var(--c6);">charming little table</mark> near the window. "Everything here is wonderful," she tells the owner, admiring a <mark style="color:var(--c6);">handsome brown desk</mark> in the corner.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. Mia finds a lovely old lamp.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. Mia finds a lovely old lamp.">
+          <label><input type="radio" name="t6q1" value="True"> True</label>
+          <label><input type="radio" name="t6q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">2. The vase is blue.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. The vase is blue.">
+          <label><input type="radio" name="t6q2" value="True"> True</label>
+          <label><input type="radio" name="t6q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">3. The mirror is large.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. The mirror is large.">
+          <label><input type="radio" name="t6q3" value="True"> True</label>
+          <label><input type="radio" name="t6q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. Mia likes the green chair.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. Mia likes the green chair.">
+          <label><input type="radio" name="t6q4" value="True"> True</label>
+          <label><input type="radio" name="t6q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">5. There is a handsome brown desk in the corner.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. There is a handsome brown desk in the corner.">
+          <label><input type="radio" name="t6q5" value="True"> True</label>
+          <label><input type="radio" name="t6q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 7 · FINAL EXAM ══════════════ -->
+  <section class="panel" id="panel-topic-7" style="--accent: var(--c7);">
+    <div class="topic-head">
+      <span class="topic-num">Units 28–35</span>
+      <h2>Final exam</h2>
+    </div>
+    <p class="rule">This 30-question exam covers every topic in this review: using "have," asking "have" questions, countable and uncountable nouns, "enough" and "many," shopping verbs, and adjective order. Choose the best answer for each question, then press <mark style="background:none;color:var(--c7);font-weight:600;">Check answers</mark> at the bottom to see your score.</p>
+
+    <div class="exercise" data-nav="tab-topic-7" data-mode="radio">
+      <h3 class="exam-sec">Using "have"</h3>
+      <div class="q" data-answer="have">
+        <p class="q-legend">1. I ____ a garage.</p>
+        <div class="mc-options" role="radiogroup" aria-label="1. I ____ a garage.">
+          <label><input type="radio" name="examq1" value="have"><span class="opt-letter">A</span> have</label>
+          <label><input type="radio" name="examq1" value="has"><span class="opt-letter">B</span> has</label>
+          <label><input type="radio" name="examq1" value="had"><span class="opt-letter">C</span> had</label>
+          <label><input type="radio" name="examq1" value="having"><span class="opt-letter">D</span> having</label>
+        </div>
+      </div>
+      <div class="q" data-answer="has">
+        <p class="q-legend">2. She ____ a yard.</p>
+        <div class="mc-options" role="radiogroup" aria-label="2. She ____ a yard.">
+          <label><input type="radio" name="examq2" value="have"><span class="opt-letter">A</span> have</label>
+          <label><input type="radio" name="examq2" value="has"><span class="opt-letter">B</span> has</label>
+          <label><input type="radio" name="examq2" value="having"><span class="opt-letter">C</span> having</label>
+          <label><input type="radio" name="examq2" value="had"><span class="opt-letter">D</span> had</label>
+        </div>
+      </div>
+      <div class="q" data-answer="do not have">
+        <p class="q-legend">3. I ____ a bathtub.</p>
+        <div class="mc-options" role="radiogroup" aria-label="3. I ____ a bathtub.">
+          <label><input type="radio" name="examq3" value="does not have"><span class="opt-letter">A</span> does not have</label>
+          <label><input type="radio" name="examq3" value="not have"><span class="opt-letter">B</span> not have</label>
+          <label><input type="radio" name="examq3" value="do not have"><span class="opt-letter">C</span> do not have</label>
+          <label><input type="radio" name="examq3" value="having not"><span class="opt-letter">D</span> having not</label>
+        </div>
+      </div>
+      <div class="q" data-answer="doesn't have">
+        <p class="q-legend">4. He ____ a garden.</p>
+        <div class="mc-options" role="radiogroup" aria-label="4. He ____ a garden.">
+          <label><input type="radio" name="examq4" value="don't have"><span class="opt-letter">A</span> don't have</label>
+          <label><input type="radio" name="examq4" value="not have"><span class="opt-letter">B</span> not have</label>
+          <label><input type="radio" name="examq4" value="has not"><span class="opt-letter">C</span> has not</label>
+          <label><input type="radio" name="examq4" value="doesn't have"><span class="opt-letter">D</span> doesn't have</label>
+        </div>
+      </div>
+      <div class="q" data-answer="She has a yard.">
+        <p class="q-legend">5. Which sentence correctly uses "has"?</p>
+        <div class="mc-options" role="radiogroup" aria-label="5. Which sentence correctly uses "has"?">
+          <label><input type="radio" name="examq5" value="She has a yard."><span class="opt-letter">A</span> She has a yard.</label>
+          <label><input type="radio" name="examq5" value="She have a yard."><span class="opt-letter">B</span> She have a yard.</label>
+          <label><input type="radio" name="examq5" value="She having a yard."><span class="opt-letter">C</span> She having a yard.</label>
+          <label><input type="radio" name="examq5" value="She haves a yard."><span class="opt-letter">D</span> She haves a yard.</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Asking "have" questions</h3>
+      <div class="q" data-answer="Do">
+        <p class="q-legend">6. ____ you have a TV?</p>
+        <div class="mc-options" role="radiogroup" aria-label="6. ____ you have a TV?">
+          <label><input type="radio" name="examq6" value="Does"><span class="opt-letter">A</span> Does</label>
+          <label><input type="radio" name="examq6" value="Do"><span class="opt-letter">B</span> Do</label>
+          <label><input type="radio" name="examq6" value="Are"><span class="opt-letter">C</span> Are</label>
+          <label><input type="radio" name="examq6" value="Is"><span class="opt-letter">D</span> Is</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Does">
+        <p class="q-legend">7. ____ she have a car?</p>
+        <div class="mc-options" role="radiogroup" aria-label="7. ____ she have a car?">
+          <label><input type="radio" name="examq7" value="Do"><span class="opt-letter">A</span> Do</label>
+          <label><input type="radio" name="examq7" value="Are"><span class="opt-letter">B</span> Are</label>
+          <label><input type="radio" name="examq7" value="Does"><span class="opt-letter">C</span> Does</label>
+          <label><input type="radio" name="examq7" value="Is"><span class="opt-letter">D</span> Is</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Do">
+        <p class="q-legend">8. ____ they have a garden?</p>
+        <div class="mc-options" role="radiogroup" aria-label="8. ____ they have a garden?">
+          <label><input type="radio" name="examq8" value="Does"><span class="opt-letter">A</span> Does</label>
+          <label><input type="radio" name="examq8" value="Are"><span class="opt-letter">B</span> Are</label>
+          <label><input type="radio" name="examq8" value="Is"><span class="opt-letter">C</span> Is</label>
+          <label><input type="radio" name="examq8" value="Do"><span class="opt-letter">D</span> Do</label>
+        </div>
+      </div>
+      <div class="q" data-answer="have">
+        <p class="q-legend">9. The verb after "does" stays as:</p>
+        <div class="mc-options" role="radiogroup" aria-label="9. The verb after "does" stays as:">
+          <label><input type="radio" name="examq9" value="have"><span class="opt-letter">A</span> have</label>
+          <label><input type="radio" name="examq9" value="has"><span class="opt-letter">B</span> has</label>
+          <label><input type="radio" name="examq9" value="having"><span class="opt-letter">C</span> having</label>
+          <label><input type="radio" name="examq9" value="had"><span class="opt-letter">D</span> had</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Does she have a car?">
+        <p class="q-legend">10. Which question is correctly formed?</p>
+        <div class="mc-options" role="radiogroup" aria-label="10. Which question is correctly formed?">
+          <label><input type="radio" name="examq10" value="Does she has a car?"><span class="opt-letter">A</span> Does she has a car?</label>
+          <label><input type="radio" name="examq10" value="Does she have a car?"><span class="opt-letter">B</span> Does she have a car?</label>
+          <label><input type="radio" name="examq10" value="Do she have a car?"><span class="opt-letter">C</span> Do she have a car?</label>
+          <label><input type="radio" name="examq10" value="Have she a car?"><span class="opt-letter">D</span> Have she a car?</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Countable and uncountable nouns</h3>
+      <div class="q" data-answer="There are">
+        <p class="q-legend">11. ____ four eggs in the fridge.</p>
+        <div class="mc-options" role="radiogroup" aria-label="11. ____ four eggs in the fridge.">
+          <label><input type="radio" name="examq11" value="There is"><span class="opt-letter">A</span> There is</label>
+          <label><input type="radio" name="examq11" value="Is there"><span class="opt-letter">B</span> Is there</label>
+          <label><input type="radio" name="examq11" value="There are"><span class="opt-letter">C</span> There are</label>
+          <label><input type="radio" name="examq11" value="Are there"><span class="opt-letter">D</span> Are there</label>
+        </div>
+      </div>
+      <div class="q" data-answer="There is">
+        <p class="q-legend">12. ____ some rice in the pot.</p>
+        <div class="mc-options" role="radiogroup" aria-label="12. ____ some rice in the pot.">
+          <label><input type="radio" name="examq12" value="There are"><span class="opt-letter">A</span> There are</label>
+          <label><input type="radio" name="examq12" value="Are there"><span class="opt-letter">B</span> Are there</label>
+          <label><input type="radio" name="examq12" value="Is there"><span class="opt-letter">C</span> Is there</label>
+          <label><input type="radio" name="examq12" value="There is"><span class="opt-letter">D</span> There is</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Are there">
+        <p class="q-legend">13. ____ any eggs left?</p>
+        <div class="mc-options" role="radiogroup" aria-label="13. ____ any eggs left?">
+          <label><input type="radio" name="examq13" value="Are there"><span class="opt-letter">A</span> Are there</label>
+          <label><input type="radio" name="examq13" value="Is there"><span class="opt-letter">B</span> Is there</label>
+          <label><input type="radio" name="examq13" value="There are"><span class="opt-letter">C</span> There are</label>
+          <label><input type="radio" name="examq13" value="There is"><span class="opt-letter">D</span> There is</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Is there">
+        <p class="q-legend">14. ____ any rice left?</p>
+        <div class="mc-options" role="radiogroup" aria-label="14. ____ any rice left?">
+          <label><input type="radio" name="examq14" value="Are there"><span class="opt-letter">A</span> Are there</label>
+          <label><input type="radio" name="examq14" value="Is there"><span class="opt-letter">B</span> Is there</label>
+          <label><input type="radio" name="examq14" value="There is"><span class="opt-letter">C</span> There is</label>
+          <label><input type="radio" name="examq14" value="There are"><span class="opt-letter">D</span> There are</label>
+        </div>
+      </div>
+      <div class="q" data-answer="rice">
+        <p class="q-legend">15. Which noun is uncountable?</p>
+        <div class="mc-options" role="radiogroup" aria-label="15. Which noun is uncountable?">
+          <label><input type="radio" name="examq15" value="egg"><span class="opt-letter">A</span> egg</label>
+          <label><input type="radio" name="examq15" value="onion"><span class="opt-letter">B</span> onion</label>
+          <label><input type="radio" name="examq15" value="rice"><span class="opt-letter">C</span> rice</label>
+          <label><input type="radio" name="examq15" value="chair"><span class="opt-letter">D</span> chair</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Using "enough" and "many"</h3>
+      <div class="q" data-answer="enough">
+        <p class="q-legend">16. We have ____ eggs for the recipe.</p>
+        <div class="mc-options" role="radiogroup" aria-label="16. We have ____ eggs for the recipe.">
+          <label><input type="radio" name="examq16" value="too many"><span class="opt-letter">A</span> too many</label>
+          <label><input type="radio" name="examq16" value="too much"><span class="opt-letter">B</span> too much</label>
+          <label><input type="radio" name="examq16" value="many"><span class="opt-letter">C</span> many</label>
+          <label><input type="radio" name="examq16" value="enough"><span class="opt-letter">D</span> enough</label>
+        </div>
+      </div>
+      <div class="q" data-answer="too many">
+        <p class="q-legend">17. We have ____ eggs — let's use fewer.</p>
+        <div class="mc-options" role="radiogroup" aria-label="17. We have ____ eggs — let's use fewer.">
+          <label><input type="radio" name="examq17" value="too many"><span class="opt-letter">A</span> too many</label>
+          <label><input type="radio" name="examq17" value="too much"><span class="opt-letter">B</span> too much</label>
+          <label><input type="radio" name="examq17" value="enough"><span class="opt-letter">C</span> enough</label>
+          <label><input type="radio" name="examq17" value="many"><span class="opt-letter">D</span> many</label>
+        </div>
+      </div>
+      <div class="q" data-answer="enough">
+        <p class="q-legend">18. Is there ____ time to finish?</p>
+        <div class="mc-options" role="radiogroup" aria-label="18. Is there ____ time to finish?">
+          <label><input type="radio" name="examq18" value="too many"><span class="opt-letter">A</span> too many</label>
+          <label><input type="radio" name="examq18" value="enough"><span class="opt-letter">B</span> enough</label>
+          <label><input type="radio" name="examq18" value="too much"><span class="opt-letter">C</span> too much</label>
+          <label><input type="radio" name="examq18" value="many"><span class="opt-letter">D</span> many</label>
+        </div>
+      </div>
+      <div class="q" data-answer="too much">
+        <p class="q-legend">19. She has ____ homework this week.</p>
+        <div class="mc-options" role="radiogroup" aria-label="19. She has ____ homework this week.">
+          <label><input type="radio" name="examq19" value="too many"><span class="opt-letter">A</span> too many</label>
+          <label><input type="radio" name="examq19" value="enough"><span class="opt-letter">B</span> enough</label>
+          <label><input type="radio" name="examq19" value="too much"><span class="opt-letter">C</span> too much</label>
+          <label><input type="radio" name="examq19" value="many"><span class="opt-letter">D</span> many</label>
+        </div>
+      </div>
+      <div class="q" data-answer="countable plural nouns">
+        <p class="q-legend">20. "Too many" is used with:</p>
+        <div class="mc-options" role="radiogroup" aria-label="20. "Too many" is used with:">
+          <label><input type="radio" name="examq20" value="uncountable nouns"><span class="opt-letter">A</span> uncountable nouns</label>
+          <label><input type="radio" name="examq20" value="singular nouns"><span class="opt-letter">B</span> singular nouns</label>
+          <label><input type="radio" name="examq20" value="verbs"><span class="opt-letter">C</span> verbs</label>
+          <label><input type="radio" name="examq20" value="countable plural nouns"><span class="opt-letter">D</span> countable plural nouns</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Shopping verbs</h3>
+      <div class="q" data-answer="owns">
+        <p class="q-legend">21. Ana ____ a red hat.</p>
+        <div class="mc-options" role="radiogroup" aria-label="21. Ana ____ a red hat.">
+          <label><input type="radio" name="examq21" value="owns"><span class="opt-letter">A</span> owns</label>
+          <label><input type="radio" name="examq21" value="sells"><span class="opt-letter">B</span> sells</label>
+          <label><input type="radio" name="examq21" value="wants"><span class="opt-letter">C</span> wants</label>
+          <label><input type="radio" name="examq21" value="fits"><span class="opt-letter">D</span> fits</label>
+        </div>
+      </div>
+      <div class="q" data-answer="sells">
+        <p class="q-legend">22. Luc ____ old clothes.</p>
+        <div class="mc-options" role="radiogroup" aria-label="22. Luc ____ old clothes.">
+          <label><input type="radio" name="examq22" value="owns"><span class="opt-letter">A</span> owns</label>
+          <label><input type="radio" name="examq22" value="sells"><span class="opt-letter">B</span> sells</label>
+          <label><input type="radio" name="examq22" value="wants"><span class="opt-letter">C</span> wants</label>
+          <label><input type="radio" name="examq22" value="fits"><span class="opt-letter">D</span> fits</label>
+        </div>
+      </div>
+      <div class="q" data-answer="want">
+        <p class="q-legend">23. They ____ new shoes.</p>
+        <div class="mc-options" role="radiogroup" aria-label="23. They ____ new shoes.">
+          <label><input type="radio" name="examq23" value="own"><span class="opt-letter">A</span> own</label>
+          <label><input type="radio" name="examq23" value="sell"><span class="opt-letter">B</span> sell</label>
+          <label><input type="radio" name="examq23" value="want"><span class="opt-letter">C</span> want</label>
+          <label><input type="radio" name="examq23" value="fit"><span class="opt-letter">D</span> fit</label>
+        </div>
+      </div>
+      <div class="q" data-answer="fits">
+        <p class="q-legend">24. The hat ____ Jane.</p>
+        <div class="mc-options" role="radiogroup" aria-label="24. The hat ____ Jane.">
+          <label><input type="radio" name="examq24" value="owns"><span class="opt-letter">A</span> owns</label>
+          <label><input type="radio" name="examq24" value="sells"><span class="opt-letter">B</span> sells</label>
+          <label><input type="radio" name="examq24" value="wants"><span class="opt-letter">C</span> wants</label>
+          <label><input type="radio" name="examq24" value="fits"><span class="opt-letter">D</span> fits</label>
+        </div>
+      </div>
+      <div class="q" data-answer="fit">
+        <p class="q-legend">25. Which verb means "to be the right size"?</p>
+        <div class="mc-options" role="radiogroup" aria-label="25. Which verb means "to be the right size"?">
+          <label><input type="radio" name="examq25" value="fit"><span class="opt-letter">A</span> fit</label>
+          <label><input type="radio" name="examq25" value="own"><span class="opt-letter">B</span> own</label>
+          <label><input type="radio" name="examq25" value="sell"><span class="opt-letter">C</span> sell</label>
+          <label><input type="radio" name="examq25" value="want"><span class="opt-letter">D</span> want</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Adjective order</h3>
+      <div class="q" data-answer="lovely">
+        <p class="q-legend">26. This is a ____ green hat.</p>
+        <div class="mc-options" role="radiogroup" aria-label="26. This is a ____ green hat.">
+          <label><input type="radio" name="examq26" value="green lovely"><span class="opt-letter">A</span> green lovely</label>
+          <label><input type="radio" name="examq26" value="lovely"><span class="opt-letter">B</span> lovely</label>
+          <label><input type="radio" name="examq26" value="lovelier"><span class="opt-letter">C</span> lovelier</label>
+          <label><input type="radio" name="examq26" value="loveliness"><span class="opt-letter">D</span> loveliness</label>
+        </div>
+      </div>
+      <div class="q" data-answer="old">
+        <p class="q-legend">27. She has a beautiful ____ house.</p>
+        <div class="mc-options" role="radiogroup" aria-label="27. She has a beautiful ____ house.">
+          <label><input type="radio" name="examq27" value="olds"><span class="opt-letter">A</span> olds</label>
+          <label><input type="radio" name="examq27" value="oldly"><span class="opt-letter">B</span> oldly</label>
+          <label><input type="radio" name="examq27" value="old"><span class="opt-letter">C</span> old</label>
+          <label><input type="radio" name="examq27" value="older"><span class="opt-letter">D</span> older</label>
+        </div>
+      </div>
+      <div class="q" data-answer="red">
+        <p class="q-legend">28. He bought a small ____ car.</p>
+        <div class="mc-options" role="radiogroup" aria-label="28. He bought a small ____ car.">
+          <label><input type="radio" name="examq28" value="reds"><span class="opt-letter">A</span> reds</label>
+          <label><input type="radio" name="examq28" value="redly"><span class="opt-letter">B</span> redly</label>
+          <label><input type="radio" name="examq28" value="redder"><span class="opt-letter">C</span> redder</label>
+          <label><input type="radio" name="examq28" value="red"><span class="opt-letter">D</span> red</label>
+        </div>
+      </div>
+      <div class="q" data-answer="a lovely old lamp">
+        <p class="q-legend">29. Which order is correct?</p>
+        <div class="mc-options" role="radiogroup" aria-label="29. Which order is correct?">
+          <label><input type="radio" name="examq29" value="a lovely old lamp"><span class="opt-letter">A</span> a lovely old lamp</label>
+          <label><input type="radio" name="examq29" value="an old lovely lamp"><span class="opt-letter">B</span> an old lovely lamp</label>
+          <label><input type="radio" name="examq29" value="a lamp lovely old"><span class="opt-letter">C</span> a lamp lovely old</label>
+          <label><input type="radio" name="examq29" value="an lovely lamp old"><span class="opt-letter">D</span> an lovely lamp old</label>
+        </div>
+      </div>
+      <div class="q" data-answer="before size, age, or color">
+        <p class="q-legend">30. Opinion adjectives usually come:</p>
+        <div class="mc-options" role="radiogroup" aria-label="30. Opinion adjectives usually come:">
+          <label><input type="radio" name="examq30" value="after the noun"><span class="opt-letter">A</span> after the noun</label>
+          <label><input type="radio" name="examq30" value="before size, age, or color"><span class="opt-letter">B</span> before size, age, or color</label>
+          <label><input type="radio" name="examq30" value="only in questions"><span class="opt-letter">C</span> only in questions</label>
+          <label><input type="radio" name="examq30" value="never before a noun"><span class="opt-letter">D</span> never before a noun</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>Grammar review worksheet for Units 28–35. Includes self-check exercises.</footer>
+
+<script>
+function switchTab(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tabbtn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateTabStatus(navId) {
+  if (!navId) return;
+  const related = document.querySelectorAll(`.exercise[data-nav="${navId}"]`);
+  const allChecked = related.length > 0 && Array.from(related).every(c => c.dataset.checked === 'true');
+  const btn = document.getElementById(navId);
+  if (btn) btn.classList.toggle('done', allChecked);
+}
+
+document.querySelectorAll('.exercise').forEach(container => {
+  const checkBtn = container.querySelector('.check-btn');
+  const resetBtn = container.querySelector('.reset-btn');
+  const resultEl = container.querySelector('.ex-result');
+  const navId = container.dataset.nav;
+  const mode = container.dataset.mode;
+
+  checkBtn.addEventListener('click', () => {
+    let correct = 0, total = 0;
+    if (mode === 'select') {
+      const selects = container.querySelectorAll('select.blank');
+      total = selects.length;
+      selects.forEach(sel => {
+        sel.classList.remove('correct', 'wrong');
+        if (sel.value && sel.value === sel.dataset.answer) { sel.classList.add('correct'); correct++; }
+        else { sel.classList.add('wrong'); }
+      });
+    } else {
+      const groups = container.querySelectorAll('.q');
+      total = groups.length;
+      groups.forEach(fs => {
+        fs.classList.remove('correct', 'wrong');
+        const checked = fs.querySelector('input[type="radio"]:checked');
+        if (checked && checked.value === fs.dataset.answer) { fs.classList.add('correct'); correct++; }
+        else { fs.classList.add('wrong'); }
+      });
+    }
+    resultEl.textContent = `${correct} / ${total} correct`;
+    container.dataset.checked = 'true';
+    updateTabStatus(navId);
+  });
+
+  resetBtn.addEventListener('click', () => {
+    if (mode === 'select') {
+      container.querySelectorAll('select.blank').forEach(sel => {
+        sel.value = '';
+        sel.classList.remove('correct', 'wrong');
+      });
+    } else {
+      container.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+      container.querySelectorAll('.q').forEach(fs => fs.classList.remove('correct', 'wrong'));
+    }
+    resultEl.textContent = '';
+    container.dataset.checked = 'false';
+    updateTabStatus(navId);
+  });
+});
+</script>
+
+</body>
+</html>

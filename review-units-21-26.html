@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review: Units 21–26 | English for Everyone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:        #223047;
+  --ink-soft:   #57697c;
+  --paper:      #ffffff;
+  --panel:      #f3e8f7;
+  --panel-line: #d9b3e8;
+  --panel-line-soft: #ecd9f2;
+
+  --brand:      #8e44ad;
+  --brand-deep: #6c3483;
+  --brand-pale: #f3e8f7;
+
+  --c1: #cf5a37; /* using there is and there are */
+  --c2: #bd8620; /* articles */
+  --c3: #2f8f74; /* using any and some */
+  --c4: #c0392b; /* imperatives */
+  --c5: #3d5a99; /* joining sentences */
+  --c6: #ab4770; /* using adjectives */
+  --c7: #5b7f37; /* using because */
+  --c8: #3a3d5c; /* final exam */
+
+  --correct: #2f9e44;
+  --wrong: #c0392b;
+  --light-correct: #e6f6ea;
+  --light-wrong: #fbe4e1;
+  --shadow: 20, 60, 90;
+
+  --font-display: 'Baloo 2', 'Poppins', sans-serif;
+  --font-body: 'Mulish', 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  padding-bottom: 4rem;
+}
+::selection { background: var(--brand); color: #fff; }
+
+h1, h2, h3 { font-family: var(--font-display); margin: 0; }
+p { margin: 0 0 0.9rem; }
+p:last-child { margin-bottom: 0; }
+
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── MASTHEAD ────────────────────────────────────────────────── */
+.masthead {
+  background: var(--brand-pale);
+  border-bottom: 3px solid var(--brand);
+  padding: 2.4rem 1.2rem 1.8rem;
+  text-align: center;
+}
+.masthead h1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  color: var(--brand-deep);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.7rem;
+}
+.masthead h1::before {
+  content: "\2713";
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--brand);
+  border-radius: 10px;
+  padding: 0.4rem 0.7rem;
+  line-height: 1;
+}
+.masthead .lede {
+  max-width: 560px;
+  margin: 0 auto 0.5rem;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+}
+.masthead .howto {
+  max-width: 560px;
+  margin: 0 auto 1rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+/* ── TABS ────────────────────────────────────────────────────── */
+.tabnav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background: #fff;
+  border-bottom: 2px solid var(--panel-line-soft);
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0 10px 24px -20px rgba(var(--shadow), 0.6);
+}
+.tabbtn {
+  --accent: #999;
+  flex: 1 1 auto;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  border: 2px solid var(--panel-line);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink-soft);
+  padding: 0.5rem 0.5rem 0.45rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.tabbtn .tb-unit {
+  font-family: var(--font-body);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.tabbtn .tb-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.tabbtn:hover { background: var(--brand-pale); border-color: var(--accent); }
+.tabbtn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.tabbtn.active .tb-unit { opacity: 0.9; }
+.tabbtn.done .tb-label::after { content: " \2713"; }
+
+/* ── PAGE ────────────────────────────────────────────────────── */
+main.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.4rem 1.2rem 0;
+}
+
+.panel { display: none; animation: fadeIn 0.2s ease; }
+.panel.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ── TOPIC PANELS ────────────────────────────────────────────── */
+.topic-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.topic-num {
+  flex: 0 0 auto;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 12px;
+  padding: 0.55rem 0.8rem;
+  line-height: 1;
+  box-shadow: 0 6px 14px -8px rgba(var(--shadow), 0.7);
+}
+.topic-head h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--ink);
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 0.35rem;
+  flex: 1 1 auto;
+}
+.rule {
+  font-size: 1rem;
+  background: var(--panel);
+  border: 2px solid var(--panel-line);
+  border-radius: 14px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.1rem;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  margin-bottom: 1.9rem;
+}
+.examples span {
+  position: relative;
+  font-size: 0.92rem;
+  font-weight: 500;
+  background: #fff;
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  padding: 0.6rem 1.05rem;
+}
+.examples span::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  bottom: -9px;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  border-radius: 0 0 3px 0;
+  transform: rotate(45deg);
+}
+.examples mark {
+  background: none;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.chart-wrap { overflow-x: auto; margin-bottom: 1.6rem; }
+.chart-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--brand-deep);
+  margin: 0 0 0.6rem 0.2rem;
+}
+.chart-card {
+  min-width: 420px;
+  border: 2.5px solid var(--accent);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 14px 26px -20px rgba(var(--shadow), 0.65);
+}
+table.chart {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+table.chart th,
+table.chart td {
+  position: relative;
+  padding: 0.75rem 0.9rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.25;
+}
+table.chart th {
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-right: 1px solid rgba(255, 255, 255, 0.28);
+}
+table.chart th:last-child { border-right: none; }
+table.chart td {
+  background: #fff;
+  color: var(--ink);
+  font-weight: 700;
+  border-top: 1px solid var(--panel-line-soft);
+  border-right: 1px solid var(--panel-line-soft);
+  transition: background 0.15s ease;
+}
+table.chart td:last-child { border-right: none; }
+table.chart tr:first-of-type td { border-top: none; }
+table.chart tr:nth-of-type(even) td { background: var(--panel); }
+table.chart tr:hover td { background: var(--panel-line-soft); }
+table.chart td.hl {
+  color: var(--accent);
+  font-weight: 800;
+}
+.chart-note { font-size: 0.85rem; color: var(--ink-soft); margin: -0.8rem 0 1.6rem; font-style: italic; }
+
+@media (max-width: 560px) {
+  .chart-card { min-width: 360px; }
+  table.chart { font-size: 0.84rem; }
+  table.chart th, table.chart td { padding: 0.6rem 0.55rem; }
+}
+
+/* ── EXERCISE / READING CARDS ───────────────────────────────── */
+.exercise {
+  position: relative;
+  background: #fff;
+  border: 2.5px solid var(--panel-line);
+  border-radius: 20px;
+  padding: 1.4rem 1.5rem 1.3rem;
+  margin-bottom: 1.4rem;
+  box-shadow: 0 10px 24px -20px rgba(var(--shadow), 0.5);
+}
+.exercise:last-child { margin-bottom: 0.4rem; }
+.exercise h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--brand-deep);
+  margin-bottom: 1.1rem;
+}
+.exercise h3::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+.exercise[data-mode="select"] h3::before { content: "\270E"; }
+.exercise[data-mode="radio"] h3::before { content: "\1F5E8"; font-size: 0.85rem; }
+.ex-list { list-style: none; margin: 0 0 1.1rem; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+.ex-list li { font-size: 0.96rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.ex-cue { color: var(--ink-soft); font-size: 0.82rem; font-style: italic; flex-basis: 100%; }
+select.blank {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+  background-color: var(--panel);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6' fill='none' stroke='%236c3483' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.55rem center;
+  background-size: 0.85rem;
+  border: 2px solid var(--panel-line);
+  border-radius: 10px;
+  padding: 0.4rem 1.8rem 0.4rem 0.7rem;
+  line-height: 1.3;
+  cursor: pointer;
+}
+select.blank:hover { border-color: var(--brand); }
+select.blank:focus-visible { border-color: var(--brand); }
+select.blank.correct {
+  background-color: var(--light-correct);
+  border-color: var(--correct);
+  color: var(--correct);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6' fill='none' stroke='%232f9e44' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+select.blank.wrong {
+  background-color: var(--light-wrong);
+  border-color: var(--wrong);
+  color: var(--wrong);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6' fill='none' stroke='%23c0392b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+
+.ex-controls { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.3rem; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 14px;
+  border: 2px solid var(--brand);
+  cursor: pointer;
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 8px 16px -8px rgba(var(--shadow), 0.65);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+}
+.btn::before {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+.btn.check-btn::before { content: "\2713"; }
+.btn.reset-btn::before { content: "\21BB"; }
+.btn:hover {
+  transform: translateY(-2px);
+  background: var(--brand-deep);
+  border-color: var(--brand-deep);
+  box-shadow: 0 12px 20px -8px rgba(var(--shadow), 0.75);
+}
+.btn:active { transform: translateY(0); box-shadow: 0 4px 10px -6px rgba(var(--shadow), 0.6); }
+.btn.ghost {
+  background: #fff;
+  color: var(--brand-deep);
+  border-color: var(--panel-line);
+  box-shadow: none;
+}
+.btn.ghost:hover {
+  background: var(--brand-pale);
+  border-color: var(--brand);
+  box-shadow: none;
+}
+.ex-result {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--brand-deep);
+  background: var(--panel);
+  border: 2px solid var(--panel-line);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  min-height: 1.2rem;
+}
+.ex-result:empty { display: none; }
+
+.mini-passage {
+  background: var(--panel);
+  border: 1.5px dashed var(--panel-line);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  font-size: 0.96rem;
+  margin-bottom: 1rem;
+}
+.mini-passage mark { background: none; font-weight: 700; }
+.mini-subhead {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--brand-deep);
+  margin-bottom: 0.8rem;
+}
+
+.q {
+  margin: 0 0 0.8rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--panel);
+  border: 2px solid var(--panel-line);
+  border-radius: 12px;
+}
+.q.correct { background: var(--light-correct); border-color: var(--correct); }
+.q.wrong { background: var(--light-wrong); border-color: var(--wrong); }
+.q-legend { font-size: 0.94rem; margin: 0 0 0.5rem; font-weight: 600; }
+.tf-options { display: flex; gap: 1.4rem; }
+.tf-options label { display: flex; align-items: center; gap: 0.4rem; font-family: var(--font-body); font-weight: 600; font-size: 0.85rem; cursor: pointer; }
+
+.mc-options { display: flex; flex-direction: column; gap: 0.45rem; }
+.mc-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  border-radius: 9px;
+  transition: background 0.12s ease;
+}
+.mc-options label:hover { background: rgba(255,255,255,0.6); }
+.mc-options .opt-letter {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--panel-line);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--ink-soft);
+}
+
+.exam-sec {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 0.2rem;
+  margin: 1.6rem 0 0.9rem;
+}
+.exam-sec:first-of-type { margin-top: 0; }
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  margin-top: 2.5rem;
+  padding: 0 1.2rem;
+}
+
+@media (max-width: 560px) {
+  .tabbtn { min-width: 30%; }
+  .topic-head { flex-wrap: wrap; }
+  .topic-head h2 { font-size: 1.3rem; }
+  .exercise { padding: 1.1rem 1.2rem; }
+  .tf-options { flex-direction: column; gap: 0.4rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <h1>Review: Units 21–26</h1>
+</header>
+
+<nav class="tabnav">
+  <button class="tabbtn active" id="tab-topic-1" style="--accent: var(--c1);" onclick="switchTab('topic-1', this)"><span class="tb-unit">Units 21.1, 21.6</span><span class="tb-label">There is / are</span></button>
+  <button class="tabbtn" id="tab-topic-2" style="--accent: var(--c2);" onclick="switchTab('topic-2', this)"><span class="tb-unit">Unit 22.1</span><span class="tb-label">Articles</span></button>
+  <button class="tabbtn" id="tab-topic-3" style="--accent: var(--c3);" onclick="switchTab('topic-3', this)"><span class="tb-unit">Unit 22.8</span><span class="tb-label">Any / Some</span></button>
+  <button class="tabbtn" id="tab-topic-4" style="--accent: var(--c4);" onclick="switchTab('topic-4', this)"><span class="tb-unit">Unit 23.1</span><span class="tb-label">Imperatives</span></button>
+  <button class="tabbtn" id="tab-topic-5" style="--accent: var(--c5);" onclick="switchTab('topic-5', this)"><span class="tb-unit">Units 24.1, 24.7</span><span class="tb-label">Joining Sentences</span></button>
+  <button class="tabbtn" id="tab-topic-6" style="--accent: var(--c6);" onclick="switchTab('topic-6', this)"><span class="tb-unit">Units 25.1, 25.4</span><span class="tb-label">Adjectives</span></button>
+  <button class="tabbtn" id="tab-topic-7" style="--accent: var(--c7);" onclick="switchTab('topic-7', this)"><span class="tb-unit">Unit 26.1</span><span class="tb-label">Because</span></button>
+  <button class="tabbtn" id="tab-topic-8" style="--accent: var(--c8);" onclick="switchTab('topic-8', this)"><span class="tb-unit">Units 21–26</span><span class="tb-label">Final Exam</span></button>
+</nav>
+
+<main class="page">
+
+  <!-- ══════════════ TOPIC 1 · USING "THERE IS" AND "THERE ARE" ══════════════ -->
+  <section class="panel active" id="panel-topic-1" style="--accent: var(--c1);">
+    <div class="topic-head">
+      <span class="topic-num">Units 21.1, 21.6</span>
+      <h2>Using "there is" and "there are"</h2>
+    </div>
+    <p class="rule">Use <mark style="background:none;color:var(--c1);font-weight:600;">There is</mark> for one thing and <mark style="background:none;color:var(--c1);font-weight:600;">There are</mark> for more than one, to say that something exists. Make it negative with <mark style="background:none;color:var(--c1);font-weight:600;">There isn't</mark> or <mark style="background:none;color:var(--c1);font-weight:600;">There aren't</mark>. We often contract "there is" to <mark style="background:none;color:var(--c1);font-weight:600;">There's</mark>.</p>
+    <div class="examples">
+      <span><mark>There is</mark> a hospital.</span>
+      <span><mark>There are</mark> three hospitals.</span>
+      <span><mark>There isn't</mark> a school.</span>
+      <span><mark>There aren't any</mark> schools.</span>
+      <span><mark>There's</mark> a park nearby.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">There is / There are</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th></th><th>Positive</th><th>Negative</th></tr>
+        <tr><td><strong>Singular</strong></td><td class="hl">There is / There's</td><td>There isn't</td></tr>
+        <tr><td><strong>Plural</strong></td><td class="hl">There are</td><td>There aren't</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">We use "any" with plural negatives and questions: "There aren't any schools," "Are there any schools?"</p>
+
+    <div class="exercise" data-nav="tab-topic-1" data-mode="select">
+      <h3>Grammar practice: complete each sentence</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">one hospital</span> <select class="blank" data-answer="There is"><option value="">choose…</option><option>There isn't</option><option>There are</option><option>There is</option></select> a hospital nearby.</li>
+        <li><span class="ex-cue">three hospitals</span> <select class="blank" data-answer="There are"><option value="">choose…</option><option>There is</option><option>There are</option><option>There aren't</option></select> three hospitals in this town.</li>
+        <li><span class="ex-cue">no school here</span> <select class="blank" data-answer="There isn't"><option value="">choose…</option><option>There is</option><option>There aren't</option><option>There isn't</option></select> a school in this village.</li>
+        <li><span class="ex-cue">no stores here (plural)</span> <select class="blank" data-answer="There aren't"><option value="">choose…</option><option>There aren't</option><option>There isn't</option><option>There are</option></select> any stores nearby.</li>
+        <li><span class="ex-cue">a contraction</span> <select class="blank" data-answer="There's"><option value="">choose…</option><option>There's</option><option>There're</option><option>There is a</option></select> a park across the street.</li>
+        <li><span class="ex-cue">asking about hotels</span> <select class="blank" data-answer="Are there"><option value="">choose…</option><option>Is there</option><option>There are</option><option>Are there</option></select> any hotels in town?</li>
+        <li><span class="ex-cue">asking about a bank</span> <select class="blank" data-answer="Is there"><option value="">choose…</option><option>Are there</option><option>Is there</option><option>There is</option></select> a bank nearby?</li>
+        <li><span class="ex-cue">two restaurants</span> <select class="blank" data-answer="There are"><option value="">choose…</option><option>There are</option><option>There isn't</option><option>There is</option></select> two restaurants on this street.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-1" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">Welcome to Maple Town! <mark style="color:var(--c1);">There is a small hospital</mark> on Main Street, and <mark style="color:var(--c1);">there are two schools</mark> nearby. <mark style="color:var(--c1);">There isn't a train station</mark>, but <mark style="color:var(--c1);">there's a bus stop</mark> on every corner. <mark style="color:var(--c1);">Are there any hotels?</mark> Yes, <mark style="color:var(--c1);">there are three hotels</mark> near the park. There isn't a supermarket in the center, but there are two just outside town. There aren't many restaurants, but the few that exist are excellent.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. There is a hospital in Maple Town.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. There is a hospital in Maple Town.">
+          <label><input type="radio" name="t1q1" value="True"> True</label>
+          <label><input type="radio" name="t1q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">2. There is a train station.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. There is a train station.">
+          <label><input type="radio" name="t1q2" value="True"> True</label>
+          <label><input type="radio" name="t1q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">3. There are three hotels near the park.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. There are three hotels near the park.">
+          <label><input type="radio" name="t1q3" value="True"> True</label>
+          <label><input type="radio" name="t1q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">4. There is a supermarket in the center.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. There is a supermarket in the center.">
+          <label><input type="radio" name="t1q4" value="True"> True</label>
+          <label><input type="radio" name="t1q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. There are many restaurants in town.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. There are many restaurants in town.">
+          <label><input type="radio" name="t1q5" value="True"> True</label>
+          <label><input type="radio" name="t1q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 2 · ARTICLES ══════════════ -->
+  <section class="panel" id="panel-topic-2" style="--accent: var(--c2);">
+    <div class="topic-head">
+      <span class="topic-num">Unit 22.1</span>
+      <h2>Articles</h2>
+    </div>
+    <p class="rule">Use <mark style="background:none;color:var(--c2);font-weight:600;">a</mark> or <mark style="background:none;color:var(--c2);font-weight:600;">an</mark> for one thing when it isn't specific, or when you mention it for the first time. Use <mark style="background:none;color:var(--c2);font-weight:600;">the</mark> when the listener already knows which one you mean.</p>
+    <div class="examples">
+      <span>I work in <mark>a library</mark>.</span>
+      <span>I work in <mark>the library</mark> on Main Street.</span>
+      <span>She bought a book. <mark>The book</mark> was expensive.</span>
+      <span><mark>The sun</mark> is bright today.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">a/an vs. the</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Article</th><th>Use</th><th>Example</th></tr>
+        <tr><td class="hl">a / an</td><td>first mention, not specific</td><td>I saw a cat.</td></tr>
+        <tr><td class="hl">the</td><td>already known, specific</td><td>The cat is mine.</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">We use "the" for things that are unique, like the sun, the moon, or the internet.</p>
+
+    <div class="exercise" data-nav="tab-topic-2" data-mode="select">
+      <h3>Grammar practice: choose a, an, or the</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">first mention</span> I saw <select class="blank" data-answer="a"><option value="">choose…</option><option>an</option><option>a</option><option>the</option></select> cat in the yard.</li>
+        <li><span class="ex-cue">already mentioned</span> <select class="blank" data-answer="The"><option value="">choose…</option><option>An</option><option>The</option><option>A</option></select> cat was orange.</li>
+        <li><span class="ex-cue">a unique thing</span> <select class="blank" data-answer="The"><option value="">choose…</option><option>A</option><option>An</option><option>The</option></select> sun rose early today.</li>
+        <li><span class="ex-cue">first mention, vowel sound</span> She bought <select class="blank" data-answer="an"><option value="">choose…</option><option>the</option><option>an</option><option>a</option></select> apple.</li>
+        <li><span class="ex-cue">specific, already known place</span> I work in <select class="blank" data-answer="the"><option value="">choose…</option><option>a</option><option>the</option><option>an</option></select> library on Main Street.</li>
+        <li><span class="ex-cue">not specific</span> I need <select class="blank" data-answer="a"><option value="">choose…</option><option>the</option><option>an</option><option>a</option></select> pen.</li>
+        <li><span class="ex-cue">already known</span> Where is <select class="blank" data-answer="the"><option value="">choose…</option><option>a</option><option>the</option><option>an</option></select> pen I gave you?</li>
+        <li><span class="ex-cue">first mention</span> He has <select class="blank" data-answer="a"><option value="">choose…</option><option>a</option><option>an</option><option>the</option></select> dog.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-2" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">Yesterday, Mia went to <mark style="color:var(--c2);">a bookstore</mark> near her house. She found <mark style="color:var(--c2);">a book about gardening</mark>. <mark style="color:var(--c2);">The book had</mark> beautiful pictures, so she bought it. On her way home, she saw <mark style="color:var(--c2);">a cat</mark> sitting near a fence. <mark style="color:var(--c2);">The cat looked</mark> hungry, so Mia gave it some food. Later, she read <mark style="color:var(--c2);">the book she bought</mark>. The pictures inside were even better than the cover.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="False">
+        <p class="q-legend">1. Mia bought a book about cooking.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. Mia bought a book about cooking.">
+          <label><input type="radio" name="t2q1" value="True"> True</label>
+          <label><input type="radio" name="t2q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">2. The book had beautiful pictures.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. The book had beautiful pictures.">
+          <label><input type="radio" name="t2q2" value="True"> True</label>
+          <label><input type="radio" name="t2q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">3. Mia saw a dog near a fence.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. Mia saw a dog near a fence.">
+          <label><input type="radio" name="t2q3" value="True"> True</label>
+          <label><input type="radio" name="t2q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. Mia gave the cat some food.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. Mia gave the cat some food.">
+          <label><input type="radio" name="t2q4" value="True"> True</label>
+          <label><input type="radio" name="t2q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. The pictures inside the book were worse than the cover.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. The pictures inside the book were worse than the cover.">
+          <label><input type="radio" name="t2q5" value="True"> True</label>
+          <label><input type="radio" name="t2q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 3 · USING "ANY" AND "SOME" ══════════════ -->
+  <section class="panel" id="panel-topic-3" style="--accent: var(--c3);">
+    <div class="topic-head">
+      <span class="topic-num">Unit 22.8</span>
+      <h2>Using "any" and "some"</h2>
+    </div>
+    <p class="rule">Use <mark style="background:none;color:var(--c3);font-weight:600;">some</mark> in positive sentences for an unspecified amount. Use <mark style="background:none;color:var(--c3);font-weight:600;">any</mark> in questions and negative sentences.</p>
+    <div class="examples">
+      <span>Are there <mark>any</mark> hotels?</span>
+      <span>There are <mark>some</mark> hotels.</span>
+      <span>I have <mark>some</mark> money.</span>
+      <span>I don't have <mark>any</mark> money.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">any vs. some</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Sentence type</th><th>Word</th><th>Example</th></tr>
+        <tr><td>Positive</td><td class="hl">some</td><td>There are some apples.</td></tr>
+        <tr><td>Question</td><td class="hl">any</td><td>Are there any apples?</td></tr>
+        <tr><td>Negative</td><td class="hl">any</td><td>There aren't any apples.</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">We can also use "some" in a question when offering or asking for something: "Would you like some tea?"</p>
+
+    <div class="exercise" data-nav="tab-topic-3" data-mode="select">
+      <h3>Grammar practice: choose any or some</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">positive statement</span> There are <select class="blank" data-answer="some"><option value="">choose…</option><option>some</option><option>any</option></select> hotels near the station.</li>
+        <li><span class="ex-cue">question</span> Are there <select class="blank" data-answer="any"><option value="">choose…</option><option>some</option><option>any</option></select> hotels in town?</li>
+        <li><span class="ex-cue">negative</span> I don't have <select class="blank" data-answer="any"><option value="">choose…</option><option>any</option><option>some</option></select> money left.</li>
+        <li><span class="ex-cue">positive</span> She bought <select class="blank" data-answer="some"><option value="">choose…</option><option>any</option><option>some</option></select> apples at the market.</li>
+        <li><span class="ex-cue">question</span> Do you have <select class="blank" data-answer="any"><option value="">choose…</option><option>some</option><option>any</option></select> questions?</li>
+        <li><span class="ex-cue">negative</span> There isn't <select class="blank" data-answer="any"><option value="">choose…</option><option>some</option><option>any</option></select> milk in the fridge.</li>
+        <li><span class="ex-cue">positive</span> We need <select class="blank" data-answer="some"><option value="">choose…</option><option>any</option><option>some</option></select> more chairs for the party.</li>
+        <li><span class="ex-cue">offering something</span> Would you like <select class="blank" data-answer="some"><option value="">choose…</option><option>any</option><option>some</option></select> coffee?</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-3" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">At the grocery store, Leo checks his list. "Do we have any eggs?" his mother asks. "Yes, we have <mark style="color:var(--c3);">some eggs</mark>," he says, "but we don't have <mark style="color:var(--c3);">any milk</mark>." They walk to the dairy section and find <mark style="color:var(--c3);">some milk</mark>. "<mark style="color:var(--c3);">Are there any apples</mark> on sale?" his mother asks. "There are <mark style="color:var(--c3);">some apples</mark> over here," Leo says, pointing. At the checkout, the cashier asks, "Would you like some bags?" "Yes, please," says Leo's mother. "We don't have <mark style="color:var(--c3);">any with us</mark> today."</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. Leo's family has some eggs.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. Leo's family has some eggs.">
+          <label><input type="radio" name="t3q1" value="True"> True</label>
+          <label><input type="radio" name="t3q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">2. They already have milk at home.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. They already have milk at home.">
+          <label><input type="radio" name="t3q2" value="True"> True</label>
+          <label><input type="radio" name="t3q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">3. There are some apples on sale.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. There are some apples on sale.">
+          <label><input type="radio" name="t3q3" value="True"> True</label>
+          <label><input type="radio" name="t3q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. The cashier offers them some bags.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. The cashier offers them some bags.">
+          <label><input type="radio" name="t3q4" value="True"> True</label>
+          <label><input type="radio" name="t3q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. Leo's mother has her own bags with her.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. Leo's mother has her own bags with her.">
+          <label><input type="radio" name="t3q5" value="True"> True</label>
+          <label><input type="radio" name="t3q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 4 · IMPERATIVES ══════════════ -->
+  <section class="panel" id="panel-topic-4" style="--accent: var(--c4);">
+    <div class="topic-head">
+      <span class="topic-num">Unit 23.1</span>
+      <h2>Imperatives</h2>
+    </div>
+    <p class="rule">Use the <mark style="background:none;color:var(--c4);font-weight:600;">base form</mark> of the verb, with <mark style="background:none;color:var(--c4);font-weight:600;">no subject</mark>, to give a command, instruction, or warning. Add <mark style="background:none;color:var(--c4);font-weight:600;">Don't</mark> before the verb to make it negative.</p>
+    <div class="examples">
+      <span><mark>Stop!</mark> <mark>Be</mark> careful!</span>
+      <span><mark>Open</mark> the door.</span>
+      <span><mark>Don't touch</mark> that.</span>
+      <span><mark>Turn</mark> left at the corner.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Forming imperatives</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Type</th><th>Form</th><th>Example</th></tr>
+        <tr><td>Positive command</td><td class="hl">base verb</td><td>Close the window.</td></tr>
+        <tr><td>Negative command</td><td class="hl">Don't + base verb</td><td>Don't touch that.</td></tr>
+        <tr><td>Polite request</td><td class="hl">Please + base verb</td><td>Please wait here.</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">Imperatives don't use a subject pronoun — we say "Stop!" not "You stop!"</p>
+
+    <div class="exercise" data-nav="tab-topic-4" data-mode="select">
+      <h3>Grammar practice: complete each command</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">warn someone about danger</span> <select class="blank" data-answer="Be"><option value="">choose…</option><option>Are</option><option>Is</option><option>Be</option></select> careful!</li>
+        <li><span class="ex-cue">telling someone to stop</span> <select class="blank" data-answer="Stop"><option value="">choose…</option><option>Stopping</option><option>Stop</option><option>Stops</option></select> right there!</li>
+        <li><span class="ex-cue">negative command</span> <select class="blank" data-answer="Don't"><option value="">choose…</option><option>Not</option><option>Don't</option><option>No</option></select> touch the stove.</li>
+        <li><span class="ex-cue">giving a direction</span> <select class="blank" data-answer="Turn"><option value="">choose…</option><option>Turn</option><option>Turning</option><option>Turns</option></select> left at the light.</li>
+        <li><span class="ex-cue">polite request</span> <select class="blank" data-answer="Please"><option value="">choose…</option><option>You</option><option>Can</option><option>Please</option></select> sit down.</li>
+        <li><span class="ex-cue">negative command</span> <select class="blank" data-answer="Don't"><option value="">choose…</option><option>Don't</option><option>No</option><option>Not</option></select> forget your keys.</li>
+        <li><span class="ex-cue">instruction</span> <select class="blank" data-answer="Close"><option value="">choose…</option><option>Closes</option><option>Closing</option><option>Close</option></select> the door before you leave.</li>
+        <li><span class="ex-cue">base verb, no subject</span> <select class="blank" data-answer="Be"><option value="">choose…</option><option>You are</option><option>Are</option><option>Be</option></select> quiet in the library.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-4" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">The lifeguard blows her whistle. "<mark style="color:var(--c4);">Stop!</mark>" she shouts to a boy near the deep end. "<mark style="color:var(--c4);">Don't swim past the rope</mark>," she warns him. "<mark style="color:var(--c4);">Be careful</mark>, everyone!" she calls to the group. A younger child runs near the pool. "<mark style="color:var(--c4);">Don't run!</mark>" the lifeguard says firmly. "Walk, please." Later, she reminds everyone, "<mark style="color:var(--c4);">Please listen</mark> for the whistle. When you hear it, get out of the water immediately." Everyone nods and follows her instructions.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="False">
+        <p class="q-legend">1. The lifeguard tells the boy to keep swimming past the rope.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. The lifeguard tells the boy to keep swimming past the rope.">
+          <label><input type="radio" name="t4q1" value="True"> True</label>
+          <label><input type="radio" name="t4q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">2. The lifeguard warns the group to be careful.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. The lifeguard warns the group to be careful.">
+          <label><input type="radio" name="t4q2" value="True"> True</label>
+          <label><input type="radio" name="t4q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">3. The younger child is told to run faster.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. The younger child is told to run faster.">
+          <label><input type="radio" name="t4q3" value="True"> True</label>
+          <label><input type="radio" name="t4q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. Everyone should get out of the water when they hear the whistle.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. Everyone should get out of the water when they hear the whistle.">
+          <label><input type="radio" name="t4q4" value="True"> True</label>
+          <label><input type="radio" name="t4q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. The lifeguard never gives any instructions.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. The lifeguard never gives any instructions.">
+          <label><input type="radio" name="t4q5" value="True"> True</label>
+          <label><input type="radio" name="t4q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 5 · JOINING SENTENCES ══════════════ -->
+  <section class="panel" id="panel-topic-5" style="--accent: var(--c5);">
+    <div class="topic-head">
+      <span class="topic-num">Units 24.1, 24.7</span>
+      <h2>Joining sentences</h2>
+    </div>
+    <p class="rule">Use <mark style="background:none;color:var(--c5);font-weight:600;">and</mark> to join two similar ideas. Use <mark style="background:none;color:var(--c5);font-weight:600;">but</mark> to join two contrasting ideas. Add a comma before "but" when it joins two full sentences.</p>
+    <div class="examples">
+      <span>There's a library <mark>and</mark> a restaurant.</span>
+      <span>There's a hotel, <mark>but</mark> there isn't a store.</span>
+      <span>I like tea <mark>and</mark> coffee.</span>
+      <span>She is tired, <mark>but</mark> she keeps working.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">and vs. but</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Word</th><th>Use</th><th>Example</th></tr>
+        <tr><td class="hl">and</td><td>joins similar ideas</td><td>a library and a restaurant</td></tr>
+        <tr><td class="hl">but</td><td>joins contrasting ideas</td><td>a hotel, but no store</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">Use a comma before "but" when it joins two full sentences: "There's a hotel, but there isn't a store."</p>
+
+    <div class="exercise" data-nav="tab-topic-5" data-mode="select">
+      <h3>Grammar practice: choose and or but</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">two similar things</span> There's a park <select class="blank" data-answer="and"><option value="">choose…</option><option>and</option><option>but</option></select> a playground.</li>
+        <li><span class="ex-cue">a contrast</span> The town is small, <select class="blank" data-answer="but"><option value="">choose…</option><option>but</option><option>and</option></select> it is very friendly.</li>
+        <li><span class="ex-cue">two similar things</span> I like apples <select class="blank" data-answer="and"><option value="">choose…</option><option>but</option><option>and</option></select> oranges.</li>
+        <li><span class="ex-cue">a contrast</span> He wanted to come, <select class="blank" data-answer="but"><option value="">choose…</option><option>and</option><option>but</option></select> he was too tired.</li>
+        <li><span class="ex-cue">two similar things</span> There's a bank <select class="blank" data-answer="and"><option value="">choose…</option><option>but</option><option>and</option></select> a post office.</li>
+        <li><span class="ex-cue">a contrast</span> The hotel is nice, <select class="blank" data-answer="but"><option value="">choose…</option><option>and</option><option>but</option></select> it is expensive.</li>
+        <li><span class="ex-cue">two similar things</span> We visited Paris <select class="blank" data-answer="and"><option value="">choose…</option><option>but</option><option>and</option></select> Rome.</li>
+        <li><span class="ex-cue">a contrast</span> She studied hard, <select class="blank" data-answer="but"><option value="">choose…</option><option>but</option><option>and</option></select> she still failed.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-5" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">Our town has a lot to offer. There's <mark style="color:var(--c5);">a library and a museum</mark>, and both are free to visit. There's <mark style="color:var(--c5);">a nice park, but</mark> it doesn't have a playground yet. The restaurants are <mark style="color:var(--c5);">excellent, but they can be</mark> expensive. We have <mark style="color:var(--c5);">a train station and a bus stop</mark>, so getting around is easy. The weather is usually <mark style="color:var(--c5);">sunny, but it can get cold</mark> in winter. Overall, it's a <mark style="color:var(--c5);">great place to live, and</mark> most people love it here.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. The library and museum are free to visit.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. The library and museum are free to visit.">
+          <label><input type="radio" name="t5q1" value="True"> True</label>
+          <label><input type="radio" name="t5q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">2. The park has a playground.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. The park has a playground.">
+          <label><input type="radio" name="t5q2" value="True"> True</label>
+          <label><input type="radio" name="t5q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">3. The restaurants are always cheap.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. The restaurants are always cheap.">
+          <label><input type="radio" name="t5q3" value="True"> True</label>
+          <label><input type="radio" name="t5q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. The town has both a train station and a bus stop.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. The town has both a train station and a bus stop.">
+          <label><input type="radio" name="t5q4" value="True"> True</label>
+          <label><input type="radio" name="t5q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. Most people dislike living in the town.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. Most people dislike living in the town.">
+          <label><input type="radio" name="t5q5" value="True"> True</label>
+          <label><input type="radio" name="t5q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 6 · USING ADJECTIVES ══════════════ -->
+  <section class="panel" id="panel-topic-6" style="--accent: var(--c6);">
+    <div class="topic-head">
+      <span class="topic-num">Units 25.1, 25.4</span>
+      <h2>Using adjectives</h2>
+    </div>
+    <p class="rule">An <mark style="background:none;color:var(--c6);font-weight:600;">adjective</mark> describes a noun. It can come <mark style="background:none;color:var(--c6);font-weight:600;">before the noun</mark>, or <mark style="background:none;color:var(--c6);font-weight:600;">after "to be"</mark>. Adjectives <mark style="background:none;color:var(--c6);font-weight:600;">don't change</mark> form for singular or plural nouns.</p>
+    <div class="examples">
+      <span>She is a <mark>busy</mark> woman.</span>
+      <span>It is a <mark>busy</mark> town.</span>
+      <span>The town is <mark>busy</mark>.</span>
+      <span>It is <mark>busy</mark>.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Where adjectives go</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Position</th><th>Example</th></tr>
+        <tr><td class="hl">Before the noun</td><td>a busy town</td></tr>
+        <tr><td class="hl">After to be</td><td>The town is busy.</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">Adjectives never take a plural -s in English: we say "busy towns," not "busies towns."</p>
+
+    <div class="exercise" data-nav="tab-topic-6" data-mode="select">
+      <h3>Grammar practice: complete each sentence</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">before the noun (busy)</span> She is a <select class="blank" data-answer="busy"><option value="">choose…</option><option>busys</option><option>busy</option><option>busies</option></select> woman.</li>
+        <li><span class="ex-cue">after to be (busy)</span> The town is <select class="blank" data-answer="busy"><option value="">choose…</option><option>busies</option><option>busy</option><option>busily</option></select>.</li>
+        <li><span class="ex-cue">before the noun, plural (busy)</span> They have <select class="blank" data-answer="busy"><option value="">choose…</option><option>busy</option><option>busies</option><option>busys</option></select> jobs.</li>
+        <li><span class="ex-cue">after to be (hot)</span> The soup is <select class="blank" data-answer="hot"><option value="">choose…</option><option>hots</option><option>hotly</option><option>hot</option></select>.</li>
+        <li><span class="ex-cue">before the noun (hot)</span> It's a <select class="blank" data-answer="hot"><option value="">choose…</option><option>hot</option><option>hots</option><option>hotter</option></select> day.</li>
+        <li><span class="ex-cue">after to be, plural subject (small)</span> The rooms are <select class="blank" data-answer="small"><option value="">choose…</option><option>smalls</option><option>small</option><option>smally</option></select>.</li>
+        <li><span class="ex-cue">before the noun (small)</span> We live in a <select class="blank" data-answer="small"><option value="">choose…</option><option>smaller</option><option>smalls</option><option>small</option></select> house.</li>
+        <li><span class="ex-cue">adjectives don't change for plural nouns (big)</span> I have three <select class="blank" data-answer="big"><option value="">choose…</option><option>bigs</option><option>big</option><option>biggies</option></select> dogs.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-6" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">The city center is always <mark style="color:var(--c6);">busy</mark>. There are <mark style="color:var(--c6);">busy</mark> streets, <mark style="color:var(--c6);">busy</mark> shops, and <mark style="color:var(--c6);">busy</mark> people everywhere. Ana works in a <mark style="color:var(--c6);">small</mark> office near the busy market. The office is quiet, but the street outside is loud. Her apartment is <mark style="color:var(--c6);">small</mark>, but it's comfortable. On weekends, the city feels less busy, and Ana enjoys the quiet mornings. Her friend says the city is too busy for her, but Ana loves the energy.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="False">
+        <p class="q-legend">1. The city center is quiet.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. The city center is quiet.">
+          <label><input type="radio" name="t6q1" value="True"> True</label>
+          <label><input type="radio" name="t6q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">2. Ana's office is near the busy market.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. Ana's office is near the busy market.">
+          <label><input type="radio" name="t6q2" value="True"> True</label>
+          <label><input type="radio" name="t6q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">3. Ana's apartment is large.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. Ana's apartment is large.">
+          <label><input type="radio" name="t6q3" value="True"> True</label>
+          <label><input type="radio" name="t6q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. The city feels less busy on weekends.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. The city feels less busy on weekends.">
+          <label><input type="radio" name="t6q4" value="True"> True</label>
+          <label><input type="radio" name="t6q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. Ana's friend loves the city's busy energy as much as Ana does.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. Ana's friend loves the city's busy energy as much as Ana does.">
+          <label><input type="radio" name="t6q5" value="True"> True</label>
+          <label><input type="radio" name="t6q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 7 · USING "BECAUSE" ══════════════ -->
+  <section class="panel" id="panel-topic-7" style="--accent: var(--c7);">
+    <div class="topic-head">
+      <span class="topic-num">Unit 26.1</span>
+      <h2>Using "because"</h2>
+    </div>
+    <p class="rule">Use <mark style="background:none;color:var(--c7);font-weight:600;">because</mark> to give a <mark style="background:none;color:var(--c7);font-weight:600;">reason</mark> for something. It comes before a full <mark style="background:none;color:var(--c7);font-weight:600;">clause</mark> — a subject plus a verb, not just a noun.</p>
+    <div class="examples">
+      <span>I live in the countryside <mark>because</mark> it's beautiful.</span>
+      <span>She is tired <mark>because</mark> she worked all night.</span>
+      <span>We stayed inside <mark>because</mark> it was raining.</span>
+      <span>He studies English <mark>because</mark> he wants to travel.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Using because</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Structure</th><th>Example</th></tr>
+        <tr><td class="hl">result + because + reason</td><td>I live here because it's quiet.</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">"Because" always introduces a reason — a full clause with its own subject and verb, not just a noun.</p>
+
+    <div class="exercise" data-nav="tab-topic-7" data-mode="select">
+      <h3>Grammar practice: complete each sentence with because</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">giving a reason</span> I live in the countryside <select class="blank" data-answer="because"><option value="">choose…</option><option>because</option><option>but</option><option>and</option></select> it's beautiful.</li>
+        <li><span class="ex-cue">giving a reason</span> She is tired <select class="blank" data-answer="because"><option value="">choose…</option><option>so</option><option>because</option><option>and</option></select> she worked all night.</li>
+        <li><span class="ex-cue">giving a reason</span> We stayed inside <select class="blank" data-answer="because"><option value="">choose…</option><option>because</option><option>and</option><option>but</option></select> it was raining.</li>
+        <li><span class="ex-cue">giving a reason</span> He studies English <select class="blank" data-answer="because"><option value="">choose…</option><option>and</option><option>but</option><option>because</option></select> he wants to travel.</li>
+        <li><span class="ex-cue">giving a reason</span> They moved <select class="blank" data-answer="because"><option value="">choose…</option><option>because</option><option>but</option><option>and</option></select> their old house was too small.</li>
+        <li><span class="ex-cue">giving a reason</span> I'm happy <select class="blank" data-answer="because"><option value="">choose…</option><option>but</option><option>and</option><option>because</option></select> it's Friday.</li>
+        <li><span class="ex-cue">giving a reason</span> She left early <select class="blank" data-answer="because"><option value="">choose…</option><option>because</option><option>and</option><option>but</option></select> she felt sick.</li>
+        <li><span class="ex-cue">giving a reason</span> We chose this house <select class="blank" data-answer="because"><option value="">choose…</option><option>and</option><option>but</option><option>because</option></select> it has a big garden.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-7" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">Diego decided to move to a small town <mark style="color:var(--c7);">because he wanted a quieter life</mark>. He chose this house <mark style="color:var(--c7);">because it has a big garden</mark>. His neighbors are friendly <mark style="color:var(--c7);">because they welcome everyone</mark> with open arms. Diego walks to work <mark style="color:var(--c7);">because the office is close by</mark>. He doesn't own a car <mark style="color:var(--c7);">because he doesn't need one</mark> here. On weekends, he visits the market because the fresh food is wonderful. Diego is happy <mark style="color:var(--c7);">because he made the right choice</mark>.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="False">
+        <p class="q-legend">1. Diego moved to a big city.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. Diego moved to a big city.">
+          <label><input type="radio" name="t7q1" value="True"> True</label>
+          <label><input type="radio" name="t7q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">2. Diego's house has a big garden.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. Diego's house has a big garden.">
+          <label><input type="radio" name="t7q2" value="True"> True</label>
+          <label><input type="radio" name="t7q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">3. Diego drives to work every day.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. Diego drives to work every day.">
+          <label><input type="radio" name="t7q3" value="True"> True</label>
+          <label><input type="radio" name="t7q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. Diego visits the market on weekends.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. Diego visits the market on weekends.">
+          <label><input type="radio" name="t7q4" value="True"> True</label>
+          <label><input type="radio" name="t7q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. Diego regrets his decision to move.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. Diego regrets his decision to move.">
+          <label><input type="radio" name="t7q5" value="True"> True</label>
+          <label><input type="radio" name="t7q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 8 · FINAL EXAM ══════════════ -->
+  <section class="panel" id="panel-topic-8" style="--accent: var(--c8);">
+    <div class="topic-head">
+      <span class="topic-num">Units 21–26</span>
+      <h2>Final exam</h2>
+    </div>
+    <p class="rule">This 35-question exam covers every topic in this review: "there is"/"there are," articles, "any"/"some," imperatives, joining sentences, adjectives, and "because." Choose the best answer for each question, then press <mark style="background:none;color:var(--c8);font-weight:600;">Check answers</mark> at the bottom to see your score.</p>
+
+    <div class="exercise" data-nav="tab-topic-8" data-mode="radio">
+      <h3 class="exam-sec">Using "there is" and "there are"</h3>
+      <div class="q" data-answer="There is">
+        <p class="q-legend">1. ____ a hospital nearby.</p>
+        <div class="mc-options" role="radiogroup" aria-label="1. ____ a hospital nearby.">
+          <label><input type="radio" name="examq1" value="There is"><span class="opt-letter">A</span> There is</label>
+          <label><input type="radio" name="examq1" value="There are"><span class="opt-letter">B</span> There are</label>
+          <label><input type="radio" name="examq1" value="There isn't"><span class="opt-letter">C</span> There isn't</label>
+          <label><input type="radio" name="examq1" value="There aren't"><span class="opt-letter">D</span> There aren't</label>
+        </div>
+      </div>
+      <div class="q" data-answer="There are">
+        <p class="q-legend">2. ____ three hospitals in town.</p>
+        <div class="mc-options" role="radiogroup" aria-label="2. ____ three hospitals in town.">
+          <label><input type="radio" name="examq2" value="There isn't"><span class="opt-letter">A</span> There isn't</label>
+          <label><input type="radio" name="examq2" value="There are"><span class="opt-letter">B</span> There are</label>
+          <label><input type="radio" name="examq2" value="There is"><span class="opt-letter">C</span> There is</label>
+          <label><input type="radio" name="examq2" value="There aren't"><span class="opt-letter">D</span> There aren't</label>
+        </div>
+      </div>
+      <div class="q" data-answer="There isn't">
+        <p class="q-legend">3. ____ a school in this village.</p>
+        <div class="mc-options" role="radiogroup" aria-label="3. ____ a school in this village.">
+          <label><input type="radio" name="examq3" value="There aren't"><span class="opt-letter">A</span> There aren't</label>
+          <label><input type="radio" name="examq3" value="There are"><span class="opt-letter">B</span> There are</label>
+          <label><input type="radio" name="examq3" value="There isn't"><span class="opt-letter">C</span> There isn't</label>
+          <label><input type="radio" name="examq3" value="There is"><span class="opt-letter">D</span> There is</label>
+        </div>
+      </div>
+      <div class="q" data-answer="There aren't">
+        <p class="q-legend">4. ____ any stores nearby.</p>
+        <div class="mc-options" role="radiogroup" aria-label="4. ____ any stores nearby.">
+          <label><input type="radio" name="examq4" value="There isn't"><span class="opt-letter">A</span> There isn't</label>
+          <label><input type="radio" name="examq4" value="There is"><span class="opt-letter">B</span> There is</label>
+          <label><input type="radio" name="examq4" value="There are"><span class="opt-letter">C</span> There are</label>
+          <label><input type="radio" name="examq4" value="There aren't"><span class="opt-letter">D</span> There aren't</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Are there any hotels?">
+        <p class="q-legend">5. Which question is correctly formed?</p>
+        <div class="mc-options" role="radiogroup" aria-label="5. Which question is correctly formed?">
+          <label><input type="radio" name="examq5" value="Are there any hotels?"><span class="opt-letter">A</span> Are there any hotels?</label>
+          <label><input type="radio" name="examq5" value="Is there any hotels?"><span class="opt-letter">B</span> Is there any hotels?</label>
+          <label><input type="radio" name="examq5" value="There are any hotels?"><span class="opt-letter">C</span> There are any hotels?</label>
+          <label><input type="radio" name="examq5" value="Are there a hotels?"><span class="opt-letter">D</span> Are there a hotels?</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Articles</h3>
+      <div class="q" data-answer="a">
+        <p class="q-legend">6. I saw ____ cat in the yard.</p>
+        <div class="mc-options" role="radiogroup" aria-label="6. I saw ____ cat in the yard.">
+          <label><input type="radio" name="examq6" value="the"><span class="opt-letter">A</span> the</label>
+          <label><input type="radio" name="examq6" value="a"><span class="opt-letter">B</span> a</label>
+          <label><input type="radio" name="examq6" value="an"><span class="opt-letter">C</span> an</label>
+          <label><input type="radio" name="examq6" value="some"><span class="opt-letter">D</span> some</label>
+        </div>
+      </div>
+      <div class="q" data-answer="The">
+        <p class="q-legend">7. ____ cat was orange.</p>
+        <div class="mc-options" role="radiogroup" aria-label="7. ____ cat was orange.">
+          <label><input type="radio" name="examq7" value="A"><span class="opt-letter">A</span> A</label>
+          <label><input type="radio" name="examq7" value="An"><span class="opt-letter">B</span> An</label>
+          <label><input type="radio" name="examq7" value="The"><span class="opt-letter">C</span> The</label>
+          <label><input type="radio" name="examq7" value="Some"><span class="opt-letter">D</span> Some</label>
+        </div>
+      </div>
+      <div class="q" data-answer="The">
+        <p class="q-legend">8. ____ sun rose early today.</p>
+        <div class="mc-options" role="radiogroup" aria-label="8. ____ sun rose early today.">
+          <label><input type="radio" name="examq8" value="A"><span class="opt-letter">A</span> A</label>
+          <label><input type="radio" name="examq8" value="An"><span class="opt-letter">B</span> An</label>
+          <label><input type="radio" name="examq8" value="Some"><span class="opt-letter">C</span> Some</label>
+          <label><input type="radio" name="examq8" value="The"><span class="opt-letter">D</span> The</label>
+        </div>
+      </div>
+      <div class="q" data-answer="an">
+        <p class="q-legend">9. She bought ____ apple.</p>
+        <div class="mc-options" role="radiogroup" aria-label="9. She bought ____ apple.">
+          <label><input type="radio" name="examq9" value="an"><span class="opt-letter">A</span> an</label>
+          <label><input type="radio" name="examq9" value="a"><span class="opt-letter">B</span> a</label>
+          <label><input type="radio" name="examq9" value="the"><span class="opt-letter">C</span> the</label>
+          <label><input type="radio" name="examq9" value="some"><span class="opt-letter">D</span> some</label>
+        </div>
+      </div>
+      <div class="q" data-answer="the">
+        <p class="q-legend">10. I work in ____ library on Main Street.</p>
+        <div class="mc-options" role="radiogroup" aria-label="10. I work in ____ library on Main Street.">
+          <label><input type="radio" name="examq10" value="a"><span class="opt-letter">A</span> a</label>
+          <label><input type="radio" name="examq10" value="the"><span class="opt-letter">B</span> the</label>
+          <label><input type="radio" name="examq10" value="an"><span class="opt-letter">C</span> an</label>
+          <label><input type="radio" name="examq10" value="some"><span class="opt-letter">D</span> some</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Using "any" and "some"</h3>
+      <div class="q" data-answer="some">
+        <p class="q-legend">11. There are ____ hotels near the station.</p>
+        <div class="mc-options" role="radiogroup" aria-label="11. There are ____ hotels near the station.">
+          <label><input type="radio" name="examq11" value="any"><span class="opt-letter">A</span> any</label>
+          <label><input type="radio" name="examq11" value="no"><span class="opt-letter">B</span> no</label>
+          <label><input type="radio" name="examq11" value="some"><span class="opt-letter">C</span> some</label>
+          <label><input type="radio" name="examq11" value="an"><span class="opt-letter">D</span> an</label>
+        </div>
+      </div>
+      <div class="q" data-answer="any">
+        <p class="q-legend">12. Are there ____ hotels in town?</p>
+        <div class="mc-options" role="radiogroup" aria-label="12. Are there ____ hotels in town?">
+          <label><input type="radio" name="examq12" value="some"><span class="opt-letter">A</span> some</label>
+          <label><input type="radio" name="examq12" value="no"><span class="opt-letter">B</span> no</label>
+          <label><input type="radio" name="examq12" value="an"><span class="opt-letter">C</span> an</label>
+          <label><input type="radio" name="examq12" value="any"><span class="opt-letter">D</span> any</label>
+        </div>
+      </div>
+      <div class="q" data-answer="any">
+        <p class="q-legend">13. I don't have ____ money left.</p>
+        <div class="mc-options" role="radiogroup" aria-label="13. I don't have ____ money left.">
+          <label><input type="radio" name="examq13" value="any"><span class="opt-letter">A</span> any</label>
+          <label><input type="radio" name="examq13" value="some"><span class="opt-letter">B</span> some</label>
+          <label><input type="radio" name="examq13" value="no"><span class="opt-letter">C</span> no</label>
+          <label><input type="radio" name="examq13" value="an"><span class="opt-letter">D</span> an</label>
+        </div>
+      </div>
+      <div class="q" data-answer="some">
+        <p class="q-legend">14. She bought ____ apples at the market.</p>
+        <div class="mc-options" role="radiogroup" aria-label="14. She bought ____ apples at the market.">
+          <label><input type="radio" name="examq14" value="any"><span class="opt-letter">A</span> any</label>
+          <label><input type="radio" name="examq14" value="some"><span class="opt-letter">B</span> some</label>
+          <label><input type="radio" name="examq14" value="no"><span class="opt-letter">C</span> no</label>
+          <label><input type="radio" name="examq14" value="an"><span class="opt-letter">D</span> an</label>
+        </div>
+      </div>
+      <div class="q" data-answer="any">
+        <p class="q-legend">15. Do you have ____ questions?</p>
+        <div class="mc-options" role="radiogroup" aria-label="15. Do you have ____ questions?">
+          <label><input type="radio" name="examq15" value="some"><span class="opt-letter">A</span> some</label>
+          <label><input type="radio" name="examq15" value="no"><span class="opt-letter">B</span> no</label>
+          <label><input type="radio" name="examq15" value="any"><span class="opt-letter">C</span> any</label>
+          <label><input type="radio" name="examq15" value="an"><span class="opt-letter">D</span> an</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Imperatives</h3>
+      <div class="q" data-answer="Be">
+        <p class="q-legend">16. ____ careful!</p>
+        <div class="mc-options" role="radiogroup" aria-label="16. ____ careful!">
+          <label><input type="radio" name="examq16" value="Are"><span class="opt-letter">A</span> Are</label>
+          <label><input type="radio" name="examq16" value="Is"><span class="opt-letter">B</span> Is</label>
+          <label><input type="radio" name="examq16" value="You"><span class="opt-letter">C</span> You</label>
+          <label><input type="radio" name="examq16" value="Be"><span class="opt-letter">D</span> Be</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Stop">
+        <p class="q-legend">17. ____ right there!</p>
+        <div class="mc-options" role="radiogroup" aria-label="17. ____ right there!">
+          <label><input type="radio" name="examq17" value="Stop"><span class="opt-letter">A</span> Stop</label>
+          <label><input type="radio" name="examq17" value="Stops"><span class="opt-letter">B</span> Stops</label>
+          <label><input type="radio" name="examq17" value="Stopping"><span class="opt-letter">C</span> Stopping</label>
+          <label><input type="radio" name="examq17" value="Stopped"><span class="opt-letter">D</span> Stopped</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Don't">
+        <p class="q-legend">18. ____ touch the stove.</p>
+        <div class="mc-options" role="radiogroup" aria-label="18. ____ touch the stove.">
+          <label><input type="radio" name="examq18" value="Not"><span class="opt-letter">A</span> Not</label>
+          <label><input type="radio" name="examq18" value="Don't"><span class="opt-letter">B</span> Don't</label>
+          <label><input type="radio" name="examq18" value="No"><span class="opt-letter">C</span> No</label>
+          <label><input type="radio" name="examq18" value="Never mind"><span class="opt-letter">D</span> Never mind</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Turn">
+        <p class="q-legend">19. ____ left at the light.</p>
+        <div class="mc-options" role="radiogroup" aria-label="19. ____ left at the light.">
+          <label><input type="radio" name="examq19" value="Turns"><span class="opt-letter">A</span> Turns</label>
+          <label><input type="radio" name="examq19" value="Turning"><span class="opt-letter">B</span> Turning</label>
+          <label><input type="radio" name="examq19" value="Turn"><span class="opt-letter">C</span> Turn</label>
+          <label><input type="radio" name="examq19" value="Turned"><span class="opt-letter">D</span> Turned</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Close the door.">
+        <p class="q-legend">20. Which sentence is a correctly formed imperative?</p>
+        <div class="mc-options" role="radiogroup" aria-label="20. Which sentence is a correctly formed imperative?">
+          <label><input type="radio" name="examq20" value="You close the door."><span class="opt-letter">A</span> You close the door.</label>
+          <label><input type="radio" name="examq20" value="Closes the door."><span class="opt-letter">B</span> Closes the door.</label>
+          <label><input type="radio" name="examq20" value="Closing the door."><span class="opt-letter">C</span> Closing the door.</label>
+          <label><input type="radio" name="examq20" value="Close the door."><span class="opt-letter">D</span> Close the door.</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Joining sentences</h3>
+      <div class="q" data-answer="and">
+        <p class="q-legend">21. There's a park ____ a playground.</p>
+        <div class="mc-options" role="radiogroup" aria-label="21. There's a park ____ a playground.">
+          <label><input type="radio" name="examq21" value="and"><span class="opt-letter">A</span> and</label>
+          <label><input type="radio" name="examq21" value="but"><span class="opt-letter">B</span> but</label>
+          <label><input type="radio" name="examq21" value="so"><span class="opt-letter">C</span> so</label>
+          <label><input type="radio" name="examq21" value="or"><span class="opt-letter">D</span> or</label>
+        </div>
+      </div>
+      <div class="q" data-answer="but">
+        <p class="q-legend">22. The town is small, ____ it is very friendly.</p>
+        <div class="mc-options" role="radiogroup" aria-label="22. The town is small, ____ it is very friendly.">
+          <label><input type="radio" name="examq22" value="and"><span class="opt-letter">A</span> and</label>
+          <label><input type="radio" name="examq22" value="but"><span class="opt-letter">B</span> but</label>
+          <label><input type="radio" name="examq22" value="so"><span class="opt-letter">C</span> so</label>
+          <label><input type="radio" name="examq22" value="or"><span class="opt-letter">D</span> or</label>
+        </div>
+      </div>
+      <div class="q" data-answer="and">
+        <p class="q-legend">23. I like apples ____ oranges.</p>
+        <div class="mc-options" role="radiogroup" aria-label="23. I like apples ____ oranges.">
+          <label><input type="radio" name="examq23" value="but"><span class="opt-letter">A</span> but</label>
+          <label><input type="radio" name="examq23" value="so"><span class="opt-letter">B</span> so</label>
+          <label><input type="radio" name="examq23" value="and"><span class="opt-letter">C</span> and</label>
+          <label><input type="radio" name="examq23" value="or"><span class="opt-letter">D</span> or</label>
+        </div>
+      </div>
+      <div class="q" data-answer="but">
+        <p class="q-legend">24. He wanted to come, ____ he was too tired.</p>
+        <div class="mc-options" role="radiogroup" aria-label="24. He wanted to come, ____ he was too tired.">
+          <label><input type="radio" name="examq24" value="and"><span class="opt-letter">A</span> and</label>
+          <label><input type="radio" name="examq24" value="so"><span class="opt-letter">B</span> so</label>
+          <label><input type="radio" name="examq24" value="or"><span class="opt-letter">C</span> or</label>
+          <label><input type="radio" name="examq24" value="but"><span class="opt-letter">D</span> but</label>
+        </div>
+      </div>
+      <div class="q" data-answer="but">
+        <p class="q-legend">25. Which word joins two contrasting ideas?</p>
+        <div class="mc-options" role="radiogroup" aria-label="25. Which word joins two contrasting ideas?">
+          <label><input type="radio" name="examq25" value="but"><span class="opt-letter">A</span> but</label>
+          <label><input type="radio" name="examq25" value="and"><span class="opt-letter">B</span> and</label>
+          <label><input type="radio" name="examq25" value="or"><span class="opt-letter">C</span> or</label>
+          <label><input type="radio" name="examq25" value="so"><span class="opt-letter">D</span> so</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Using adjectives</h3>
+      <div class="q" data-answer="busy">
+        <p class="q-legend">26. She is a ____ woman.</p>
+        <div class="mc-options" role="radiogroup" aria-label="26. She is a ____ woman.">
+          <label><input type="radio" name="examq26" value="busies"><span class="opt-letter">A</span> busies</label>
+          <label><input type="radio" name="examq26" value="busy"><span class="opt-letter">B</span> busy</label>
+          <label><input type="radio" name="examq26" value="busys"><span class="opt-letter">C</span> busys</label>
+          <label><input type="radio" name="examq26" value="busily"><span class="opt-letter">D</span> busily</label>
+        </div>
+      </div>
+      <div class="q" data-answer="busy">
+        <p class="q-legend">27. The town is ____.</p>
+        <div class="mc-options" role="radiogroup" aria-label="27. The town is ____.">
+          <label><input type="radio" name="examq27" value="busies"><span class="opt-letter">A</span> busies</label>
+          <label><input type="radio" name="examq27" value="busys"><span class="opt-letter">B</span> busys</label>
+          <label><input type="radio" name="examq27" value="busy"><span class="opt-letter">C</span> busy</label>
+          <label><input type="radio" name="examq27" value="busily"><span class="opt-letter">D</span> busily</label>
+        </div>
+      </div>
+      <div class="q" data-answer="take a plural -s">
+        <p class="q-legend">28. Adjectives in English do NOT:</p>
+        <div class="mc-options" role="radiogroup" aria-label="28. Adjectives in English do NOT:">
+          <label><input type="radio" name="examq28" value="come before a noun"><span class="opt-letter">A</span> come before a noun</label>
+          <label><input type="radio" name="examq28" value="follow to be"><span class="opt-letter">B</span> follow to be</label>
+          <label><input type="radio" name="examq28" value="describe a noun"><span class="opt-letter">C</span> describe a noun</label>
+          <label><input type="radio" name="examq28" value="take a plural -s"><span class="opt-letter">D</span> take a plural -s</label>
+        </div>
+      </div>
+      <div class="q" data-answer="hot">
+        <p class="q-legend">29. It's a ____ day.</p>
+        <div class="mc-options" role="radiogroup" aria-label="29. It's a ____ day.">
+          <label><input type="radio" name="examq29" value="hot"><span class="opt-letter">A</span> hot</label>
+          <label><input type="radio" name="examq29" value="hots"><span class="opt-letter">B</span> hots</label>
+          <label><input type="radio" name="examq29" value="hotter"><span class="opt-letter">C</span> hotter</label>
+          <label><input type="radio" name="examq29" value="hotly"><span class="opt-letter">D</span> hotly</label>
+        </div>
+      </div>
+      <div class="q" data-answer="small">
+        <p class="q-legend">30. The rooms are ____.</p>
+        <div class="mc-options" role="radiogroup" aria-label="30. The rooms are ____.">
+          <label><input type="radio" name="examq30" value="smalls"><span class="opt-letter">A</span> smalls</label>
+          <label><input type="radio" name="examq30" value="small"><span class="opt-letter">B</span> small</label>
+          <label><input type="radio" name="examq30" value="smaller"><span class="opt-letter">C</span> smaller</label>
+          <label><input type="radio" name="examq30" value="smally"><span class="opt-letter">D</span> smally</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Using "because"</h3>
+      <div class="q" data-answer="because">
+        <p class="q-legend">31. I live in the countryside ____ it's beautiful.</p>
+        <div class="mc-options" role="radiogroup" aria-label="31. I live in the countryside ____ it's beautiful.">
+          <label><input type="radio" name="examq31" value="and"><span class="opt-letter">A</span> and</label>
+          <label><input type="radio" name="examq31" value="but"><span class="opt-letter">B</span> but</label>
+          <label><input type="radio" name="examq31" value="because"><span class="opt-letter">C</span> because</label>
+          <label><input type="radio" name="examq31" value="so"><span class="opt-letter">D</span> so</label>
+        </div>
+      </div>
+      <div class="q" data-answer="because">
+        <p class="q-legend">32. She is tired ____ she worked all night.</p>
+        <div class="mc-options" role="radiogroup" aria-label="32. She is tired ____ she worked all night.">
+          <label><input type="radio" name="examq32" value="and"><span class="opt-letter">A</span> and</label>
+          <label><input type="radio" name="examq32" value="but"><span class="opt-letter">B</span> but</label>
+          <label><input type="radio" name="examq32" value="so"><span class="opt-letter">C</span> so</label>
+          <label><input type="radio" name="examq32" value="because"><span class="opt-letter">D</span> because</label>
+        </div>
+      </div>
+      <div class="q" data-answer="because">
+        <p class="q-legend">33. We stayed inside ____ it was raining.</p>
+        <div class="mc-options" role="radiogroup" aria-label="33. We stayed inside ____ it was raining.">
+          <label><input type="radio" name="examq33" value="because"><span class="opt-letter">A</span> because</label>
+          <label><input type="radio" name="examq33" value="but"><span class="opt-letter">B</span> but</label>
+          <label><input type="radio" name="examq33" value="and"><span class="opt-letter">C</span> and</label>
+          <label><input type="radio" name="examq33" value="so"><span class="opt-letter">D</span> so</label>
+        </div>
+      </div>
+      <div class="q" data-answer="because">
+        <p class="q-legend">34. He studies English ____ he wants to travel.</p>
+        <div class="mc-options" role="radiogroup" aria-label="34. He studies English ____ he wants to travel.">
+          <label><input type="radio" name="examq34" value="and"><span class="opt-letter">A</span> and</label>
+          <label><input type="radio" name="examq34" value="because"><span class="opt-letter">B</span> because</label>
+          <label><input type="radio" name="examq34" value="but"><span class="opt-letter">C</span> but</label>
+          <label><input type="radio" name="examq34" value="so"><span class="opt-letter">D</span> so</label>
+        </div>
+      </div>
+      <div class="q" data-answer="a reason, with its own subject and verb">
+        <p class="q-legend">35. "Because" introduces:</p>
+        <div class="mc-options" role="radiogroup" aria-label="35. "Because" introduces:">
+          <label><input type="radio" name="examq35" value="a question"><span class="opt-letter">A</span> a question</label>
+          <label><input type="radio" name="examq35" value="a contrast"><span class="opt-letter">B</span> a contrast</label>
+          <label><input type="radio" name="examq35" value="a reason, with its own subject and verb"><span class="opt-letter">C</span> a reason, with its own subject and verb</label>
+          <label><input type="radio" name="examq35" value="a command"><span class="opt-letter">D</span> a command</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>Grammar review worksheet for Units 21–26. Includes self-check exercises.</footer>
+
+<script>
+function switchTab(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tabbtn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateTabStatus(navId) {
+  if (!navId) return;
+  const related = document.querySelectorAll(`.exercise[data-nav="${navId}"]`);
+  const allChecked = related.length > 0 && Array.from(related).every(c => c.dataset.checked === 'true');
+  const btn = document.getElementById(navId);
+  if (btn) btn.classList.toggle('done', allChecked);
+}
+
+document.querySelectorAll('.exercise').forEach(container => {
+  const checkBtn = container.querySelector('.check-btn');
+  const resetBtn = container.querySelector('.reset-btn');
+  const resultEl = container.querySelector('.ex-result');
+  const navId = container.dataset.nav;
+  const mode = container.dataset.mode;
+
+  checkBtn.addEventListener('click', () => {
+    let correct = 0, total = 0;
+    if (mode === 'select') {
+      const selects = container.querySelectorAll('select.blank');
+      total = selects.length;
+      selects.forEach(sel => {
+        sel.classList.remove('correct', 'wrong');
+        if (sel.value && sel.value === sel.dataset.answer) { sel.classList.add('correct'); correct++; }
+        else { sel.classList.add('wrong'); }
+      });
+    } else {
+      const groups = container.querySelectorAll('.q');
+      total = groups.length;
+      groups.forEach(fs => {
+        fs.classList.remove('correct', 'wrong');
+        const checked = fs.querySelector('input[type="radio"]:checked');
+        if (checked && checked.value === fs.dataset.answer) { fs.classList.add('correct'); correct++; }
+        else { fs.classList.add('wrong'); }
+      });
+    }
+    resultEl.textContent = `${correct} / ${total} correct`;
+    container.dataset.checked = 'true';
+    updateTabStatus(navId);
+  });
+
+  resetBtn.addEventListener('click', () => {
+    if (mode === 'select') {
+      container.querySelectorAll('select.blank').forEach(sel => {
+        sel.value = '';
+        sel.classList.remove('correct', 'wrong');
+      });
+    } else {
+      container.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+      container.querySelectorAll('.q').forEach(fs => fs.classList.remove('correct', 'wrong'));
+    }
+    resultEl.textContent = '';
+    container.dataset.checked = 'false';
+    updateTabStatus(navId);
+  });
+});
+</script>
+
+</body>
+</html>
