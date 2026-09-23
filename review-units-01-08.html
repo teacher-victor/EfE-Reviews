@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review: Units 01–08 | English for Everyone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:        #223047;
+  --ink-soft:   #57697c;
+  --paper:      #ffffff;
+  --panel:      #eaf5fc;
+  --panel-line: #9bd6f2;
+  --panel-line-soft: #d8eefb;
+
+  --brand:      #1c86c9;
+  --brand-deep: #115e8d;
+  --brand-pale: #eaf5fc;
+
+  --c1: #cf5a37; /* introducing yourself */
+  --c2: #bd8620; /* age */
+  --c3: #2f8f74; /* possessive adjectives */
+  --c4: #3d5a99; /* apostrophe with 's */
+  --c5: #8a3f95; /* this / that / these / those */
+  --c6: #ab4770; /* determiners & pronouns */
+  --c7: #3a3d5c; /* final exam */
+
+  --correct: #2f9e44;
+  --wrong: #c0392b;
+  --light-correct: #e6f6ea;
+  --light-wrong: #fbe4e1;
+  --shadow: 20, 60, 90;
+
+  --font-display: 'Baloo 2', 'Poppins', sans-serif;
+  --font-body: 'Mulish', 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  padding-bottom: 4rem;
+}
+::selection { background: var(--brand); color: #fff; }
+
+h1, h2, h3 { font-family: var(--font-display); margin: 0; }
+p { margin: 0 0 0.9rem; }
+p:last-child { margin-bottom: 0; }
+
+:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── MASTHEAD ────────────────────────────────────────────────── */
+.masthead {
+  background: var(--brand-pale);
+  border-bottom: 3px solid var(--brand);
+  padding: 2.4rem 1.2rem 1.8rem;
+  text-align: center;
+}
+.masthead h1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  color: var(--brand-deep);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.7rem;
+}
+.masthead h1::before {
+  content: "\2713";
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--brand);
+  border-radius: 10px;
+  padding: 0.4rem 0.7rem;
+  line-height: 1;
+}
+.masthead .lede {
+  max-width: 560px;
+  margin: 0 auto 0.5rem;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+}
+.masthead .howto {
+  max-width: 560px;
+  margin: 0 auto 1rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+/* ── TABS ────────────────────────────────────────────────────── */
+.tabnav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background: #fff;
+  border-bottom: 2px solid var(--panel-line-soft);
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0 10px 24px -20px rgba(var(--shadow), 0.6);
+}
+.tabbtn {
+  --accent: #999;
+  flex: 1 1 auto;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  border: 2px solid var(--panel-line);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink-soft);
+  padding: 0.5rem 0.5rem 0.45rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.tabbtn .tb-unit {
+  font-family: var(--font-body);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.tabbtn .tb-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.tabbtn:hover { background: var(--brand-pale); border-color: var(--accent); }
+.tabbtn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.tabbtn.active .tb-unit { opacity: 0.9; }
+.tabbtn.done .tb-label::after { content: " \2713"; }
+
+/* ── PAGE ────────────────────────────────────────────────────── */
+main.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.4rem 1.2rem 0;
+}
+
+.panel { display: none; animation: fadeIn 0.2s ease; }
+.panel.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ── TOPIC PANELS ────────────────────────────────────────────── */
+.topic-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.topic-num {
+  flex: 0 0 auto;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 12px;
+  padding: 0.55rem 0.8rem;
+  line-height: 1;
+  box-shadow: 0 6px 14px -8px rgba(var(--shadow), 0.7);
+}
+.topic-head h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--ink);
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 0.35rem;
+  flex: 1 1 auto;
+}
+.rule {
+  font-size: 1rem;
+  background: var(--panel);
+  border: 2px solid var(--panel-line);
+  border-radius: 14px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.1rem;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  margin-bottom: 1.9rem;
+}
+.examples span {
+  position: relative;
+  font-size: 0.92rem;
+  font-weight: 500;
+  background: #fff;
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  padding: 0.6rem 1.05rem;
+}
+.examples span::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  bottom: -9px;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  border-radius: 0 0 3px 0;
+  transform: rotate(45deg);
+}
+.examples mark {
+  background: none;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.chart-wrap { overflow-x: auto; margin-bottom: 1.6rem; }
+.chart-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--brand-deep);
+  margin: 0 0 0.6rem 0.2rem;
+}
+.chart-card {
+  min-width: 420px;
+  border: 2.5px solid var(--accent);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 14px 26px -20px rgba(var(--shadow), 0.65);
+}
+table.chart {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+table.chart th,
+table.chart td {
+  position: relative;
+  padding: 0.75rem 0.9rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.25;
+}
+table.chart th {
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-right: 1px solid rgba(255, 255, 255, 0.28);
+}
+table.chart th:last-child { border-right: none; }
+table.chart td {
+  background: #fff;
+  color: var(--ink);
+  font-weight: 700;
+  border-top: 1px solid var(--panel-line-soft);
+  border-right: 1px solid var(--panel-line-soft);
+  transition: background 0.15s ease;
+}
+table.chart td:last-child { border-right: none; }
+table.chart tr:first-of-type td { border-top: none; }
+table.chart tr:nth-of-type(even) td { background: var(--panel); }
+table.chart tr:hover td { background: var(--panel-line-soft); }
+table.chart td.hl {
+  color: var(--accent);
+  font-weight: 800;
+}
+.chart-note { font-size: 0.85rem; color: var(--ink-soft); margin: -0.8rem 0 1.6rem; font-style: italic; }
+
+@media (max-width: 560px) {
+  .chart-card { min-width: 360px; }
+  table.chart { font-size: 0.84rem; }
+  table.chart th, table.chart td { padding: 0.6rem 0.55rem; }
+}
+
+/* ── EXERCISE / READING CARDS ───────────────────────────────── */
+.exercise {
+  position: relative;
+  background: #fff;
+  border: 2.5px solid var(--panel-line);
+  border-radius: 20px;
+  padding: 1.4rem 1.5rem 1.3rem;
+  margin-bottom: 1.4rem;
+  box-shadow: 0 10px 24px -20px rgba(var(--shadow), 0.5);
+}
+.exercise:last-child { margin-bottom: 0.4rem; }
+.exercise h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--brand-deep);
+  margin-bottom: 1.1rem;
+}
+.exercise h3::before {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+.exercise[data-mode="select"] h3::before { content: "\270E"; }
+.exercise[data-mode="radio"] h3::before { content: "\1F5E8"; font-size: 0.85rem; }
+.ex-list { list-style: none; margin: 0 0 1.1rem; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+.ex-list li { font-size: 0.96rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.ex-cue { color: var(--ink-soft); font-size: 0.82rem; font-style: italic; flex-basis: 100%; }
+select.blank {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+  background-color: var(--panel);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6' fill='none' stroke='%23115e8d' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.55rem center;
+  background-size: 0.85rem;
+  border: 2px solid var(--panel-line);
+  border-radius: 10px;
+  padding: 0.4rem 1.8rem 0.4rem 0.7rem;
+  line-height: 1.3;
+  cursor: pointer;
+}
+select.blank:hover { border-color: var(--brand); }
+select.blank:focus-visible { border-color: var(--brand); }
+select.blank.correct {
+  background-color: var(--light-correct);
+  border-color: var(--correct);
+  color: var(--correct);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6' fill='none' stroke='%232f9e44' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+select.blank.wrong {
+  background-color: var(--light-wrong);
+  border-color: var(--wrong);
+  color: var(--wrong);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M6 9l6 6 6-6' fill='none' stroke='%23c0392b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+
+.ex-controls { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.3rem; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 14px;
+  border: 2px solid var(--brand);
+  cursor: pointer;
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 8px 16px -8px rgba(var(--shadow), 0.65);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+}
+.btn::before {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+.btn.check-btn::before { content: "\2713"; }
+.btn.reset-btn::before { content: "\21BB"; }
+.btn:hover {
+  transform: translateY(-2px);
+  background: var(--brand-deep);
+  border-color: var(--brand-deep);
+  box-shadow: 0 12px 20px -8px rgba(var(--shadow), 0.75);
+}
+.btn:active { transform: translateY(0); box-shadow: 0 4px 10px -6px rgba(var(--shadow), 0.6); }
+.btn.ghost {
+  background: #fff;
+  color: var(--brand-deep);
+  border-color: var(--panel-line);
+  box-shadow: none;
+}
+.btn.ghost:hover {
+  background: var(--brand-pale);
+  border-color: var(--brand);
+  box-shadow: none;
+}
+.ex-result {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--brand-deep);
+  background: var(--panel);
+  border: 2px solid var(--panel-line);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  min-height: 1.2rem;
+}
+.ex-result:empty { display: none; }
+
+.mini-passage {
+  background: var(--panel);
+  border: 1.5px dashed var(--panel-line);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  font-size: 0.96rem;
+  margin-bottom: 1rem;
+}
+.mini-passage mark { background: none; font-weight: 700; }
+.mini-subhead {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--brand-deep);
+  margin-bottom: 0.8rem;
+}
+
+.q {
+  margin: 0 0 0.8rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--panel);
+  border: 2px solid var(--panel-line);
+  border-radius: 12px;
+}
+.q.correct { background: var(--light-correct); border-color: var(--correct); }
+.q.wrong { background: var(--light-wrong); border-color: var(--wrong); }
+.q-legend { font-size: 0.94rem; margin: 0 0 0.5rem; font-weight: 600; }
+.tf-options { display: flex; gap: 1.4rem; }
+.tf-options label { display: flex; align-items: center; gap: 0.4rem; font-family: var(--font-body); font-weight: 600; font-size: 0.85rem; cursor: pointer; }
+
+.mc-options { display: flex; flex-direction: column; gap: 0.45rem; }
+.mc-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  border-radius: 9px;
+  transition: background 0.12s ease;
+}
+.mc-options label:hover { background: rgba(255,255,255,0.6); }
+.mc-options .opt-letter {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--panel-line);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--ink-soft);
+}
+
+.exam-sec {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 0.2rem;
+  margin: 1.6rem 0 0.9rem;
+}
+.exam-sec:first-of-type { margin-top: 0; }
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+footer {
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  margin-top: 2.5rem;
+  padding: 0 1.2rem;
+}
+
+@media (max-width: 560px) {
+  .tabbtn { min-width: 30%; }
+  .topic-head { flex-wrap: wrap; }
+  .topic-head h2 { font-size: 1.3rem; }
+  .exercise { padding: 1.1rem 1.2rem; }
+  .tf-options { flex-direction: column; gap: 0.4rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <h1>Review: Units 01–08</h1>
+</header>
+
+<nav class="tabnav">
+  <button class="tabbtn active" id="tab-topic-1" style="--accent: var(--c1);" onclick="switchTab('topic-1', this)"><span class="tb-unit">Unit 1.1</span><span class="tb-label">Introductions</span></button>
+  <button class="tabbtn" id="tab-topic-2" style="--accent: var(--c2);" onclick="switchTab('topic-2', this)"><span class="tb-unit">Unit 3.1</span><span class="tb-label">Age</span></button>
+  <button class="tabbtn" id="tab-topic-3" style="--accent: var(--c3);" onclick="switchTab('topic-3', this)"><span class="tb-unit">Unit 5.1</span><span class="tb-label">Possessives</span></button>
+  <button class="tabbtn" id="tab-topic-4" style="--accent: var(--c4);" onclick="switchTab('topic-4', this)"><span class="tb-unit">Units 6.1, 6.5</span><span class="tb-label">Apostrophe 's</span></button>
+  <button class="tabbtn" id="tab-topic-5" style="--accent: var(--c5);" onclick="switchTab('topic-5', this)"><span class="tb-unit">Units 5.6, 8.1</span><span class="tb-label">This / That</span></button>
+  <button class="tabbtn" id="tab-topic-6" style="--accent: var(--c6);" onclick="switchTab('topic-6', this)"><span class="tb-unit">Unit 8.7</span><span class="tb-label">Pronouns</span></button>
+  <button class="tabbtn" id="tab-topic-7" style="--accent: var(--c7);" onclick="switchTab('topic-7', this)"><span class="tb-unit">Units 01–08</span><span class="tb-label">Final Exam</span></button>
+</nav>
+
+<main class="page">
+
+  <!-- ══════════════ TOPIC 1 · INTRODUCING YOURSELF ══════════════ -->
+  <section class="panel active" id="panel-topic-1" style="--accent: var(--c1);">
+    <div class="topic-head">
+      <span class="topic-num">Unit 1.1</span>
+      <h2>Introducing yourself</h2>
+    </div>
+    <p class="rule">Use <mark style="background:none;color:var(--c1);font-weight:600;">I am</mark> (short form <mark style="background:none;color:var(--c1);font-weight:600;">I'm</mark>) and your name to introduce yourself. <mark style="background:none;color:var(--c1);font-weight:600;">My name is</mark> works the same way. To introduce another person, say <mark style="background:none;color:var(--c1);font-weight:600;">This is</mark> for one person, or <mark style="background:none;color:var(--c1);font-weight:600;">These are</mark> for more than one. You can add <mark style="background:none;color:var(--c1);font-weight:600;">His name is</mark> or <mark style="background:none;color:var(--c1);font-weight:600;">Her name is</mark> too.</p>
+    <div class="examples">
+      <span>Hi, <mark>I'm</mark> Diego.</span>
+      <span><mark>My name is</mark> Priya.</span>
+      <span><mark>This is</mark> my friend, Noah.</span>
+      <span><mark>Her name is</mark> Ms. Alvarez. She is our teacher.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Subject + to be</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Subject</th><th>to be</th><th>Contraction</th></tr>
+        <tr><td>I</td><td>am</td><td class="hl">I'm</td></tr>
+        <tr><td>You</td><td>are</td><td class="hl">You're</td></tr>
+        <tr><td>He</td><td>is</td><td class="hl">He's</td></tr>
+        <tr><td>She</td><td>is</td><td class="hl">She's</td></tr>
+        <tr><td>It</td><td>is</td><td class="hl">It's</td></tr>
+        <tr><td>We</td><td>are</td><td class="hl">We're</td></tr>
+        <tr><td>They</td><td>are</td><td class="hl">They're</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">We often use the short form in speech, like "I'm Marco." The full form, like "I am Marco," sounds a little more formal.</p>
+
+    <div class="exercise" data-nav="tab-topic-1" data-mode="select">
+      <h3>Grammar practice: complete each introduction</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">You stand up in a new class.</span>
+          Hello, everyone!
+          <select class="blank" data-answer="I am"><option value="">choose…</option><option>She is</option><option>You are</option><option>I am</option></select>
+          Sofia.</li>
+        <li><span class="ex-cue">A formal introduction</span>
+          <select class="blank" data-answer="My name is"><option value="">choose…</option><option>Her name is</option><option>My name is</option><option>Your name is</option></select>
+          Nadia. I am your teacher today.</li>
+        <li><span class="ex-cue">A casual introduction, at a party</span>
+          Hi, <select class="blank" data-answer="I'm"><option value="">choose…</option><option>You're</option><option>I'm</option><option>He's</option></select>
+          Marco.</li>
+        <li><span class="ex-cue">Introducing a classmate</span>
+          This is my classmate.
+          <select class="blank" data-answer="His name is"><option value="">choose…</option><option>His name is</option><option>Their name is</option><option>My name is</option></select>
+          Ben.</li>
+        <li><span class="ex-cue">Introducing your cousins</span>
+          These are my cousins.
+          <select class="blank" data-answer="They are"><option value="">choose…</option><option>It is</option><option>She is</option><option>They are</option></select>
+          Mia and Zoe.</li>
+        <li><span class="ex-cue">Checking someone's name</span>
+          <select class="blank" data-answer="You are"><option value="">choose…</option><option>You are</option><option>I am</option><option>She is</option></select>
+          Ms. Alvarez, right? Nice to meet you.</li>
+        <li><span class="ex-cue">Introducing yourself and a friend</span>
+          Nice to meet you!
+          <select class="blank" data-answer="We are"><option value="">choose…</option><option>You are</option><option>We are</option><option>They are</option></select>
+          Aiko and Kenji.</li>
+        <li><span class="ex-cue">Introducing your teacher</span>
+          This is our teacher.
+          <select class="blank" data-answer="Her name is"><option value="">choose…</option><option>Her name is</option><option>Their name is</option><option>My name is</option></select>
+          Mrs. Owens.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-1" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">It is the first day of summer school. The teacher asks each student to stand up. "<mark style="color:var(--c1);">I'm</mark> Aiko," says a girl. "This is my friend, Kenji. <mark style="color:var(--c1);">We're</mark> from Osaka." The teacher smiles. "<mark style="color:var(--c1);">My name is</mark> Ms. Alvarez. <mark style="color:var(--c1);">I'm</mark> your teacher this summer." Next, a tall boy stands up. "Good morning! <mark style="color:var(--c1);">My name is</mark> Diego." A quiet girl speaks last. "<mark style="color:var(--c1);">I am</mark> Priya. <mark style="color:var(--c1);">This is</mark> my roommate, Noor. <mark style="color:var(--c1);">Her name is</mark> a little hard to say, but that's OK!" Everyone laughs. "Great!" says Ms. Alvarez. "Now <mark style="color:var(--c1);">we're</mark> all friends. Let's start."</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. Aiko and Kenji are from the same city.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. Aiko and Kenji are from the same city.">
+          <label><input type="radio" name="t1q1" value="True"> True</label>
+          <label><input type="radio" name="t1q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">2. Ms. Alvarez is a new student.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. Ms. Alvarez is a new student.">
+          <label><input type="radio" name="t1q2" value="True"> True</label>
+          <label><input type="radio" name="t1q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">3. Diego uses "My name is" to introduce himself.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. Diego uses 'My name is' to introduce himself.">
+          <label><input type="radio" name="t1q3" value="True"> True</label>
+          <label><input type="radio" name="t1q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. Priya's roommate is named Noor.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. Priya's roommate is named Noor.">
+          <label><input type="radio" name="t1q4" value="True"> True</label>
+          <label><input type="radio" name="t1q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. This is the last day of school.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. This is the last day of school.">
+          <label><input type="radio" name="t1q5" value="True"> True</label>
+          <label><input type="radio" name="t1q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 2 · HOW OLD ARE YOU? ══════════════ -->
+  <section class="panel" id="panel-topic-2" style="--accent: var(--c2);">
+    <div class="topic-head">
+      <span class="topic-num">Unit 3.1</span>
+      <h2>How old are you?</h2>
+    </div>
+    <p class="rule">Say your age with a subject, a form of <mark style="background:none;color:var(--c2);font-weight:600;">to be</mark>, a number, and <mark style="background:none;color:var(--c2);font-weight:600;">years old</mark>. Ask about someone's age with <mark style="background:none;color:var(--c2);font-weight:600;">How old is/are...?</mark> We often drop "years old" in speech. "I'm 29" is the same as "I'm 29 years old."</p>
+    <div class="examples">
+      <span><mark>I'm 27 years old.</mark></span>
+      <span><mark>How old is</mark> your grandfather?</span>
+      <span><mark>We're</mark> both 19.</span>
+      <span><mark>They're turning</mark> 40 next month.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Subject + to be + years old</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Subject</th><th>to be</th><th>Example</th></tr>
+        <tr><td>I</td><td>am</td><td>I'm 29 years old.</td></tr>
+        <tr><td>You</td><td>are</td><td>You're 22 years old.</td></tr>
+        <tr><td>He / She / It</td><td>is</td><td>She's 8 years old.</td></tr>
+        <tr><td>We / They</td><td>are</td><td>They're 70 years old.</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">In questions, "is" or "are" comes before the subject. We say "How old is she?" We do not say "How old she is?"</p>
+
+    <div class="exercise" data-nav="tab-topic-2" data-mode="select">
+      <h3>Grammar practice: complete each sentence</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">Liam just had his birthday.</span>
+          <select class="blank" data-answer="He is"><option value="">choose…</option><option>He is</option><option>They are</option><option>He am</option></select> 11 years old.</li>
+        <li><span class="ex-cue">Talking about yourself</span>
+          <select class="blank" data-answer="I am"><option value="">choose…</option><option>I is</option><option>I am</option><option>I are</option></select> 29 years old.</li>
+        <li><span class="ex-cue">Your grandparents are the same age.</span>
+          <select class="blank" data-answer="They are"><option value="">choose…</option><option>They are</option><option>He is</option><option>They is</option></select> both 70 years old.</li>
+        <li><span class="ex-cue">Asking a friend her age</span>
+          So, <select class="blank" data-answer="how old"><option value="">choose…</option><option>how many</option><option>how much</option><option>how old</option></select> are you now?</li>
+        <li><span class="ex-cue">Talking about a new kitten</span>
+          <select class="blank" data-answer="It is"><option value="">choose…</option><option>It are</option><option>It is</option><option>It am</option></select> only 2 months old.</li>
+        <li><span class="ex-cue">You and a friend are the same age.</span>
+          <select class="blank" data-answer="We are"><option value="">choose…</option><option>You are</option><option>It is</option><option>We are</option></select> both 22.</li>
+        <li><span class="ex-cue">Sara's little sister</span>
+          <select class="blank" data-answer="She is"><option value="">choose…</option><option>She is</option><option>He is</option><option>They are</option></select> only 8 years old.</li>
+        <li><span class="ex-cue">Your new boss looks young.</span>
+          <select class="blank" data-answer="You are"><option value="">choose…</option><option>We are</option><option>You are</option><option>I am</option></select> only 45? You look young!</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-2" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">Every summer, the Torres family meets at Grandma's farm. <mark style="color:var(--c2);">She's</mark> 80 years old this year. "<mark style="color:var(--c2);">How old are you now</mark>, Grandma?" asks Mateo, her youngest grandchild. "<mark style="color:var(--c2);">I'm 80</mark> today," she laughs, "but I still feel 30!" Her granddaughters, Elena and Rosa, are twins. "<mark style="color:var(--c2);">We're 16</mark>," says Elena. "Next year we'll be 17." Uncle Carlos has a new puppy. "<mark style="color:var(--c2);">He's only</mark> three months old," Carlos says, "but he already thinks he owns the farm!" Grandma looks at her whole family. "<mark style="color:var(--c2);">You're all</mark> growing up so fast," she says.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="False">
+        <p class="q-legend">1. Grandma is 90 years old this year.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. Grandma is 90 years old this year.">
+          <label><input type="radio" name="t2q1" value="True"> True</label>
+          <label><input type="radio" name="t2q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">2. Mateo is Grandma's youngest grandchild.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. Mateo is Grandma's youngest grandchild.">
+          <label><input type="radio" name="t2q2" value="True"> True</label>
+          <label><input type="radio" name="t2q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">3. Elena and Rosa are the same age.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. Elena and Rosa are the same age.">
+          <label><input type="radio" name="t2q3" value="True"> True</label>
+          <label><input type="radio" name="t2q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">4. Carlos's puppy is more than one year old.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. Carlos's puppy is more than one year old.">
+          <label><input type="radio" name="t2q4" value="True"> True</label>
+          <label><input type="radio" name="t2q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">5. The family meets every summer.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. The family meets every summer.">
+          <label><input type="radio" name="t2q5" value="True"> True</label>
+          <label><input type="radio" name="t2q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 3 · POSSESSIVE ADJECTIVES ══════════════ -->
+  <section class="panel" id="panel-topic-3" style="--accent: var(--c3);">
+    <div class="topic-head">
+      <span class="topic-num">Unit 5.1</span>
+      <h2>Possessive adjectives</h2>
+    </div>
+    <p class="rule">A possessive adjective comes before a noun. It shows who something belongs to: <mark style="background:none;color:var(--c3);font-weight:600;">my, your, his, her, its, our, their</mark>. These words do not change. We use <mark style="background:none;color:var(--c3);font-weight:600;">her</mark> for both "her book" and "her books."</p>
+    <div class="examples">
+      <span>Max is <mark>my</mark> dog.</span>
+      <span>Is that <mark>your</mark> bike?</span>
+      <span>Nina lost <mark>her</mark> keys.</span>
+      <span>The company changed <mark>its</mark> logo.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Subject pronoun → possessive adjective</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Subject</th><th>Possessive adjective</th><th>Example</th></tr>
+        <tr><td>I</td><td class="hl">my</td><td>my dog</td></tr>
+        <tr><td>You</td><td class="hl">your</td><td>your bike</td></tr>
+        <tr><td>He</td><td class="hl">his</td><td>his book</td></tr>
+        <tr><td>She</td><td class="hl">her</td><td>her keys</td></tr>
+        <tr><td>It</td><td class="hl">its</td><td>its tail</td></tr>
+        <tr><td>We</td><td class="hl">our</td><td>our house</td></tr>
+        <tr><td>They</td><td class="hl">their</td><td>their toys</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">Do not confuse <strong>its</strong> (possessive, no apostrophe) with <strong>it's</strong> ("it is"). Use <strong>whose</strong> to ask about possession: "Whose keys are these?" "They're Nina's."</p>
+
+    <div class="exercise" data-nav="tab-topic-3" data-mode="select">
+      <h3>Grammar practice: choose the right word</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">(I)</span> Max is
+          <select class="blank" data-answer="my"><option value="">choose…</option><option>your</option><option>my</option><option>our</option></select> dog. He loves the park.</li>
+        <li><span class="ex-cue">(you)</span> Is this
+          <select class="blank" data-answer="your"><option value="">choose…</option><option>her</option><option>their</option><option>your</option></select> jacket on the chair?</li>
+        <li><span class="ex-cue">(she)</span> Priya lost
+          <select class="blank" data-answer="her"><option value="">choose…</option><option>its</option><option>his</option><option>her</option></select> umbrella again.</li>
+        <li><span class="ex-cue">(they)</span> The players lost
+          <select class="blank" data-answer="their"><option value="">choose…</option><option>its</option><option>their</option><option>our</option></select> first game this season.</li>
+        <li><span class="ex-cue">(it)</span> The company changed
+          <select class="blank" data-answer="its"><option value="">choose…</option><option>his</option><option>it's</option><option>its</option></select> website last month.</li>
+        <li><span class="ex-cue">(he)</span> Omar can't find
+          <select class="blank" data-answer="his"><option value="">choose…</option><option>his</option><option>her</option><option>its</option></select> glasses.</li>
+        <li><span class="ex-cue">(we)</span>
+          <select class="blank" data-answer="Our"><option value="">choose…</option><option>Their</option><option>Our</option><option>Your</option></select> flight leaves at noon.</li>
+        <li><span class="ex-cue">Asking about ownership</span>
+          <select class="blank" data-answer="Whose"><option value="">choose…</option><option>Whose</option><option>Who's</option><option>Who</option></select> backpack is this?</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-3" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">The soccer team is ready for the big game. <mark style="color:var(--c3);">Its</mark> new shirts came yesterday. Coach Ramirez calls <mark style="color:var(--c3);">her</mark> players together. "Where is Omar?" she asks. "He forgot <mark style="color:var(--c3);">his</mark> shoes again!" laughs a player. Nearby, two brothers, Sam and Alex, look at a water bottle. "<mark style="color:var(--c3);">Whose</mark> bottle is this?" Sam asks. "It's <mark style="color:var(--c3);">mine</mark>," says Alex. The other coach checks <mark style="color:var(--c3);">his</mark> notes and reads out <mark style="color:var(--c3);">their</mark> names for tonight's game. "Remember," says Coach Ramirez, "<mark style="color:var(--c3);">our</mark> goal is not just to win. It's to play <mark style="color:var(--c3);">our</mark> best."</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. The team got new shirts.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. The team got new shirts.">
+          <label><input type="radio" name="t3q1" value="True"> True</label>
+          <label><input type="radio" name="t3q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">2. Omar forgot his shoes.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. Omar forgot his shoes.">
+          <label><input type="radio" name="t3q2" value="True"> True</label>
+          <label><input type="radio" name="t3q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">3. The water bottle belongs to Alex.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. The water bottle belongs to Alex.">
+          <label><input type="radio" name="t3q3" value="True"> True</label>
+          <label><input type="radio" name="t3q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">4. Coach Ramirez is the other coach.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. Coach Ramirez is the other coach.">
+          <label><input type="radio" name="t3q4" value="True"> True</label>
+          <label><input type="radio" name="t3q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. Winning is the team's only goal.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. Winning is the team's only goal.">
+          <label><input type="radio" name="t3q5" value="True"> True</label>
+          <label><input type="radio" name="t3q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 4 · APOSTROPHE WITH 'S ══════════════ -->
+  <section class="panel" id="panel-topic-4" style="--accent: var(--c4);">
+    <div class="topic-head">
+      <span class="topic-num">Units 6.1, 6.5</span>
+      <h2>Apostrophe with 's</h2>
+    </div>
+    <p class="rule">Add <mark style="background:none;color:var(--c4);font-weight:600;">'s</mark> to a singular noun to show possession. If a plural noun already ends in -s, add only an <mark style="background:none;color:var(--c4);font-weight:600;">apostrophe</mark>. Some plural words, like <mark style="background:none;color:var(--c4);font-weight:600;">children</mark> and <mark style="background:none;color:var(--c4);font-weight:600;">men</mark>, do not end in -s. We still add <mark style="background:none;color:var(--c4);font-weight:600;">'s</mark> to these words. For a name that ends in -s, like James, we can write <mark style="background:none;color:var(--c4);font-weight:600;">James's</mark> or <mark style="background:none;color:var(--c4);font-weight:600;">James'</mark>. When two people own one thing together, only the second name gets 's: <mark style="background:none;color:var(--c4);font-weight:600;">Tom and Rosa's car</mark>.</p>
+    <div class="examples">
+      <span><mark>Ana's</mark> brother is a doctor.</span>
+      <span>My <mark>parents'</mark> car is red.</span>
+      <span>The <mark>children's</mark> shoes are new.</span>
+      <span><mark>James's</mark> office is on the third floor.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Forming the possessive</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Noun type</th><th>Rule</th><th>Example</th></tr>
+        <tr><td>Singular noun</td><td class="hl">add 's</td><td>Ana's brother</td></tr>
+        <tr><td>Plural noun ending in -s</td><td class="hl">add ' only</td><td>my parents' car</td></tr>
+        <tr><td>Irregular plural (no -s)</td><td class="hl">add 's</td><td>the children's shoes</td></tr>
+        <tr><td>Singular name ending in -s</td><td class="hl">add 's (or ')</td><td>James's office</td></tr>
+              </table>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-4" data-mode="select">
+      <h3>Grammar practice: pick the correctly formed possessive</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">one dog, one toy</span>
+          <select class="blank" data-answer="the dog's toy"><option value="">choose…</option><option>the dogs' toy</option><option>the dogs's toy</option><option>the dog's toy</option></select></li>
+        <li><span class="ex-cue">more than one girl, their bags</span>
+          <select class="blank" data-answer="the girls' bags"><option value="">choose…</option><option>the girl's bags</option><option>the girls' bags</option><option>the girls's bags</option></select></li>
+        <li><span class="ex-cue">Ana, her mother</span>
+          <select class="blank" data-answer="Ana's mother"><option value="">choose…</option><option>Anas mother</option><option>Ana's mother</option><option>Anas' mother</option></select></li>
+        <li><span class="ex-cue">the children, their toys</span>
+          <select class="blank" data-answer="the children's toys"><option value="">choose…</option><option>the childrens' toys</option><option>the childrens toys</option><option>the children's toys</option></select></li>
+        <li><span class="ex-cue">one teacher, her desk</span>
+          <select class="blank" data-answer="the teacher's desk"><option value="">choose…</option><option>the teacher's desk</option><option>the teachers' desk</option><option>the teachers's desk</option></select></li>
+        <li><span class="ex-cue">more than one boy, their bikes</span>
+          <select class="blank" data-answer="the boys' bikes"><option value="">choose…</option><option>the boys's bikes</option><option>the boys' bikes</option><option>the boy's bikes</option></select></li>
+        <li><span class="ex-cue">the men, their coats (irregular plural)</span>
+          <select class="blank" data-answer="the men's coats"><option value="">choose…</option><option>the men's coats</option><option>the mens' coats</option><option>the mens coats</option></select></li>
+        <li><span class="ex-cue">Tom and Rosa share one car together</span>
+          <select class="blank" data-answer="Tom and Rosa's car"><option value="">choose…</option><option>Tom's and Rosa's car</option><option>Toms and Rosas car</option><option>Tom and Rosa's car</option></select></li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-4" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">Every Sunday, <mark style="color:var(--c4);">Elena's</mark> family sells vegetables at the market. Her <mark style="color:var(--c4);">parents'</mark> tomatoes sell out fast. Next to them, <mark style="color:var(--c4);">James's</mark> stand sells fresh bread. The <mark style="color:var(--c4);">children's</mark> favorite stop is the honey stand. The <mark style="color:var(--c4);">beekeeper's</mark> honey comes in many sizes. Down the row, the <mark style="color:var(--c4);">Alvarez brothers'</mark> cart is full of flowers. "<mark style="color:var(--c4);">Whose</mark> stand is the busiest?" a shopper asks. "Probably <mark style="color:var(--c4);">Elena's</mark>," someone says. "Her <mark style="color:var(--c4);">parents'</mark> line is very long." By noon, some stands are already sold out.</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="False">
+        <p class="q-legend">1. Elena's parents mainly sell flowers.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. Elena's parents mainly sell flowers.">
+          <label><input type="radio" name="t4q1" value="True"> True</label>
+          <label><input type="radio" name="t4q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">2. James's stand sells bread.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. James's stand sells bread.">
+          <label><input type="radio" name="t4q2" value="True"> True</label>
+          <label><input type="radio" name="t4q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">3. One beekeeper owns the honey stand.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. One beekeeper owns the honey stand.">
+          <label><input type="radio" name="t4q3" value="True"> True</label>
+          <label><input type="radio" name="t4q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">4. The Alvarez brothers sell tomatoes.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. The Alvarez brothers sell tomatoes.">
+          <label><input type="radio" name="t4q4" value="True"> True</label>
+          <label><input type="radio" name="t4q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. Elena's parents have the shortest line at the market.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. Elena's parents have the shortest line at the market.">
+          <label><input type="radio" name="t4q5" value="True"> True</label>
+          <label><input type="radio" name="t4q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 5 · THIS, THAT, THESE, THOSE ══════════════ -->
+  <section class="panel" id="panel-topic-5" style="--accent: var(--c5);">
+    <div class="topic-head">
+      <span class="topic-num">Units 5.6, 8.1</span>
+      <h2>This, that, these, those</h2>
+    </div>
+    <p class="rule"><mark style="background:none;color:var(--c5);font-weight:600;">This</mark> and <mark style="background:none;color:var(--c5);font-weight:600;">that</mark> point to one thing. <mark style="background:none;color:var(--c5);font-weight:600;">These</mark> and <mark style="background:none;color:var(--c5);font-weight:600;">those</mark> point to more than one. <mark style="background:none;color:var(--c5);font-weight:600;">This</mark> and <mark style="background:none;color:var(--c5);font-weight:600;">these</mark> are for things close to you. <mark style="background:none;color:var(--c5);font-weight:600;">That</mark> and <mark style="background:none;color:var(--c5);font-weight:600;">those</mark> are for things far away. These words can also stand alone, without a noun after them: "I love this!"</p>
+    <div class="examples">
+      <span><mark>This</mark> is my phone.</span>
+      <span><mark>That</mark> is your phone.</span>
+      <span><mark>These</mark> are my keys, and <mark>those</mark> are yours.</span>
+      <span>I love <mark>this</mark> song.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Near / far × singular / plural</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th></th><th>Near</th><th>Far</th></tr>
+        <tr><td><strong>Singular</strong></td><td class="hl">this</td><td class="hl">that</td></tr>
+        <tr><td><strong>Plural</strong></td><td class="hl">these</td><td class="hl">those</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note">These words work with or without a noun: "This bag is mine" and "This is mine" are both correct.</p>
+
+    <div class="exercise" data-nav="tab-topic-5" data-mode="select">
+      <h3>Grammar practice: choose the right word</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">You hold one umbrella.</span>
+          <select class="blank" data-answer="This"><option value="">choose…</option><option>These</option><option>That</option><option>Those</option><option>This</option></select> is my new umbrella.</li>
+        <li><span class="ex-cue">You see a house far down the road.</span>
+          <select class="blank" data-answer="That"><option value="">choose…</option><option>That</option><option>This</option><option>Those</option><option>These</option></select> is where my aunt lives.</li>
+        <li><span class="ex-cue">You hold two notebooks.</span>
+          <select class="blank" data-answer="These"><option value="">choose…</option><option>Those</option><option>These</option><option>That</option><option>This</option></select> are my notes.</li>
+        <li><span class="ex-cue">You see mountains far away.</span>
+          <select class="blank" data-answer="Those"><option value="">choose…</option><option>That</option><option>These</option><option>This</option><option>Those</option></select> are the Andes.</li>
+        <li><span class="ex-cue">You hold one shell you just found.</span>
+          <select class="blank" data-answer="This"><option value="">choose…</option><option>Those</option><option>This</option><option>These</option><option>That</option></select> is the biggest shell I have found.</li>
+        <li><span class="ex-cue">You hold five letters.</span>
+          <select class="blank" data-answer="These"><option value="">choose…</option><option>Those</option><option>This</option><option>These</option><option>That</option></select> need to go in the mail today.</li>
+        <li><span class="ex-cue">You point at a painting across the room.</span>
+          <select class="blank" data-answer="That"><option value="">choose…</option><option>That</option><option>These</option><option>This</option><option>Those</option></select> painting is worth a lot.</li>
+        <li><span class="ex-cue">You point at stars high in the night sky.</span>
+          <select class="blank" data-answer="Those"><option value="">choose…</option><option>This</option><option>These</option><option>Those</option><option>That</option></select> are actually planets, not stars.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-5" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">Mateo is at the flea market. "<mark style="color:var(--c5);">This</mark> is amazing," he says, holding an old camera. "Look how heavy it is!" His sister Elena points across the room. "<mark style="color:var(--c5);">That</mark> clock looks even better." A seller nearby holds up two bracelets. "<mark style="color:var(--c5);">These</mark> just arrived today," she says. "Only two dollars each." Elena sees something else. "What about <mark style="color:var(--c5);">those</mark> postcards on that table?" The seller nods. "<mark style="color:var(--c5);">Those</mark> are very old." Mateo looks at the camera again. "I'm getting <mark style="color:var(--c5);">this</mark> one," he says. "I won't find another one like <mark style="color:var(--c5);">that</mark> again."</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. The camera is close to Mateo.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. The camera is close to Mateo.">
+          <label><input type="radio" name="t5q1" value="True"> True</label>
+          <label><input type="radio" name="t5q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">2. The clock is right next to Elena.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. The clock is right next to Elena.">
+          <label><input type="radio" name="t5q2" value="True"> True</label>
+          <label><input type="radio" name="t5q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">3. The bracelets are new at the market.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. The bracelets are new at the market.">
+          <label><input type="radio" name="t5q3" value="True"> True</label>
+          <label><input type="radio" name="t5q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. The postcards are far from Elena.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. The postcards are far from Elena.">
+          <label><input type="radio" name="t5q4" value="True"> True</label>
+          <label><input type="radio" name="t5q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. Mateo does not buy the camera.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. Mateo does not buy the camera.">
+          <label><input type="radio" name="t5q5" value="True"> True</label>
+          <label><input type="radio" name="t5q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 6 · DETERMINERS & PRONOUNS ══════════════ -->
+  <section class="panel" id="panel-topic-6" style="--accent: var(--c6);">
+    <div class="topic-head">
+      <span class="topic-num">Unit 8.7</span>
+      <h2>Determiners and pronouns</h2>
+    </div>
+    <p class="rule">A possessive adjective comes before a noun, like <mark style="background:none;color:var(--c6);font-weight:600;">my keys</mark>. A possessive pronoun stands alone and replaces the noun, like <mark style="background:none;color:var(--c6);font-weight:600;">they're mine</mark>. Possessive pronouns never have an apostrophe. We write <mark style="background:none;color:var(--c6);font-weight:600;">hers, yours, theirs, ours</mark>. We do not write <mark style="background:none;color:var(--c6);font-weight:600;">her's</mark> or <mark style="background:none;color:var(--c6);font-weight:600;">your's</mark>.</p>
+    <div class="examples">
+      <span>These are <mark>my</mark> shoes.</span>
+      <span>Those shoes are <mark>mine</mark>.</span>
+      <span>Is this <mark>your</mark> umbrella? Yes, it's <mark>yours</mark>.</span>
+      <span>That desk is <mark>hers</mark>, not <mark>his</mark>.</span>
+    </div>
+    <div class="chart-wrap">
+      <p class="chart-label">Possessive adjective vs. possessive pronoun</p>
+      <div class="chart-card">
+        <table class="chart">
+        <tr><th>Adjective (+ noun)</th><th>Pronoun (alone)</th></tr>
+        <tr><td>my</td><td class="hl">mine</td></tr>
+        <tr><td>your</td><td class="hl">yours</td></tr>
+        <tr><td>his</td><td class="hl">his</td></tr>
+        <tr><td>her</td><td class="hl">hers</td></tr>
+        <tr><td>our</td><td class="hl">ours</td></tr>
+        <tr><td>their</td><td class="hl">theirs</td></tr>
+              </table>
+      </div>
+    </div>
+    <p class="chart-note"><strong>His</strong> is the same word in both columns: "his keys" and "they're his."</p>
+
+    <div class="exercise" data-nav="tab-topic-6" data-mode="select">
+      <h3>Grammar practice: adjective or pronoun?</h3>
+      <ol class="ex-list">
+        <li><span class="ex-cue">before a noun</span> These are
+          <select class="blank" data-answer="my"><option value="">choose…</option><option>my</option><option>mine</option></select> shoes.</li>
+        <li><span class="ex-cue">no noun after</span> Those shoes are
+          <select class="blank" data-answer="mine"><option value="">choose…</option><option>mine</option><option>my</option></select>.</li>
+        <li><span class="ex-cue">before a noun</span> Is this
+          <select class="blank" data-answer="your"><option value="">choose…</option><option>yours</option><option>your</option></select> car?</li>
+        <li><span class="ex-cue">no noun after</span> This car is
+          <select class="blank" data-answer="yours"><option value="">choose…</option><option>yours</option><option>your</option></select>.</li>
+        <li><span class="ex-cue">before a noun</span> That is
+          <select class="blank" data-answer="her"><option value="">choose…</option><option>hers</option><option>her</option></select> backpack.</li>
+        <li><span class="ex-cue">no noun after</span> This backpack is
+          <select class="blank" data-answer="hers"><option value="">choose…</option><option>her</option><option>hers</option></select>.</li>
+        <li><span class="ex-cue">before a noun</span> These are
+          <select class="blank" data-answer="our"><option value="">choose…</option><option>our</option><option>ours</option></select> tickets.</li>
+        <li><span class="ex-cue">no noun after</span> Those tickets are
+          <select class="blank" data-answer="ours"><option value="">choose…</option><option>ours</option><option>our</option></select>.</li>
+        <li><span class="ex-cue">before a noun</span> That is
+          <select class="blank" data-answer="their"><option value="">choose…</option><option>theirs</option><option>their</option></select> apartment on the fifth floor.</li>
+        <li><span class="ex-cue">no noun after</span> That apartment is
+          <select class="blank" data-answer="theirs"><option value="">choose…</option><option>theirs</option><option>their</option></select>.</li>
+        <li><span class="ex-cue">before a noun</span> This is
+          <select class="blank" data-answer="his"><option value="">choose…</option><option>him</option><option>his</option></select> jacket, I think.</li>
+        <li><span class="ex-cue">no noun after</span> That jacket on the hook is
+          <select class="blank" data-answer="his"><option value="">choose…</option><option>him</option><option>his</option></select>.</li>
+      </ol>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="exercise" data-nav="tab-topic-6" data-mode="radio">
+      <h3>Reading practice</h3>
+      <p class="mini-passage">At the airport, people look for <mark style="color:var(--c6);">their</mark> bags. "Is this <mark style="color:var(--c6);">yours</mark>?" a man asks a woman, holding up a green suitcase. "No, that's not <mark style="color:var(--c6);">mine</mark>," she says. "<mark style="color:var(--c6);">Mine</mark> has a yellow ribbon on it." Nearby, two brothers, Leo and Sam, both grab the same backpack. "That's <mark style="color:var(--c6);">mine</mark>!" says Leo. "No, I think it's <mark style="color:var(--c6);">his</mark>," says Sam, pointing at a stranger. The stranger checks his own bag and laughs. "You're right, this is <mark style="color:var(--c6);">mine</mark>." A family finds four red suitcases. "<mark style="color:var(--c6);">These are ours</mark>," says the father, counting them again. Leo looks at his empty hands. "I think <mark style="color:var(--c6);">this</mark> backpack really was <mark style="color:var(--c6);">mine</mark> after all."</p>
+      <p class="mini-subhead">Check your understanding</p>
+      <div class="q" data-answer="True">
+        <p class="q-legend">1. The woman's suitcase has a yellow ribbon on it.</p>
+        <div class="tf-options" role="radiogroup" aria-label="1. The woman's suitcase has a yellow ribbon on it.">
+          <label><input type="radio" name="t6q1" value="True"> True</label>
+          <label><input type="radio" name="t6q1" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">2. The green suitcase belongs to the woman.</p>
+        <div class="tf-options" role="radiogroup" aria-label="2. The green suitcase belongs to the woman.">
+          <label><input type="radio" name="t6q2" value="True"> True</label>
+          <label><input type="radio" name="t6q2" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">3. The backpack belongs to the stranger.</p>
+        <div class="tf-options" role="radiogroup" aria-label="3. The backpack belongs to the stranger.">
+          <label><input type="radio" name="t6q3" value="True"> True</label>
+          <label><input type="radio" name="t6q3" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="True">
+        <p class="q-legend">4. The family has four matching suitcases.</p>
+        <div class="tf-options" role="radiogroup" aria-label="4. The family has four matching suitcases.">
+          <label><input type="radio" name="t6q4" value="True"> True</label>
+          <label><input type="radio" name="t6q4" value="False"> False</label>
+        </div>
+      </div>
+      <div class="q" data-answer="False">
+        <p class="q-legend">5. Sam keeps the backpack.</p>
+        <div class="tf-options" role="radiogroup" aria-label="5. Sam keeps the backpack.">
+          <label><input type="radio" name="t6q5" value="True"> True</label>
+          <label><input type="radio" name="t6q5" value="False"> False</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ TOPIC 7 · FINAL EXAM ══════════════ -->
+  <section class="panel" id="panel-topic-7" style="--accent: var(--c7);">
+    <div class="topic-head">
+      <span class="topic-num">Units 01–08</span>
+      <h2>Final exam</h2>
+    </div>
+    <p class="rule">This 30-question exam covers every topic in this review: introductions, age, possessive adjectives, the apostrophe with 's, this/that/these/those, and determiners &amp; pronouns. Choose the best answer for each question, then press <mark style="background:none;color:var(--c7);font-weight:600;">Check answers</mark> at the bottom to see your score.</p>
+
+    <div class="exercise" data-nav="tab-topic-7" data-mode="radio">
+      <h3 class="exam-sec">Introducing yourself</h3>
+      <div class="q" data-answer="I'm">
+        <p class="q-legend">1. Hi, ____ Marco.</p>
+        <div class="mc-options" role="radiogroup" aria-label="1. Hi, ____ Marco.">
+          <label><input type="radio" name="examq1" value="We're"><span class="opt-letter">A</span> We're</label>
+          <label><input type="radio" name="examq1" value="He's"><span class="opt-letter">B</span> He's</label>
+          <label><input type="radio" name="examq1" value="You're"><span class="opt-letter">C</span> You're</label>
+          <label><input type="radio" name="examq1" value="I'm"><span class="opt-letter">D</span> I'm</label>
+        </div>
+      </div>
+      <div class="q" data-answer="He's">
+        <p class="q-legend">2. This is my friend, Ben. ____ from Chicago.</p>
+        <div class="mc-options" role="radiogroup" aria-label="2. This is my friend, Ben. ____ from Chicago.">
+          <label><input type="radio" name="examq2" value="They're"><span class="opt-letter">A</span> They're</label>
+          <label><input type="radio" name="examq2" value="He's"><span class="opt-letter">B</span> He's</label>
+          <label><input type="radio" name="examq2" value="You're"><span class="opt-letter">C</span> You're</label>
+          <label><input type="radio" name="examq2" value="I'm"><span class="opt-letter">D</span> I'm</label>
+        </div>
+      </div>
+      <div class="q" data-answer="My name is Nadia.">
+        <p class="q-legend">3. Which sentence is a correctly formed, formal introduction?</p>
+        <div class="mc-options" role="radiogroup" aria-label="3. Which sentence is a correctly formed, formal introduction?">
+          <label><input type="radio" name="examq3" value="My name is Nadia."><span class="opt-letter">A</span> My name is Nadia.</label>
+          <label><input type="radio" name="examq3" value="Name my is Nadia."><span class="opt-letter">B</span> Name my is Nadia.</label>
+          <label><input type="radio" name="examq3" value="My name are Nadia."><span class="opt-letter">C</span> My name are Nadia.</label>
+          <label><input type="radio" name="examq3" value="My names is Nadia."><span class="opt-letter">D</span> My names is Nadia.</label>
+        </div>
+      </div>
+      <div class="q" data-answer="These are">
+        <p class="q-legend">4. ____ my cousins, Mia and Zoe.</p>
+        <div class="mc-options" role="radiogroup" aria-label="4. ____ my cousins, Mia and Zoe.">
+          <label><input type="radio" name="examq4" value="This is"><span class="opt-letter">A</span> This is</label>
+          <label><input type="radio" name="examq4" value="It is"><span class="opt-letter">B</span> It is</label>
+          <label><input type="radio" name="examq4" value="These are"><span class="opt-letter">C</span> These are</label>
+          <label><input type="radio" name="examq4" value="He is"><span class="opt-letter">D</span> He is</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Her name is Ms. Alvarez.">
+        <p class="q-legend">5. Which sentence correctly introduces someone else?</p>
+        <div class="mc-options" role="radiogroup" aria-label="5. Which sentence correctly introduces someone else?">
+          <label><input type="radio" name="examq5" value="Her name is Ms. Alvarez."><span class="opt-letter">A</span> Her name is Ms. Alvarez.</label>
+          <label><input type="radio" name="examq5" value="Her name are Ms. Alvarez."><span class="opt-letter">B</span> Her name are Ms. Alvarez.</label>
+          <label><input type="radio" name="examq5" value="She name is Ms. Alvarez."><span class="opt-letter">C</span> She name is Ms. Alvarez.</label>
+          <label><input type="radio" name="examq5" value="Her names is Ms. Alvarez."><span class="opt-letter">D</span> Her names is Ms. Alvarez.</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">How old are you?</h3>
+      <div class="q" data-answer="is">
+        <p class="q-legend">6. How old ____ your brother?</p>
+        <div class="mc-options" role="radiogroup" aria-label="6. How old ____ your brother?">
+          <label><input type="radio" name="examq6" value="be"><span class="opt-letter">A</span> be</label>
+          <label><input type="radio" name="examq6" value="are"><span class="opt-letter">B</span> are</label>
+          <label><input type="radio" name="examq6" value="am"><span class="opt-letter">C</span> am</label>
+          <label><input type="radio" name="examq6" value="is"><span class="opt-letter">D</span> is</label>
+        </div>
+      </div>
+      <div class="q" data-answer="are">
+        <p class="q-legend">7. We ____ both 19 years old.</p>
+        <div class="mc-options" role="radiogroup" aria-label="7. We ____ both 19 years old.">
+          <label><input type="radio" name="examq7" value="be"><span class="opt-letter">A</span> be</label>
+          <label><input type="radio" name="examq7" value="are"><span class="opt-letter">B</span> are</label>
+          <label><input type="radio" name="examq7" value="am"><span class="opt-letter">C</span> am</label>
+          <label><input type="radio" name="examq7" value="is"><span class="opt-letter">D</span> is</label>
+        </div>
+      </div>
+      <div class="q" data-answer="She's 8 years old.">
+        <p class="q-legend">8. Which sentence is correct?</p>
+        <div class="mc-options" role="radiogroup" aria-label="8. Which sentence is correct?">
+          <label><input type="radio" name="examq8" value="She's 8 year old."><span class="opt-letter">A</span> She's 8 year old.</label>
+          <label><input type="radio" name="examq8" value="She's 8 years old."><span class="opt-letter">B</span> She's 8 years old.</label>
+          <label><input type="radio" name="examq8" value="She are 8 years old."><span class="opt-letter">C</span> She are 8 years old.</label>
+          <label><input type="radio" name="examq8" value="She is 8 years."><span class="opt-letter">D</span> She is 8 years.</label>
+        </div>
+      </div>
+      <div class="q" data-answer="How old is she?">
+        <p class="q-legend">9. Which question about age is formed correctly?</p>
+        <div class="mc-options" role="radiogroup" aria-label="9. Which question about age is formed correctly?">
+          <label><input type="radio" name="examq9" value="How old is being she?"><span class="opt-letter">A</span> How old is being she?</label>
+          <label><input type="radio" name="examq9" value="How old she is?"><span class="opt-letter">B</span> How old she is?</label>
+          <label><input type="radio" name="examq9" value="How old is she?"><span class="opt-letter">C</span> How old is she?</label>
+          <label><input type="radio" name="examq9" value="How old are she?"><span class="opt-letter">D</span> How old are she?</label>
+        </div>
+      </div>
+      <div class="q" data-answer="They will be 40 soon.">
+        <p class="q-legend">10. "They're turning 40 next month" means:</p>
+        <div class="mc-options" role="radiogroup" aria-label="10. "They're turning 40 next month" means:">
+          <label><input type="radio" name="examq10" value="They will be 40 soon."><span class="opt-letter">A</span> They will be 40 soon.</label>
+          <label><input type="radio" name="examq10" value="They were 40 last year."><span class="opt-letter">B</span> They were 40 last year.</label>
+          <label><input type="radio" name="examq10" value="They are older than 40."><span class="opt-letter">C</span> They are older than 40.</label>
+          <label><input type="radio" name="examq10" value="They are already 40."><span class="opt-letter">D</span> They are already 40.</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Possessive adjectives</h3>
+      <div class="q" data-answer="my">
+        <p class="q-legend">11. Max is ____ dog. (the speaker owns the dog)</p>
+        <div class="mc-options" role="radiogroup" aria-label="11. Max is ____ dog. (the speaker owns the dog)">
+          <label><input type="radio" name="examq11" value="your"><span class="opt-letter">A</span> your</label>
+          <label><input type="radio" name="examq11" value="my"><span class="opt-letter">B</span> my</label>
+          <label><input type="radio" name="examq11" value="its"><span class="opt-letter">C</span> its</label>
+          <label><input type="radio" name="examq11" value="their"><span class="opt-letter">D</span> their</label>
+        </div>
+      </div>
+      <div class="q" data-answer="its">
+        <p class="q-legend">12. The company changed ____ logo.</p>
+        <div class="mc-options" role="radiogroup" aria-label="12. The company changed ____ logo.">
+          <label><input type="radio" name="examq12" value="it's"><span class="opt-letter">A</span> it's</label>
+          <label><input type="radio" name="examq12" value="his"><span class="opt-letter">B</span> his</label>
+          <label><input type="radio" name="examq12" value="their"><span class="opt-letter">C</span> their</label>
+          <label><input type="radio" name="examq12" value="its"><span class="opt-letter">D</span> its</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Nina lost her keys.">
+        <p class="q-legend">13. Which sentence uses a possessive adjective correctly?</p>
+        <div class="mc-options" role="radiogroup" aria-label="13. Which sentence uses a possessive adjective correctly?">
+          <label><input type="radio" name="examq13" value="Nina lost her keys."><span class="opt-letter">A</span> Nina lost her keys.</label>
+          <label><input type="radio" name="examq13" value="Nina lost she keys."><span class="opt-letter">B</span> Nina lost she keys.</label>
+          <label><input type="radio" name="examq13" value="Nina lost hers keys."><span class="opt-letter">C</span> Nina lost hers keys.</label>
+          <label><input type="radio" name="examq13" value="Nina lost her's keys."><span class="opt-letter">D</span> Nina lost her's keys.</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Whose">
+        <p class="q-legend">14. ____ backpack is this? (asking about ownership)</p>
+        <div class="mc-options" role="radiogroup" aria-label="14. ____ backpack is this? (asking about ownership)">
+          <label><input type="radio" name="examq14" value="Whom"><span class="opt-letter">A</span> Whom</label>
+          <label><input type="radio" name="examq14" value="Who"><span class="opt-letter">B</span> Who</label>
+          <label><input type="radio" name="examq14" value="Whose"><span class="opt-letter">C</span> Whose</label>
+          <label><input type="radio" name="examq14" value="Who's"><span class="opt-letter">D</span> Who's</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Our">
+        <p class="q-legend">15. ____ flight leaves at noon. (the speaker is part of "we")</p>
+        <div class="mc-options" role="radiogroup" aria-label="15. ____ flight leaves at noon. (the speaker is part of "we")">
+          <label><input type="radio" name="examq15" value="Their"><span class="opt-letter">A</span> Their</label>
+          <label><input type="radio" name="examq15" value="Its"><span class="opt-letter">B</span> Its</label>
+          <label><input type="radio" name="examq15" value="Your"><span class="opt-letter">C</span> Your</label>
+          <label><input type="radio" name="examq15" value="Our"><span class="opt-letter">D</span> Our</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Apostrophe with ’s</h3>
+      <div class="q" data-answer="the girls' bags">
+        <p class="q-legend">16. More than one girl, their bags:</p>
+        <div class="mc-options" role="radiogroup" aria-label="16. More than one girl, their bags:">
+          <label><input type="radio" name="examq16" value="the girls's bags"><span class="opt-letter">A</span> the girls's bags</label>
+          <label><input type="radio" name="examq16" value="the girls' bags"><span class="opt-letter">B</span> the girls' bags</label>
+          <label><input type="radio" name="examq16" value="the girlss bags"><span class="opt-letter">C</span> the girlss bags</label>
+          <label><input type="radio" name="examq16" value="the girl's bags"><span class="opt-letter">D</span> the girl's bags</label>
+        </div>
+      </div>
+      <div class="q" data-answer="the children's toys">
+        <p class="q-legend">17. The children, their toys (irregular plural):</p>
+        <div class="mc-options" role="radiogroup" aria-label="17. The children, their toys (irregular plural):">
+          <label><input type="radio" name="examq17" value="the childrens toys"><span class="opt-letter">A</span> the childrens toys</label>
+          <label><input type="radio" name="examq17" value="the childrens's toys"><span class="opt-letter">B</span> the childrens's toys</label>
+          <label><input type="radio" name="examq17" value="the childrens' toys"><span class="opt-letter">C</span> the childrens' toys</label>
+          <label><input type="radio" name="examq17" value="the children's toys"><span class="opt-letter">D</span> the children's toys</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Tom and Rosa's car">
+        <p class="q-legend">18. Tom and Rosa share one car together:</p>
+        <div class="mc-options" role="radiogroup" aria-label="18. Tom and Rosa share one car together:">
+          <label><input type="radio" name="examq18" value="Tom and Rosa's car"><span class="opt-letter">A</span> Tom and Rosa's car</label>
+          <label><input type="radio" name="examq18" value="Tom's and Rosa's car"><span class="opt-letter">B</span> Tom's and Rosa's car</label>
+          <label><input type="radio" name="examq18" value="Tom's and Rosa car"><span class="opt-letter">C</span> Tom's and Rosa car</label>
+          <label><input type="radio" name="examq18" value="Toms and Rosas' car"><span class="opt-letter">D</span> Toms and Rosas' car</label>
+        </div>
+      </div>
+      <div class="q" data-answer="the teacher's desk">
+        <p class="q-legend">19. One teacher, her desk:</p>
+        <div class="mc-options" role="radiogroup" aria-label="19. One teacher, her desk:">
+          <label><input type="radio" name="examq19" value="the teachers's desk"><span class="opt-letter">A</span> the teachers's desk</label>
+          <label><input type="radio" name="examq19" value="the teacher's desk"><span class="opt-letter">B</span> the teacher's desk</label>
+          <label><input type="radio" name="examq19" value="the teacher' desk"><span class="opt-letter">C</span> the teacher' desk</label>
+          <label><input type="radio" name="examq19" value="the teachers' desk"><span class="opt-letter">D</span> the teachers' desk</label>
+        </div>
+      </div>
+      <div class="q" data-answer="James's office">
+        <p class="q-legend">20. A name ending in -s, like James — which form is acceptable?</p>
+        <div class="mc-options" role="radiogroup" aria-label="20. A name ending in -s, like James — which form is acceptable?">
+          <label><input type="radio" name="examq20" value="James's office"><span class="opt-letter">A</span> James's office</label>
+          <label><input type="radio" name="examq20" value="Jame's office"><span class="opt-letter">B</span> Jame's office</label>
+          <label><input type="radio" name="examq20" value="James're office"><span class="opt-letter">C</span> James're office</label>
+          <label><input type="radio" name="examq20" value="Jamess office"><span class="opt-letter">D</span> Jamess office</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">This, that, these, those</h3>
+      <div class="q" data-answer="This">
+        <p class="q-legend">21. You hold one umbrella: ____ is my new umbrella.</p>
+        <div class="mc-options" role="radiogroup" aria-label="21. You hold one umbrella: ____ is my new umbrella.">
+          <label><input type="radio" name="examq21" value="Those"><span class="opt-letter">A</span> Those</label>
+          <label><input type="radio" name="examq21" value="That"><span class="opt-letter">B</span> That</label>
+          <label><input type="radio" name="examq21" value="This"><span class="opt-letter">C</span> This</label>
+          <label><input type="radio" name="examq21" value="These"><span class="opt-letter">D</span> These</label>
+        </div>
+      </div>
+      <div class="q" data-answer="That">
+        <p class="q-legend">22. You see a house far down the road: ____ is where my aunt lives.</p>
+        <div class="mc-options" role="radiogroup" aria-label="22. You see a house far down the road: ____ is where my aunt lives.">
+          <label><input type="radio" name="examq22" value="Those"><span class="opt-letter">A</span> Those</label>
+          <label><input type="radio" name="examq22" value="This"><span class="opt-letter">B</span> This</label>
+          <label><input type="radio" name="examq22" value="That"><span class="opt-letter">C</span> That</label>
+          <label><input type="radio" name="examq22" value="These"><span class="opt-letter">D</span> These</label>
+        </div>
+      </div>
+      <div class="q" data-answer="These">
+        <p class="q-legend">23. You hold two notebooks: ____ are my notes.</p>
+        <div class="mc-options" role="radiogroup" aria-label="23. You hold two notebooks: ____ are my notes.">
+          <label><input type="radio" name="examq23" value="Those"><span class="opt-letter">A</span> Those</label>
+          <label><input type="radio" name="examq23" value="This"><span class="opt-letter">B</span> This</label>
+          <label><input type="radio" name="examq23" value="That"><span class="opt-letter">C</span> That</label>
+          <label><input type="radio" name="examq23" value="These"><span class="opt-letter">D</span> These</label>
+        </div>
+      </div>
+      <div class="q" data-answer="Those">
+        <p class="q-legend">24. You see mountains far away: ____ are the Andes.</p>
+        <div class="mc-options" role="radiogroup" aria-label="24. You see mountains far away: ____ are the Andes.">
+          <label><input type="radio" name="examq24" value="Those"><span class="opt-letter">A</span> Those</label>
+          <label><input type="radio" name="examq24" value="This"><span class="opt-letter">B</span> This</label>
+          <label><input type="radio" name="examq24" value="These"><span class="opt-letter">C</span> These</label>
+          <label><input type="radio" name="examq24" value="That"><span class="opt-letter">D</span> That</label>
+        </div>
+      </div>
+      <div class="q" data-answer="this">
+        <p class="q-legend">25. Which word points to one thing that is close to you?</p>
+        <div class="mc-options" role="radiogroup" aria-label="25. Which word points to one thing that is close to you?">
+          <label><input type="radio" name="examq25" value="that"><span class="opt-letter">A</span> that</label>
+          <label><input type="radio" name="examq25" value="this"><span class="opt-letter">B</span> this</label>
+          <label><input type="radio" name="examq25" value="these"><span class="opt-letter">C</span> these</label>
+          <label><input type="radio" name="examq25" value="those"><span class="opt-letter">D</span> those</label>
+        </div>
+      </div>
+      <h3 class="exam-sec">Determiners and pronouns</h3>
+      <div class="q" data-answer="mine">
+        <p class="q-legend">26. Those shoes are ____. (no noun after)</p>
+        <div class="mc-options" role="radiogroup" aria-label="26. Those shoes are ____. (no noun after)">
+          <label><input type="radio" name="examq26" value="my"><span class="opt-letter">A</span> my</label>
+          <label><input type="radio" name="examq26" value="me"><span class="opt-letter">B</span> me</label>
+          <label><input type="radio" name="examq26" value="I"><span class="opt-letter">C</span> I</label>
+          <label><input type="radio" name="examq26" value="mine"><span class="opt-letter">D</span> mine</label>
+        </div>
+      </div>
+      <div class="q" data-answer="your">
+        <p class="q-legend">27. This is ____ umbrella. (before a noun)</p>
+        <div class="mc-options" role="radiogroup" aria-label="27. This is ____ umbrella. (before a noun)">
+          <label><input type="radio" name="examq27" value="you"><span class="opt-letter">A</span> you</label>
+          <label><input type="radio" name="examq27" value="you're"><span class="opt-letter">B</span> you're</label>
+          <label><input type="radio" name="examq27" value="your"><span class="opt-letter">C</span> your</label>
+          <label><input type="radio" name="examq27" value="yours"><span class="opt-letter">D</span> yours</label>
+        </div>
+      </div>
+      <div class="q" data-answer="hers">
+        <p class="q-legend">28. That backpack is ____. (no noun after)</p>
+        <div class="mc-options" role="radiogroup" aria-label="28. That backpack is ____. (no noun after)">
+          <label><input type="radio" name="examq28" value="shes"><span class="opt-letter">A</span> shes</label>
+          <label><input type="radio" name="examq28" value="her"><span class="opt-letter">B</span> her</label>
+          <label><input type="radio" name="examq28" value="hers"><span class="opt-letter">C</span> hers</label>
+          <label><input type="radio" name="examq28" value="she"><span class="opt-letter">D</span> she</label>
+        </div>
+      </div>
+      <div class="q" data-answer="theirs">
+        <p class="q-legend">29. Which possessive pronoun is spelled correctly?</p>
+        <div class="mc-options" role="radiogroup" aria-label="29. Which possessive pronoun is spelled correctly?">
+          <label><input type="radio" name="examq29" value="thiers"><span class="opt-letter">A</span> thiers</label>
+          <label><input type="radio" name="examq29" value="theirs"><span class="opt-letter">B</span> theirs</label>
+          <label><input type="radio" name="examq29" value="theirs'"><span class="opt-letter">C</span> theirs'</label>
+          <label><input type="radio" name="examq29" value="their's"><span class="opt-letter">D</span> their's</label>
+        </div>
+      </div>
+      <div class="q" data-answer="both before a noun and alone">
+        <p class="q-legend">30. "His" can be used:</p>
+        <div class="mc-options" role="radiogroup" aria-label="30. "His" can be used:">
+          <label><input type="radio" name="examq30" value="never as a possessive"><span class="opt-letter">A</span> never as a possessive</label>
+          <label><input type="radio" name="examq30" value="only before a noun"><span class="opt-letter">B</span> only before a noun</label>
+          <label><input type="radio" name="examq30" value="only alone"><span class="opt-letter">C</span> only alone</label>
+          <label><input type="radio" name="examq30" value="both before a noun and alone"><span class="opt-letter">D</span> both before a noun and alone</label>
+        </div>
+      </div>
+      <div class="ex-controls">
+        <button class="btn check-btn">Check answers</button>
+        <button class="btn ghost reset-btn">Reset</button>
+        <span class="ex-result" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>Grammar review worksheet for Units 01–08. Includes self-check exercises.</footer>
+
+<script>
+function switchTab(id, btn) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tabbtn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateTabStatus(navId) {
+  if (!navId) return;
+  const related = document.querySelectorAll(`.exercise[data-nav="${navId}"]`);
+  const allChecked = related.length > 0 && Array.from(related).every(c => c.dataset.checked === 'true');
+  const btn = document.getElementById(navId);
+  if (btn) btn.classList.toggle('done', allChecked);
+}
+
+document.querySelectorAll('.exercise').forEach(container => {
+  const checkBtn = container.querySelector('.check-btn');
+  const resetBtn = container.querySelector('.reset-btn');
+  const resultEl = container.querySelector('.ex-result');
+  const navId = container.dataset.nav;
+  const mode = container.dataset.mode;
+
+  checkBtn.addEventListener('click', () => {
+    let correct = 0, total = 0;
+    if (mode === 'select') {
+      const selects = container.querySelectorAll('select.blank');
+      total = selects.length;
+      selects.forEach(sel => {
+        sel.classList.remove('correct', 'wrong');
+        if (sel.value && sel.value === sel.dataset.answer) { sel.classList.add('correct'); correct++; }
+        else { sel.classList.add('wrong'); }
+      });
+    } else {
+      const groups = container.querySelectorAll('.q');
+      total = groups.length;
+      groups.forEach(fs => {
+        fs.classList.remove('correct', 'wrong');
+        const checked = fs.querySelector('input[type="radio"]:checked');
+        if (checked && checked.value === fs.dataset.answer) { fs.classList.add('correct'); correct++; }
+        else { fs.classList.add('wrong'); }
+      });
+    }
+    resultEl.textContent = `${correct} / ${total} correct`;
+    container.dataset.checked = 'true';
+    updateTabStatus(navId);
+  });
+
+  resetBtn.addEventListener('click', () => {
+    if (mode === 'select') {
+      container.querySelectorAll('select.blank').forEach(sel => {
+        sel.value = '';
+        sel.classList.remove('correct', 'wrong');
+      });
+    } else {
+      container.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+      container.querySelectorAll('.q').forEach(fs => fs.classList.remove('correct', 'wrong'));
+    }
+    resultEl.textContent = '';
+    container.dataset.checked = 'false';
+    updateTabStatus(navId);
+  });
+});
+</script>
+
+</body>
+</html>
